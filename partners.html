@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <title>Cal Cycling p/b Harder Mechanical Contractors</title>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+        </script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+        <style>
+        @font-face {
+          font-family: Sather;
+          src: url("NCAA Cal Golden Bears.otf") format("opentype");
+        }
+          #profile {
+            position: fixed;
+            margin-top: -90px;
+            margin-left: calc(90% - 80px);
+            margin-right: calc(10% - 80px);
+            background-color: rgb(0, 0, 80);
+            color: rgb(200, 200, 0); /* go bears */
+            font-size: 25px;
+            text-align: center;
+            text-decoration: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 6px;
+            font-family: 'Avenir', 'Montserrat';
+          }
+          #cal {
+            position: absolute;
+            float: left;
+            width: 160px;
+            height: auto;
+            margin-left: calc(50% - 230px);
+            margin-top: 0px;
+            border-radius: 0px;
+          }
+          #title {
+            font-family: 'Sather';
+            color: rgb(4, 30, 66);
+            margin-left: calc(50% - 45px);
+            font-size: 120px;
+            margin-bottom: -20px;
+          }
+          #subtitle {
+            font-family: 'Play';
+            text-align: center;
+            font-size: 26px;
+            color: rgb(0, 0, 0);
+            margin-top: 0px;
+          }
+          .menu {
+            text-decoration: none;
+            font-style: normal;
+            position: absolute;
+            margin-top: 25px;
+            width: 11%;
+            text-align: center;
+            background-color: rgb(200, 200, 200);
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-family: 'Avenir', 'Montserrat';
+            border-radius: 0px;
+            border-style: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            cursor: pointer;
+          }
+          #b1 {
+            margin-left: 0px;
+          }
+          #b2 {
+            margin-left: 11%;
+          }
+          #b3 {
+            margin-left: 22%;
+
+          }
+          #b4 {
+            margin-left: 33%;
+          }
+          #b5 {
+            margin-left: 44%;
+          }
+          #b6 {
+            margin-left: 55%;
+          }
+          #b7 {
+            margin-left: 66%;
+
+            color: rgb(200, 200, 0);
+            background-color: rgb(0, 0, 90);
+          }
+          #b8 {
+            margin-left: 77%;
+          }
+          #b9 {
+            margin-left: 88%;
+          }
+
+          #homeimg {
+            opacity: 0.5;
+            margin-top: 85px;
+            width: 80%;
+            height: 40%;
+            margin-left: 10%;
+          }
+          #hometxt {
+            border-radius: 15px;
+            font-style: italic;
+            font-family: 'AvenirNext-UltraLight';
+            position: absolute;
+            margin-top: -34%;
+            text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+            height: 120px;
+            padding-top: 130px;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 35px;
+            color: rgb(200, 200, 0); //go bears
+
+          }
+          #titletxt {
+            font-style: normal;
+            font-family: 'Play';
+            position: absolute;
+            margin-top: -32%;
+            text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+            font-size: 55px;
+            color: rgb(200, 200, 0); //go bears
+          }
+
+          #left {
+            margin-left: 5%;
+            margin-top: 90px;
+            margin-right: 50px;
+            width: 560px;
+            height: 400px;
+            float: left;
+          }
+
+          #left2 {
+            margin-left: 5%;
+            margin-top: 90px;
+            margin-right: 50px;
+            width: 560px;
+            height: 400px;
+            float: left;
+            margin-bottom: 100px;
+          }
+
+          #righttitle {
+            margin-top: 122px;
+            margin-right: 5%;
+            font-size: 30px;
+            font-family: 'Play';
+          }
+
+          #righttitle2 {
+            margin-top: 147px;
+            margin-right: 5%;
+            font-size: 30px;
+            font-family: 'Play';
+          }
+
+          #righttext {
+            margin-top: 40px;
+            margin-right: 5%;
+            font-size: 16px;
+            font-family: 'Avenir', 'Montserrat';
+          }
+
+          #righttext2 {
+            margin-top: 40px;
+            margin-right: 5%;
+            font-size: 16px;
+            font-family: 'Avenir', 'Montserrat';
+          }
+
+          #right {
+            margin-right: 5%;
+            margin-top: 90px;
+            margin-left: 50px;
+            width: 560px;
+            height: 400px;
+            float: right;
+          }
+
+          #lefttitle {
+            margin-top: 72px;
+            margin-left: 5%;
+            font-size: 30px;
+            font-family: 'Play';
+          }
+          #lefttitle2 {
+            margin-top: 165px;
+            margin-left: 5%;
+            font-size: 30px;
+            font-family: 'Play';
+          }
+
+          #lefttext {
+            margin-top: 40px;
+            margin-left: 5%;
+            font-size: 15px;
+            font-family: 'Avenir', 'Montserrat';
+          }
+
+          #racetable {
+            font-family: 'Avenir', 'Montserrat';
+            font-size: 15px;
+            margin-left: 5%;
+          }
+
+          #ind {
+            margin-left: 20px;
+          }
+
+          #big {
+            margin-top: -15px;
+            background-color: rgb(0, 0, 80);
+            color: rgb(200, 200, 0); /* go bears */
+            font-size: 37px;
+            margin-left: 0%;
+            margin-right: 0%;
+            text-align: center;
+            text-decoration: none;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 6px;
+            font-family: 'Play';
+          }
+          #buffer {
+            margin-top: 100px;
+          }
+          #buffer2 {
+            margin-top: 130px;
+          }
+
+        </style>
+    </head>
+    <body>
+  <script src="login.js" type="module"></script>
+  <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
+  <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
+
+  <a href="index.html" class="menu" id="b1" onclick="b1()">Home</a>
+  <a href="about.html" class="menu" id="b2" onclick="b2()">About</a>
+  <a href="membership.html" class="menu" id="b3" onclick="b3()">Membership</a>
+  <a href="officers.html" class="menu" id="b4" onclick="b4()">Officers</a>
+  <a href="routes.html" class="menu" id="b5" onclick="b5()">Routes</a>
+  <a href="upcomingrides.html" class="menu" id="b6" onclick="b6()">Upcoming Rides</a>
+  <a href="partners.html" class="menu" id="b7" onclick="b7()">Partners</a>
+  <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
+  <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
+
+  <p id="buffer"></p>
+  <div id="big">CAL CYCLING IS PROUDLY POWERED BY</div>
+
+<a href="https://harder.com" target="_blank"><img id="left" src="imgs/partners-1.jpeg"></a>
+<p id="righttitle"><a href="https://harder.com" target="_blank">HARDER MECHANICAL CONTRACTORS</a></p>
+<p id="righttext">We are incredibly grateful to <a href="https://harder.com" target="_blank">Harder Mechanical Contractors</a> for their long-time support of Cal Cycling. Cal Cycling as it is would not exist without the support of Harder Mechanical. As a team with a ton of mechanical engineers, we are thrilled to have the support of Harder Mechanical.</p>
+<em><p id="righttext"><a href="https://harder.com" target="_blank">Harder Mechanical</a> has dedicated almost a century to tackling tough, complex projects. We fabricate high-quality, sophisticated piping the right way, the Harder Way—safely, on time, and on budget. By prioritizing continuous improvement, innovation and resource development, we position ourselves to meet the unique needs of your industry. Safety is at the heart of quality and performance. Our people and customers trust us to manage safe, successful projects.</p></em>
+<p id="buffer2"></p>
+  <div id="big">CAL CYCLING IS SUPPORTED BY</div>
+<a href="https://bayareabicyclelaw.com/" target="_blank"><img class="img" id="right" src="imgs/partners-2.jpeg"></a>
+<p id="lefttitle"><a href="https://bayareabicyclelaw.com/" target="_blank">BAY AREA BICYCLE LAW</a></p>
+<p id="lefttext">At Cal Cycling, we take safety seriously, so the support of Bay Area Bicycle Law is greatly appreciated. It’s comforting to know that when we’re out on the roads, there’s someone we can have in our corner if something goes wrong.</p>
+<em><p id="lefttext">We understand how difficult the aftermath of a bicycle accident can be. All bicycle accidents are serious accidents – even with a helmet and other protective gear, being involved in a collision with a motor vehicle can be devastating. Along with the physical, emotional, and financial toll of a bicycle accident, the legal process for pursuing compensation can insert additional stress into an already frustrating situation.</p></em>
+<em><p id="lefttext">At <a href="https://bayareabicyclelaw.com/" target="_blank">Bay Area Bicycle Law</a>, we understand the pain and suffering you are going through. Because we are a full-service firm, we handle all the legal legwork necessary on your behalf, so that you can focus all of your energy on healing and recovery. We want to make your life easier, and we will fight to make sure you receive the help and compensation you deserve.</p></em>
+
+<a href="https://www.panachecyclewear.com/" target="_blank"><img class="img" id="left" src="imgs/partners-3.jpeg"></a>
+<p id="righttitle2"><a href="https://www.panachecyclewear.com/" target="_blank">PANACHE CYCLEWEAR</a></p>
+<p id="righttext">A great team needs an equally great kit, and Panache makes the very best out there. Their bib shorts are by far the most comfortable we’ve ever used. If you’re riding out to Mt. Tam for five hours, that’s what you want to be wearing.</p>
+<em><p id="righttext"><a href="https://www.panachecyclewear.com/" target="_blank">Panache</a> was founded on the belief that cycling is more than an activity; it is a way of life. A way of life that reveals truths and gives one a better understanding of self and time through both the internal and external challenge that cycling provides. We pursue this belief by passionately fusing style and innovation in a way that respects, but also redefines apparel, accessories, and service.</p></em>
+<img class="img" id="right" src="imgs/partners-4.jpeg">
+<a href="https://mikesbikes.com/" target="_blank"><p id="lefttitle2">MIKE'S BIKES OF BERKELEY</p></a>
+<p id="lefttext">Sometimes, you really just need a professional to look at your bike. That’s where <a href="https://mikesbikes.com/" target="_blank">Mike’s Bikes</a> of Berkeley comes in for us. Their skilled repair services and wide selection of all things cycling keep us on the road.</p>
+<em><p id="lefttext">Why shop with us? Because we know bikes and we care. We don’t sell snowboards, we don’t sell kayaks and we don’t sell tents. We only sell bikes – you might even say bikes are our life. Why does that matter? Because this utter fanaticism for our product makes us the best at what we do – We live to create cyclists.</p></em>
+<p id="buffer2"></p>
+  <div id="big">CAL CYCLING IS MADE BEAUTIFUL BY</div>
+  <img id="left" src="imgs/partners-5.jpeg">
+  <p id="righttitle2">INNOVATIVE DESIGN</p>
+  <p id="righttext">If you’ve seen our kit, you’ve got to be wondering who designed it. Well, that’s Cal Innovative Design, a Cal-based student design club. They do pro bono work for campus organizations and paid work for off-campus organizations. If you’ve got a design need, get in touch with them.</p>
+  <em><p id="righttext">Innovative Design is UC Berkeley’s premier creative agency. We are designers, photographers, and web developers together in a mission to Make Berkeley Beautiful.</p></em>
+<p id="buffer2"></p>
+<div id="big">We would also like to thank the contributions of</div>
+<a href="https://www.seasucker.com/" target="_blank"><img class="img" id="right" src="imgs/partners-6.jpeg"></a>
+<p id="lefttitle2"><a href="https://www.seasucker.com/" target="_blank">SEASUCKER</a></p>
+<p id="lefttext">Getting bikes to races is a chaotic affair. We use a lot of rental cars and this season we’ll be using <a href="https://www.seasucker.com/" target="_blank">SeaSucker</a>‘s suction cup roof racks. The small form factor and modularity gives us a tremendous amount of flexibility and additional capacity, helping us economize on cars.</p>
+
+  <script>
+  var updated = false;
+  var ratios = [];
+  function update() {
+    console.log(ratios);
+    var imgs = document.getElementsByClassName("img");
+    var w = window.innerWidth / 2.8;
+    for (var i = 0 ; i < imgs.length ; i++) {
+      if (!updated) {
+        ratios.push(imgs[i].height / imgs[i].width);
+      }
+      if (i == imgs.length - 1) {
+        w /= 1.5;
+      }
+      imgs[i].style.width = w + "px";
+      imgs[i].style.height = w * (ratios[i]) + "px";
+    }
+    updated = true;
+    window.requestAnimationFrame(update, 1);
+  }
+  update();
+  </script>
+
+<!--<button id="signin">Google Signin</button>
+<button id="signout">Google Signout</button>!-->
+  </body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <title>Cal Cycling p/b Harder Mechanical Contractors</title>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+        </script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+        <style>
+        @font-face {
+          font-family: Sather;
+          src: url("NCAA Cal Golden Bears.otf") format("opentype");
+        }
+
+        #profile {
+          position: fixed;
+          margin-top: -90px;
+          margin-left: calc(90% - 80px);
+          margin-right: calc(10% - 80px);
+          background-color: rgb(0, 0, 80);
+          color: rgb(200, 200, 0); /* go bears */
+          font-size: 25px;
+          text-align: center;
+          text-decoration: none;
+          padding-top: 3px;
+          padding-bottom: 3px;
+          padding-left: 10px;
+          padding-right: 10px;
+          border-radius: 6px;
+          font-family: 'Avenir', 'Montserrat';
+        }
+        #cal {
+          position: absolute;
+          float: left;
+          width: 160px;
+          height: auto;
+          margin-left: calc(50% - 230px);
+          margin-top: 0px;
+          border-radius: 0px;
+        }
+        #title {
+          font-family: 'Sather';
+          color: rgb(4, 30, 66);
+          margin-left: calc(50% - 45px);
+          font-size: 120px;
+          margin-bottom: -20px;
+        }
+        #subtitle {
+          font-family: 'Play';
+          text-align: center;
+          font-size: 26px;
+          color: rgb(0, 0, 0);
+          margin-top: 0px;
+        }
+          .menu {
+            text-decoration: none;
+            font-style: normal;
+            position: absolute;
+            margin-top: 25px;
+            width: 11%;
+            text-align: center;
+            background-color: rgb(200, 200, 200);
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-family: 'Avenir', 'Montserrat';
+            border-radius: 0px;
+            border-style: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            cursor: pointer;
+          }
+          #b1 {
+            margin-left: 0px;
+            background-color: rgb(0, 0, 90);
+            color: rgb(200, 200, 0);
+          }
+          #b2 {
+            margin-left: 11%;
+          }
+          #b3 {
+            margin-left: 22%;
+          }
+          #b4 {
+            margin-left: 33%;
+          }
+          #b5 {
+            margin-left: 44%;
+          }
+          #b6 {
+            margin-left: 55%;
+          }
+          #b7 {
+            margin-left: 66%;
+          }
+          #b8 {
+            margin-left: 77%;
+          }
+          #b9 {
+            margin-left: 88%;
+          }
+
+          #homeimg {
+            opacity: 0.5;
+            margin-top: 85px;
+            width: 80%;
+            height: 40%;
+            margin-left: 10%;
+          }
+          #hometxt {
+            border-radius: 15px;
+            font-style: italic;
+            font-family: 'AvenirNext-UltraLight', 'Montserrat';
+            position: absolute;
+            margin-top: -29%;
+            text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+            height: 120px;
+            padding-top: 130px;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 35px;
+            color: rgb(200, 200, 0); //go bears
+
+          }
+          #titletxt {
+            font-style: normal;
+            font-family: 'Play';
+            position: absolute;
+            margin-top: -27.5%;
+            text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+            font-size: 55px;
+            color: rgb(200, 200, 0); //go bears
+          }
+          .leftbox {
+            margin-left: 10%;
+            width: 26.6%;
+            float: left;
+          }
+          .middlebox {
+            margin-left: 0%;
+            width: 26.6%;
+            float: left;
+            margin-top: 25px;
+          }
+          .rightbox {
+            margin-left: 0%;
+            width: 26.6%;
+            float: left;
+          }
+          #pimg {
+            width: 100%;
+            height: 100%;
+            margin-top: 15px;
+          }
+          #ptext {
+            font-family: 'Avenir', 'Montserrat';
+            font-size: 21px;
+            color: rgb(0,0,0);
+            margin-top: 10px;
+            text-align: center;
+            margin-left: 5%;
+            margin-right: 5%;
+          }
+          #pbutton {
+            background-color: rgb(0, 0, 80);
+            color: rgb(200, 200, 0); /* go bears */
+            font-size: 21px;
+            margin-left: calc(50% - 80px);
+            margin-right: calc(50% - 80px);
+            text-align: center;
+            text-decoration: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 6px;
+            font-family: 'Avenir', 'Montserrat';
+            margin-bottom: 15px;
+          }
+          #btext {
+            font-family: 'Avenir', 'Montserrat';
+            font-size: 24px;
+            color: rgb(0,0,0);
+            margin-top: 10px;
+            text-align: center;
+          }
+          #pl {
+            text-decoration: none;
+            color: rgb(200, 200, 0);
+          }
+
+        </style>
+    </head>
+    <body>
+  <script src="login.js" type="module"></script>
+  <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
+  <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
+
+  <a href="index.html" class="menu" id="b1" onclick="b1()">Home</a>
+  <a href="about.html" class="menu" id="b2" onclick="b2()">About</a>
+  <a href="membership.html" class="menu" id="b3" onclick="b3()">Membership</a>
+  <a href="officers.html" class="menu" id="b4" onclick="b4()">Officers</a>
+  <a href="routes.html" class="menu" id="b5" onclick="b5()">Routes</a>
+  <a href="upcomingrides.html" class="menu" id="b6" onclick="b6()">Upcoming Rides</a>
+  <a href="partners.html" class="menu" id="b7" onclick="b7()">Partners</a>
+  <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
+  <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
+
+  <img id="homeimg" src="imgs/home1.jpeg">
+
+  <div id="hometxt">The bicycle club and racing team of University of California, Berkeley</div>
+  <div id="titletxt">CAL CYCLING</div>
+  <div class="leftbox">
+    <img id="pimg" src="imgs/partners-1.jpeg"></img>
+    <p id="ptext">Meet our generous sponsors and partners</p>
+    <button id="pbutton"><a id="pl" href="partners.html">Our Sponsors</a></button>
+  </div>
+  <div class="middlebox">
+    <p id="btext">Join our Mailing List</p>
+    <p id="ptext">Click <a href="https://berkeley.us19.list-manage.com/subscribe?u=fb4fd1b725cba0ec7e0db508b&id=1e242ee17e">here</a> to join our mailing list. See <a href="officers.html">here</a> for Road, MTB, and Operations contact information.</p>
+  </div>
+  <div class="rightbox">
+    <img id="pimg" src="imgs/home2.jpeg" style="margin-top: 30px"></img>
+    <p id="ptext">Learn about joining the club.</p>
+    <button id="pbutton"><a id="pl" href="membership.html">Membership</a></button>
+  </div>
+
+  <div hidden=true id="i0"></div>
+  <div hidden=true id="i1"></div>
+  <div hidden=true id="i2"></div>
+  <div hidden=true id="i3"></div>
+  <div hidden=true id="i4"></div>
+  <div hidden=true id="i5"></div>
+  <div hidden=true id="i6"></div>
+  <div hidden=true id="i7"></div>
+  <div hidden=true id="i8"></div>
+  <div hidden=true id="i9"></div>
+  <div hidden=true id="i10"></div>
+
+
+  <script>
+
+  </script>
+
+<!--<button id="signin">Google Signin</button>
+<button id="signout">Google Signout</button>!-->
+  </body>
+</html>

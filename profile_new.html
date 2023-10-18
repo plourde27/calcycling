@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>Cal Cycling p/b Harder Mechanical Contractors</title>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+        </script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+        <style>
+        @font-face {
+          font-family: Sather;
+          src: url("NCAA Cal Golden Bears.otf") format("opentype");
+        }
+          #login {
+            text-align: center;
+            font-size: 26px;
+            font-family: 'Avenir', 'Montserrat';
+          }
+          #cal {
+            position: absolute;
+            float: left;
+            width: 160px;
+            height: auto;
+            margin-left: calc(50% - 230px);
+            margin-top: 0px;
+            border-radius: 0px;
+          }
+          #title {
+            font-family: 'Sather';
+            color: rgb(4, 30, 66);
+            margin-left: calc(50% - 45px);
+            font-size: 120px;
+            margin-bottom: -20px;
+          }
+          #subtitle {
+            font-family: 'Play';
+            text-align: center;
+            font-size: 26px;
+            color: rgb(0, 0, 0);
+            margin-top: 0px;
+          }
+            .menu {
+              text-decoration: none;
+              font-style: normal;
+              position: absolute;
+              margin-top: 25px;
+              width: 11%;
+              text-align: center;
+              background-color: rgb(200, 200, 200);
+              color: rgb(0, 0, 0);
+              font-size: 18px;
+              font-family: 'Avenir', 'Montserrat';
+              border-radius: 0px;
+              border-style: none;
+              padding-top: 3px;
+              padding-bottom: 3px;
+              cursor: pointer;
+            }
+            #b1 {
+              margin-left: 0px;
+            }
+            #b2 {
+              margin-left: 11%;
+            }
+            #b3 {
+              margin-left: 22%;
+            }
+            #b4 {
+              margin-left: 33%;
+            }
+            #b5 {
+              margin-left: 44%;
+            }
+            #b6 {
+              margin-left: 55%;
+            }
+            #b7 {
+              margin-left: 66%;
+            }
+            #b8 {
+              margin-left: 77%;
+            }
+            #b9 {
+              margin-left: 88%;
+
+              color: rgb(200, 200, 0);
+              background-color: rgb(0, 0, 90);
+            }
+
+            #buffer {
+              margin-top: 100px;
+            }
+
+            #signin {
+              color: rgb(200, 200, 0);
+              background-color: rgb(0, 0, 90);
+              font-size: 21px;
+              font-family: 'Avenir', 'Montserrat';
+              padding-left: 10px;
+              padding-right: 10px;
+              text-align: center;
+              padding-top: 3px;
+              padding-bottom: 3px;
+              margin-left: calc(50% - 110px);
+              width: 220px;
+              border-radius: 3px;
+              border-style: none;
+              cursor: pointer;
+              margin-bottom: 20px;
+            }
+
+            #signout {
+              color: rgb(200, 200, 0);
+              background-color: rgb(0, 0, 90);
+              font-size: 21px;
+              font-family: 'Avenir', 'Montserrat';
+              padding-left: 10px;
+              padding-right: 10px;
+              text-align: center;
+              padding-top: 3px;
+              padding-bottom: 3px;
+              margin-left: calc(50% - 110px);
+              width: 220px;
+              border-radius: 3px;
+              border-style: none;
+              cursor: pointer;
+              margin-bottom: 20px;
+            }
+
+            #desc {
+              margin-left: 10%;
+              margin-right: 10%;
+              font-size: 17px;
+              font-family: 'Avenir', 'Montserrat';
+            }
+
+            #segmentname {
+              font-family: 'Avenir', 'Montserrat';
+              margin-left: 10%;
+              font-size: 19px;
+              margin-top: 20px;
+            }
+
+            .segmentinp {
+              font-family: 'Avenir', 'Montserrat';
+              margin-left: 10%;
+              width: 80%;
+              font-size: 19px;
+              margin-top: 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+  <script src="login.js" type="module"></script>
+
+  <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
+  <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
+
+  <a href="index.html" class="menu" id="b1" onclick="b1()">Home</a>
+  <a href="about.html" class="menu" id="b2" onclick="b2()">About</a>
+  <a href="membership.html" class="menu" id="b3" onclick="b3()">Membership</a>
+  <a href="officers.html" class="menu" id="b4" onclick="b4()">Officers</a>
+  <a href="routes.html" class="menu" id="b5" onclick="b5()">Routes</a>
+  <a href="upcomingrides.html" class="menu" id="b6" onclick="b6()">Upcoming Rides</a>
+  <a href="partners.html" class="menu" id="b7" onclick="b7()">Partners</a>
+  <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
+  <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
+  <p id="buffer"></p>
+  <div id="loginbutton">
+    <p id="login">Log in with your Berkeley email address here:</p>
+    <button id="signin">Sign In</button>
+  </div>
+  <div id="logoutbutton">
+    <button id="signout">Sign Out</button>
+  <p id="desc">Please take a minute and fill out the following information. We will calculate your estimated pace based on this information, which will be used for recommending group rides.<br>Please be honest; this information will not be visible by anyone else, and will not be put on any leaderboards. You will never be prevented from signing up for a group ride because of your estimated pace; these numbers are merely used to give you an idea of how much of an effort you'll need to put in to go on each group ride.</p>
+
+  <div id="data">
+  </div>
+  </div>
+  <script>
+    var segs = [
+      ["Wildcat Canyon Descent", "https://www.strava.com/segments/4824073"],
+      ["Claremont Descent", "https://www.strava.com/segments/527925"],
+      ["Bay Trail from Marina to Gilman", "https://www.strava.com/segments/662554"],
+      ["Bay Trail from Pt. Isabel to Richmond", "https://www.strava.com/segments/663732"],
+      ["Wildcat Canyon Ascent", "https://www.strava.com/segments/9657846"],
+      ["Tunnel Road", "https://www.strava.com/segments/5816161"],
+      ["Claremont Ascent", "https://www.strava.com/segments/522461"],
+      ["Pinehurst Ascent", "https://www.strava.com/segments/17775966"],
+      ["Your fastest moving speed on any flat segment of around 1 mile"],
+      ["How many century rides (at least 100 miles) you've done"],
+      ["Distance of your longest ever ride in miles"]
+    ];
+
+      for (var i = 0 ; i < segs.length ; i++) {
+        if (i < segs.length - 3) {
+          document.getElementById("data").innerHTML += "<div id=\"segmentname\">Your fastest time on <a href=\"" + segs[i][1] + "\" target=\"_blank\">" + segs[i][0] + "</a>, according to Strava (leave this field blank if you haven't done the segment):";
+          document.getElementById("data").innerHTML += "<input value=\"MM:SS\" class=\"segmentinp\" id=\"i" + i + "\"></input>";
+        }
+        else if (i == segs.length - 3) {
+          document.getElementById("data").innerHTML += "<div id=\"segmentname\">" + segs[i][0]  + " (only fill this in if you don't have any data at all for the segments above):</div>";
+          document.getElementById("data").innerHTML += "<input class=\"segmentinp\" id=\"i" + i + "\"></input>"
+        }
+        else {
+          document.getElementById("data").innerHTML += "<div id=\"segmentname\">" + segs[i][0]  + ":</div>";
+          document.getElementById("data").innerHTML += "<input class=\"segmentinp\" id=\"i" + i + "\"></input>"
+        }
+      }
+
+  </script>
+
+<!--<button id="signin">Google Signin</button>
+<button id="signout">Google Signout</button>!-->
+  </body>
+</html>

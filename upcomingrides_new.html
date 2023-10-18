@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>Cal Cycling p/b Harder Mechanical Contractors</title>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+        </script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+        <style>
+        @font-face {
+          font-family: Sather;
+          src: url("NCAA Cal Golden Bears.otf") format("opentype");
+        }
+
+        body {
+          min-width: 1000px;
+          overflow-x: scroll;
+        }
+
+        #profile {
+          position: fixed;
+          margin-top: -90px;
+          margin-left: calc(90% - 80px);
+          margin-right: calc(10% - 80px);
+          background-color: rgb(0, 0, 80);
+          color: rgb(200, 200, 0); /* go bears */
+          font-size: 25px;
+          text-align: center;
+          text-decoration: none;
+          padding-top: 3px;
+          padding-bottom: 3px;
+          padding-left: 10px;
+          padding-right: 10px;
+          border-radius: 6px;
+          font-family: 'Avenir', 'Montserrat', 'Montserrat';
+        }
+        #cal {
+          position: absolute;
+          float: left;
+          width: 160px;
+          height: auto;
+          margin-left: calc(50% - 230px);
+          margin-top: 0px;
+          border-radius: 0px;
+        }
+        #title {
+          font-family: 'Sather';
+          color: rgb(4, 30, 66);
+          margin-left: calc(50% - 45px);
+          font-size: 120px;
+          margin-bottom: -20px;
+        }
+        #subtitle {
+          font-family: 'Play';
+          text-align: center;
+          font-size: 26px;
+          color: rgb(0, 0, 0);
+          margin-top: 0px;
+        }
+          .menu {
+            text-decoration: none;
+            font-style: normal;
+            position: absolute;
+            margin-top: 25px;
+            width: 11%;
+            text-align: center;
+            background-color: rgb(200, 200, 200);
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            border-radius: 0px;
+            border-style: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            cursor: pointer;
+          }
+          #b1 {
+            margin-left: 0px;
+
+          }
+          #b2 {
+            margin-left: 11%;
+          }
+          #b3 {
+            margin-left: 22%;
+          }
+          #b4 {
+            margin-left: 33%;
+          }
+          #b5 {
+            margin-left: 44%;
+          }
+          #b6 {
+            margin-left: 55%;
+            background-color: rgb(0, 0, 90);
+            color: rgb(200, 200, 0);
+          }
+          #b7 {
+            margin-left: 66%;
+          }
+          #b8 {
+            margin-left: 77%;
+          }
+          #b9 {
+            margin-left: 88%;
+          }
+
+          #homeimg {
+            opacity: 0.5;
+            margin-top: 85px;
+            width: 80%;
+            height: 40%;
+            margin-left: 10%;
+          }
+          #hometxt {
+            border-radius: 15px;
+            font-style: italic;
+            font-family: 'AvenirNext-UltraLight';
+            position: absolute;
+            margin-top: -34%;
+            text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+            height: 120px;
+            padding-top: 130px;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 35px;
+            color: rgb(200, 200, 0); //go bears
+
+          }
+          #titletxt {
+            font-style: normal;
+            font-family: 'Play';
+            position: absolute;
+            margin-top: -32%;
+            text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+            font-size: 55px;
+            color: rgb(200, 200, 0); //go bears
+          }
+          #buffer {
+            margin-top: 90px;
+          }
+          #error {
+            text-align: center;
+            font-size: 26px;
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+          }
+
+          .center {
+            text-align: center;
+          }
+
+          .ridebox {
+            margin-left: 5%;
+            margin-right: 5%;
+            border-style: solid;
+            border-color: rgb(0,0,0);
+            border-radius: 10px;
+            padding-top: 0px;
+            padding-bottom: 10px;
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            margin-bottom: 20px;
+          }
+          #ridename {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            margin-right: 30%;
+          }
+
+          #riders {
+            margin-left: 5%;
+            font-size: 17px;
+            margin-right: 30%;
+          }
+
+          .join {
+            position: absolute;
+            margin-left: calc(57% - 160px);
+            margin-top: 50px;
+            background-color: rgba(0, 200, 0, 0.6);
+            color: rgb(0, 0, 0);
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            font-size: 18px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-style: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 30%;
+          }
+
+          .join2 {
+            position: absolute;
+            margin-left: calc(57% - 160px);
+            margin-top: 90px;
+            background-color: rgba(0, 200, 0, 0.6);
+            color: rgb(0, 0, 0);
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            font-size: 18px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-style: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 30%;
+          }
+
+          #pace {
+            margin-top: -15px;
+            text-align: center;
+            font-size: 21px;
+            margin-right: 30%;
+          }
+
+          #addbutton {
+            margin-top: -5px;
+            background-color: rgb(0, 0, 80);
+            color: rgb(200, 200, 0); /* go bears */
+            font-size: 19px;
+            text-decoration: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 8px;
+            padding-right: 8px;
+            border-radius: 6px;
+            border-style: none;
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            margin-bottom: 25px;
+            cursor: pointer;
+          }
+
+
+          #rideinput {
+            margin-left: 5%;
+            margin-right: 5%;
+            border-style: solid;
+            border-color: rgb(0,0,0);
+            border-radius: 10px;
+            padding-top: 0px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-left: 20px;
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.03);
+          }
+
+          #inplabel {
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            margin-left: 10%;
+            font-size: 19px;
+            margin-bottom: 6px;
+          }
+
+          .inpbox {
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            margin-left: 10%;
+            width: 80%;
+            font-size: 19px;
+          }
+
+          #finish {
+            margin-left: 25%;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            background-color: rgba(0, 200, 0, 0.6);
+            color: rgb(0, 0, 0);
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            font-size: 18px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-style: none;
+            border-radius: 3px;
+            cursor: pointer;
+          }
+
+          #cancel {
+            margin-left: calc(50% - 230px);
+            margin-top: 25px;
+            margin-bottom: 15px;
+
+            background-color: rgba(200, 0, 0, 0.6);
+            color: rgb(0, 0, 0);
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            font-size: 18px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-style: none;
+            border-radius: 3px;
+            cursor: pointer;
+          }
+
+          .messagebox {
+            position: absolute;
+            margin-left: 66%;
+            width: 24%;
+            margin-top: 10px;
+
+            padding-top: 0px;
+            padding-bottom: 10px;
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+          }
+
+          #messtitle {
+            text-align: center;
+            font-size: 22px;
+            border-bottom: solid;
+            border-color: 'rgb(0,0,0)';
+            border-style: solid;
+            border-color: rgb(0,0,0);
+            border-radius: 10px 10px 0px 0px;
+          }
+
+          .messcontainer {
+            border-style: solid;
+            border-color: rgb(0,0,0);
+            border-top: none;
+            border-radius: 0px;
+            overflow: auto;
+            height: 250px;
+            font-size: 16px;
+          }
+
+          #messagename {
+            background-color: rgb(200, 200, 200);
+            width: calc(100% - 20px);
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 6px;
+
+          }
+
+          #messagecontent {
+            background-color: rgb(200, 200, 200);
+            width: calc(100% - 20px);
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 2px;
+            padding-bottom: 6px;
+          }
+
+          .messinpcontainer {
+            border-style: solid;
+            border-color: rgb(0,0,0);
+            border-top: none;
+            border-radius: 0px 0px 10px 10px;
+            overflow: auto;
+
+            height: 58px;
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+
+            font-size: 16px;
+
+
+          }
+
+          .messinp {
+            margin-top: 18px;
+
+            margin-left: 2%;
+            margin-right: 30%;
+            width: 68%;
+            float: left;
+          }
+
+          #sendmess {
+            position: absolute;
+            background-color: rgba(0, 200, 0, 0.8);
+            font-size: 19px;
+            padding-left: 8px;
+            padding-right: 8px;
+            border-radius: 3px;
+            margin-top: 18px;
+            margin-left: 76%;
+            border-style: none;
+            cursor: pointer;
+          }
+
+          #dropdown {
+            text-align: center;
+            font-size: 21px;
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            margin-bottom: 25px;
+          }
+
+          #sort {
+            font-family: 'Avenir', 'Montserrat', 'Montserrat';
+            font-size: 18px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+
+        </style>
+    </head>
+    <body>
+
+  <script src="upcomingrides.js" type="module"></script>
+
+  <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
+  <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
+
+  <a href="index.html" class="menu" id="b1" onclick="b1()">Home</a>
+  <a href="about.html" class="menu" id="b2" onclick="b2()">About</a>
+  <a href="membership.html" class="menu" id="b3" onclick="b3()">Membership</a>
+  <a href="officers.html" class="menu" id="b4" onclick="b4()">Officers</a>
+  <a href="routes.html" class="menu" id="b5" onclick="b5()">Routes</a>
+  <a href="upcomingrides.html" class="menu" id="b6" onclick="b6()">Upcoming Rides</a>
+  <a href="partners.html" class="menu" id="b7" onclick="b7()">Partners</a>
+  <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
+  <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
+
+
+  <div hidden=true id="i0"></div>
+  <div hidden=true id="i1"></div>
+  <div hidden=true id="i2"></div>
+  <div hidden=true id="i3"></div>
+  <div hidden=true id="i4"></div>
+  <div hidden=true id="i5"></div>
+  <div hidden=true id="i6"></div>
+  <div hidden=true id="i7"></div>
+  <div hidden=true id="i8"></div>
+  <div hidden=true id="i9"></div>
+  <div hidden=true id="i10"></div>
+
+
+  <p id="buffer"></p>
+
+<div id="ridepage">
+  <div id="dropdown">Sort Rides By
+    <br>
+    <select name="sort" id="sort">
+      <option value="0">Posting Time (Latest First)</option>
+      <option value="1">Posting Time (Earliest First)</option>
+      <option value="2">Start Time (Latest First)</option>
+      <option value="3">Start Time (Earliest First)</option>
+      <option value="4">Mileage (Ascending)</option>
+      <option value="5">Mileage (Descending)</option>
+      <option value="6">Elevation Gain (Ascending)</option>
+      <option value="7">Elevation Gain (Descending)</option>
+
+    </select>
+  </div>
+    <div class="center"><button id="addbutton" onclick="addride()">Add Ride</button></div>
+
+    <div id="rideinput" hidden=true></div>
+  <div id="rides">
+  </div>
+</div>
+
+  <p id="error" hidden=true>You must be logged in to view this page. Log in <a href="profile.html">here</a></p>
+
+  <div id="email" hidden=true></div>
+
+  <div id="sendtofirebase" hidden=true></div>
+  <div id="ridenum" hidden=true></div>
+  <div id="rideinfo" hidden=true></div>
+  <div id="joinid" hidden=true></div>
+  <div id="leaveid" hidden=true></div>
+  <div id="newinfo" hidden=true></div>
+  <div id="messid" hidden=true></div>
+  <div id="username" hidden=true></div>
+
+  <script>
+
+  var sortfuncs = [
+    function(a, b) {
+      return parseInt(b[12][0][2]) - parseInt(a[12][0][2]);
+    },
+    function(a, b) {
+      return parseInt(a[12][0][2]) - parseInt(b[12][0][2]);
+    },
+    function(a, b) {
+      return reversetime(b[5]) - reversetime(a[5]);
+    },
+    function(a, b) {
+      return reversetime(a[5]) - reversetime(b[5]);
+    },
+    function(a, b) {
+      return a[2] - b[2];
+    },
+    function(a, b) {
+      return b[2] - a[2];
+    },
+    function(a, b) {
+      return a[3] - b[3];
+    },
+    function(a, b) {
+      return b[3] - a[3];
+    }
+  ];
+
+  var keys = [];
+  for (var i = 0 ; i < 500 ; i++) {
+    keys[i] = false;
+  }
+
+  document.addEventListener("keydown", function(event) {
+    keys[event.keyCode] = true;
+  });
+
+  document.addEventListener("keyup", function(event) {
+    keys[event.keyCode] = false;
+  });
+
+  var dists = [2.31, 1.89, 0.58, 1.04, 2.38, 3.08, 1.90, 0.22];
+
+  var lastridearr = [];
+  for (var i = 0 ; i < 1000 ; i++) {
+    lastridearr.push("");
+  }
+
+
+    var ride = [
+        ["Xavier Plourde", "Sample Name", "Berk Lee", "Calcy Cling"],       //riders
+        "B/C Pace RWPH",                                                //route name
+        28.6,
+        2796,
+        "https://ridewithgps.com/routes/33429180",                          //route link
+        "July 7 at 2:27 PM",                                                 //ride time
+        "Fountain",                                                         //ride start location
+        "Chill RWPH ride Thursday at 2:27",                                 //ride description
+        2,                                                                  //relative speed (1 to 5)
+    ];
+
+    var rides = [
+      [
+          ["Xavier Plourde", "Sample Name", "Berk Lee", "Calcy Cling"],       //riders
+          "B/C Pace RWPH",                                                //route name
+          28.6,
+          2796,
+          "https://ridewithgps.com/routes/33429180",                          //route link
+          "July 7 at 2:27 PM",                                                 //ride time
+          "Fountain",                                                         //ride start location
+          "Chill RWPH ride Thursday at 2:27",                                 //ride description
+          "Road"
+      ],
+      [
+          ["Xavier Plourde", "Reivax Edruolp"],
+          "Fast A Pace Diablo",
+          80.7,
+          7792,
+          "https://ridewithgps.com/routes/33425009",
+          "July 8 at 11:10 AM",
+          "Fountain",
+          "Fast Diablo ride on Friday morning - join at your own risk",
+          "Road"
+      ]
+    ];
+
+    function isLeapYear(year) {
+      return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
+    }
+
+    function reversetime(st) {
+      try {
+        var monwords = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var mon = monwords.indexOf(st.split(" ")[0]);
+        var day = parseInt(st.split(" ")[1]);
+        var mins = parseInt(st.split(" ")[3].split(":")[1]);
+        var hours = parseInt(st.split(" ")[3].split(":")[0]);
+        var ampm = st.split(" ")[4];
+        if (hours == 12) {
+          if (ampm == "AM" || ampm == "am" || ampm == "a.m." || ampm == "A.M.") {
+            hours = 0;
+          }
+        }
+        else {
+          if (ampm == "PM" || ampm == "pm" || ampm == "p.m." || ampm == "P.M.") {
+            hours += 12;
+          }
+        }
+        var year = 2022;
+        var ms = 0;
+        for (var i = 1970 ; i < year ; i++) {
+          if (isLeapYear(i)) {
+            ms += 1000 * 3600 * 24 * 366;
+          }
+          else {
+            ms += 1000 * 3600 * 24 * 365;
+          }
+        }
+        var mons = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        for (var i = 0 ; i < mon ; i++) {
+          ms += mons[i] * 1000 * 3600 * 24;
+        }
+        ms += 1000 * 3600 * 24 * day;
+        ms += 1000 * 3600 * hours;
+        ms += 1000 * 60 * mins;
+        return ms;
+      }
+      catch (e) {
+        return 0;
+      }
+    }
+
+    function converttime(ms) {
+      ms -= 1000 * 3600 * 7;
+
+      var year = 1970;
+      var regyear = 1000 * 3600 * 24 * 365;
+      var leapyear = 1000 * 3600 * 24 * 366;
+      while (true) {
+        var tm = regyear;
+        if (isLeapYear(year)) {
+          tm = leapyear;
+        }
+        if (tm <= ms) {
+          ms -= tm;
+          year++;
+        }
+        else {
+          break;
+        }
+      }
+
+      var mons = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      var monwords = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+      if (isLeapYear(year)) {
+        mons[1]++;
+      }
+
+      var dayl = 1000 * 3600 * 24;
+      var mon = 0;
+
+      while (mon < 12) {
+        if (dayl * mons[mon] <= ms) {
+          ms -= dayl * mons[mon];
+          mon++;
+        }
+        else {
+          break;
+        }
+      }
+
+      var day = 0;
+
+      while (day < 32) {
+        if (1000 * 3600 * 24 <= ms) {
+          ms -= 1000 * 3600 * 24;
+          day++;
+        }
+        else {
+          break;
+        }
+      }
+
+      var hour = 0;
+
+      while (hour < 25) {
+        if (1000 * 3600 <= ms) {
+          ms -= 1000 * 3600;
+          hour++;
+        }
+        else {
+          break;
+        }
+      }
+
+
+      var min = 0;
+
+      while (min < 61) {
+        if (1000 * 60 <= ms) {
+          ms -= 1000 * 60;
+          min++;
+        }
+        else {
+          break;
+        }
+      }
+
+      if (min<10) {
+        min = "0" + min;
+      }
+
+      var ampm = "AM";
+      if (hour == 0) {
+        hour = 12;
+      }
+      else if (hour == 12) {
+        ampm = "PM";
+      }
+      else if (hour > 12) {
+        hour -= 12;
+        ampm = "PM";
+      }
+
+      return hour + ":" + min + " " + ampm + " on " + monwords[mon] + " " + day + ", " + year;
+
+    }
+
+    function calcnc(name) {
+      if  (name == undefined || name.length == 0) {
+        return "rgb(200, 0, 0)";
+      }
+      var colors = ["rgb(200, 0, 0)", "rgb(0, 200, 0)", "rgb(0, 0, 200)", "rgb(200, 200, 0)", "rgb(200, 0, 200)", "rgb(0, 200, 200)", "rgb(250, 125, 0)", "rgb(250, 0, 125)", "rgb(125, 255, 0)", "rgb(125, 0, 255)", "rgb(0, 125, 255)", "rgb(0, 255, 125)", 'rgb(125, 125, 125)', 'rgb(180, 125, 0)', 'rgb(125, 180, 0)', 'rgb(180, 0, 125)', 'rgb(125, 0, 180)', 'rgb(0, 125, 180)', 'rgb(0, 180, 125)'];
+      var num = ((name.split(" ")[0].charCodeAt(0) - 65)%32) * 26 + ((name.split(" ")[1].charCodeAt(0) - 65)%32);
+      num = (num + 676 * 10000000) % 676;
+      var col = colors[num % colors.length];
+      return col;
+    }
+
+
+    var lastrides = [];
+    for (var i = 0 ; i < 1000 ; i++) {
+      document.getElementById("rides").innerHTML += "<div id=\"ride" + i + "\"></div>";
+      lastrides.push("");
+    }
+
+    function addRideInfo(rides) {
+      cycledata = [];
+      for (var i = 0 ; i < 11 ; i++) {
+        var data = document.getElementById("i" + i).innerHTML;
+
+        if (i < 8) {
+          if (data.length) {
+            var time = (parseInt(data.split(":")[0]) * 60 + parseInt(data.split(":")[1])) / 3600;
+            data = dists[i] / time;
+            cycledata.push(data);
+          }
+          else {
+            cycledata.push(-1);
+          }
+        }
+        else if (i == 8) {
+          if (data.length) {
+            cycledata.push(parseFloat(data));
+          }
+          else {
+            cycledata.push(-1);
+          }
+        }
+        else if (i == 9) {
+          cycledata.push(parseInt(data))
+        }
+        else {
+          cycledata.push(parseFloat(data))
+        }
+      }
+
+
+      for (var i = 0 ; i < rides.length ; i++) {
+
+        var yourspeed = calc(cycledata, parseFloat(rides[i][2]), parseInt(rides[i][3]))[1];
+        rides[i][13] = yourspeed;
+        var rat = yourspeed / parseFloat(rides[i][9]);
+        var bounds = [0, 0.65, 0.79, 0.93, 1.07, 1.21, 1.35, 1000000000];
+        var clas = 0;
+        for (var j = 0 ; j < bounds.length-1 ; j++) {
+          if (rat >= bounds[j] && rat <= bounds[j+1]) {
+            clas = j;
+          }
+        }
+
+        if (!(rat >= 0 && rat <= 100000)) {
+          clas = 7;
+        }
+
+        if (clas == 0) {
+          console.log(yourspeed);
+          console.log(rides[i][9]);
+        }
+
+        var words = ["Very Challenging", "Challenging", "Slightly Challenging", "Just Right", "Slightly Easy", "Easy", "Very Easy", "Unknown", "Unknown"];
+        var cols = ["rgb(255, 0, 0)", "rgb(200, 120, 0)", "rgb(120, 200, 0)", "rgb(0, 255, 0)", "rgb(0, 200, 120)", "rgb(0, 120, 200)", "rgb(0, 0, 255)", "rgb(150, 150, 150)", "rgb(150, 150, 150)"];
+        var desc = [
+          "You will have to put in a significant effort into keeping up with the group and might get dropped",
+          "You will have to put in more effort than usual to keep up with the group, and might fall behind",
+          "You might have to put in slightly more effort than usual, but you should be able to keep up with the group",
+          "The group's pace is similar to what your pace would be if you did a solo ride on the route",
+          "The group's pace is slightly slower than your typical pace, but you probably won't be held up by too much",
+          "The group's pace is slower than your usual pace, and you might feel held back throughout the ride",
+          "The group's pace is signficantly slower than your usual pace.",
+          "Add data to your profile <a href=\"profile.html\">here</a> to enable pace calculation.",
+          "Pace data is not available for rides you've joined"
+        ];
+        var ride = rides[i];
+        var rideStr = "";
+        rideStr += "<div class=\"messagebox\">";
+        rideStr += "<div id=\"messtitle\"><strong>Messages</strong></div>";
+
+        /*var messages = [
+            ["Hey is this ride still happening?", "CodeRams JD", "July 27 at 4:18 PM"],
+            ["Yes it is!", "Xavier Plourde", "July 27 at 9:12 PM"],
+            ["Ok great!", "CodeRams JD", "July 28 at 2:03 AM"],
+            ["Wait -- can we push it back by an hour?", "CodeRams JD", "July 28 at 3:10 PM"],
+            ["Ok sure!", "Xavier Plourde", "July 29 at 3:23 PM"],
+            ["Will I be able to keep up? My tunnel time is 12:05.", "CodeRams JD", "July 30 at 4:09 PM"],
+            ["Yes you will -- my time is only 13:19.", "Xavier Plourde", "July 30 at 4:20 PM"],
+            ["Ok sounds great, looking forward to the ride.", "CodeRams JD", "July 30 at 5:01 PM"]
+        ];*/
+
+        var messages = ride[12];
+
+        rideStr += "<div class=\"messcontainer\" id=\"m" + i + "\">";
+        for (var j = 0 ; j < messages.length ; j++) {
+          var col = "rgb(230, 230, 230)";
+          if (j%2 == 0) {
+            col = "rgb(255, 255, 255)";
+          }
+
+          var time = converttime(messages[j][2]);
+          rideStr += "<div style=\"background-color: " + col + "\" id=\"messagename\"><strong style=\"color: " + calcnc(messages[j][1]) + ";\">" + messages[j][1] + "</strong> <span style=\"color: rgb(110, 110, 110);\"> at " + time + "</span></div>";
+          rideStr += "<div style=\"background-color: " + col + "\" id=\"messagecontent\">" + messages[j][0] + "</div>";
+        }
+
+        rideStr += "</div>";
+        rideStr += "<div class=\"messinpcontainer\">";
+        rideStr += "<button id=\"sendmess\" onclick=sendmess(" + i + ")>Send</button>";
+        rideStr += "<input oninput=\"loginput(" + i + ")\" class=\"messinp\"  id=\"ri" + i + "\"></input>";
+        rideStr += "</div>";
+
+
+        rideStr += "</div>";
+        rideStr += "<div class=\"ridebox\">";
+
+        if (ride[11] == "false") {
+          rideStr += "<button onclick=join(" + i + ") class=\"join\">Join Ride</button>";
+        }
+        else {
+          if (ride[0].length == 1) {
+            rideStr += "<button style=\"background-color: rgb(200, 0, 0)\" onclick=leave(" + i + ") class=\"join\">Delete Ride</button>";
+          }
+          else {
+            rideStr += "<button style=\"background-color: rgb(200, 0, 0)\" onclick=leave(" + i + ") class=\"join\">Leave Ride</button>";
+          }
+          //if (ride[0][0] == document.getElementById("username").innerHTML) {
+            rideStr += "<button style=\"background-color: rgb(200, 200, 0)\" onclick=edit(" + i + ") class=\"join2\">Edit Ride</button>";
+          //}
+        }
+        rideStr += "<p id=\"ridename\"><strong>" + ride[1] + "</strong></p>";
+
+        var names = ride[0].join(", ");
+        rideStr += "<p id=\"riders\">" + ride[7] + "</p>";
+        rideStr += "<p id=\"riders\">Riders: ";
+        var yourin = false;
+        for (var j = 0 ; j < ride[0].length ; j++) {
+          if (ride[0][j] == document.getElementById("username").innerHTML) {
+            yourin = true;
+          }
+          var col = calcnc(ride[0][j]);
+          rideStr += "<strong style=\"color: " + col + "\">" + ride[0][j] + "</strong>";
+          if (j < ride[0].length - 1) {
+            rideStr += ", ";
+          }
+        }
+        var spaceCount = 12;
+        rideStr += "</p>";
+
+        var dc = "rgb(" + parseInt(Math.min((ride[2]/100)*255,255)) + "," + parseInt(Math.max(0,255-(ride[2]/100)*255))  + ",0)";
+
+
+        rideStr += "<p id=\"riders\">Ride Discipline: <strong>" + ride[8] + "</strong><br>";
+
+        rideStr += "Distance: <strong style=\"color:" + dc + "\">" +ride[2] + "</strong> miles";
+        /*for (var i = 0 ; i < spaceCount ; i++) {
+          rideStr += "&nbsp;";
+        }*/
+        var ec = "rgb(" + parseInt(Math.min((ride[3]/10000)*255,255)) + "," + parseInt(Math.max(0,255-(ride[3]/10000)*255))  + ",0)";
+
+        rideStr += "<br>";
+        rideStr += "Elevation Gain: <strong style=\"color:" + ec + "\">" + ride[3] + "</strong> ft";
+        /*for (var i = 0 ; i < spaceCount ; i++) {
+          rideStr += "&nbsp;";
+        }*/
+        rideStr += "<br>";
+        rideStr += "Date & Time: <strong>" + ride[5] + "</strong>";
+        /*for (var i = 0 ; i < spaceCount ; i++) {
+          rideStr += "&nbsp;";
+        }*/
+
+        rideStr += "<br>";
+        rideStr += "Start Location: <strong>" + ride[6] + "</strong>";
+        if (ride[1] != "No link specified") {
+          rideStr += "<br><a href=\"" + ride[4] + "\" target=\"_blank\">RideWithGps Link</a></p>";
+        }
+        else {
+          rideStr += "<br>No link specified</p>";
+        }
+        /*if (!yourin) {
+          rideStr += "<p id=\"pace\">Pace: <strong style=\"color: " + cols[clas] + "\">" + words[clas] + "</strong><br><em style=\"font-size: 18px\">" + desc[clas] + "<em></p>"
+        }*/
+        if (yourin) {
+          clas = 8;
+        }
+
+        rideStr += "<p id=\"pace\">Pace: <strong style=\"color: " + cols[clas] + "\">" + words[clas] + "</strong><br><em style=\"font-size: 18px\">" + desc[clas] + "<em></p>"
+
+        rideStr += "</div>";
+
+        if (rideStr != lastridearr[i]) {
+          document.getElementById("ride" + i).innerHTML = rideStr;
+          document.getElementById("m" + i).scrollTop = 9999999;
+          if (lastridearr[i].length > 0) {
+            document.getElementById("ri" + i).focus();
+          }
+        }
+
+        console.log(ride[5] + " " + reversetime(ride[5]));
+        if (ride[0][0] == "NO RIDERS" || (reversetime(ride[5]) < Date.now() && reversetime(ride[5]) > 0)) {
+          document.getElementById("ride" + i).hidden = true;
+        }
+        else {
+          document.getElementById("ride" + i).hidden = false;
+        }
+
+        lastridearr[i] = rideStr;
+
+      }
+    }
+
+    var frames = 0;
+    var lastrides = "";
+    var rides;
+    var ridelist;
+    var le = false;
+    var lastinp;
+    var lenter = false;
+    var lastsort = -1;
+
+    window.resizeTo(window.screen.availWidth / 2, window.screen.availHeight / 2);
+
+    function update() {
+
+
+      if (!keys[13] && le && !lenter) {
+        sendmess(lastinp);
+      }
+      if (!keys[13]) {
+        le = false;
+      }
+      else {
+        le = true;
+      }
+
+      var sort = parseInt(document.getElementById("sort").value);
+
+      rides = document.getElementById("rideinfo").innerHTML;
+
+      if ((rides != lastrides || sort != lastsort) && (rides.length > 0)) {
+
+        ridelist = rides.split("~~~");
+
+        for (var i = 0 ; i < ridelist.length ; i++) {
+          ridelist[i] = ridelist[i].split("~~");
+          ridelist[i][0] = ridelist[i][0].split("~");
+          ridelist[i][12] = ridelist[i][12].split("~");
+          for (var j = 0 ; j < ridelist[i][12].length ; j++) {
+            ridelist[i][12][j] = ridelist[i][12][j].split("===");
+          }
+          ridelist[i][2] = parseFloat(ridelist[i][2]);
+          ridelist[i][3] = parseFloat(ridelist[i][3]);
+          ridelist[i][9] = parseFloat(ridelist[i][9]);
+        }
+
+
+        var lsx = window.scrollX;
+        var lsy = window.scrollY;
+        ridelist.sort(sortfuncs[sort]);
+        addRideInfo(ridelist);
+        window.scrollTo(lsx, lsy);
+
+      }
+
+
+
+
+      lastrides = rides;
+      lastsort = sort;
+      frames++;
+      var email = document.getElementById("email").innerHTML;
+      if (email.length == 0) {
+        document.getElementById("ridepage").hidden = true;
+        if (frames > 100) {
+          document.getElementById("error").hidden = false;
+        }
+
+      }
+      else {
+        document.getElementById("ridepage").hidden = false;
+        document.getElementById("error").hidden = true;
+      }
+
+
+
+      window.requestAnimationFrame(update, 1);
+    }
+
+    function addride(edit) {
+      document.getElementById("addbutton").hidden = true;
+      document.getElementById("rideinput").hidden = false;
+
+      var info = [
+        "Ride title:",
+        "Ride description:",
+        "Ride discipline (e.g. Road or MTB):",
+        "Distance, in miles:",
+        "Elevation gain, in feet:",
+        "Date of ride (MM/DD/YYYY):",
+        "Start Time of ride (e.g. 6:30 PM):",
+        "Start Location (e.g. \"Fountain\"):",
+        "RideWithGps link:",
+        "Expected pace of the ride, relative to your typical pace, on a scale of 1 to 5 (where 1 is the slowest and 5 is the fastest):"
+      ];
+
+      var inps = ["","","","","","","","","",""];
+      if (edit) {
+        inps = edit;
+      }
+
+      var infoStr = "";
+      for (var i = 0 ; i < info.length ; i++) {
+        infoStr += "<strong><p id=\"inplabel\">" + info[i] + "</p></strong><input oninput=\"logbad()\" id=\"inp" + i + "\" class=\"inpbox\" value=\"" + inps[i] + "\"></input>"
+      }
+      if (edit) {
+        infoStr += "<button onclick=add(" + inps[10] + ") id=\"finish\">Update Ride</button><button onclick=cancel() id=\"cancel\">Cancel</button>";
+      }
+      else {
+        infoStr += "<button onclick=add() id=\"finish\">Add Ride</button><button onclick=cancel() id=\"cancel\">Cancel</button>";
+      }
+      document.getElementById("rideinput").innerHTML = infoStr;
+    }
+
+    function add(num) {
+      var inps = [];
+      for (var i = 0 ; i < 10 ; i++) {
+        inps.push(document.getElementById("inp" + i).value);
+      }
+
+      var defs = ["Untitled Ride", "No description", "No discipline specified", 0, 0, "No date specified", "3:00 PM", "No location specified", "No link specified", 3];
+
+      for (var i = 0 ; i < 10 ; i++) {
+        if (inps[i].length == 0) {
+          inps[i] = defs[i];
+        }
+      }
+
+      document.getElementById("addbutton").hidden = false;
+      document.getElementById("rideinput").hidden = true;
+
+      var cycledata = [];
+
+      for (var i = 0 ; i < 11 ; i++) {
+        var data = document.getElementById("i" + i).innerHTML;
+
+        if (i < 8) {
+          if (data.length) {
+            var time = (parseInt(data.split(":")[0]) * 60 + parseInt(data.split(":")[1])) / 3600;
+            data = dists[i] / time;
+            cycledata.push(data);
+          }
+          else {
+            cycledata.push(-1);
+          }
+        }
+        else if (i == 8) {
+          if (data.length) {
+            cycledata.push(parseFloat(data));
+          }
+          else {
+            cycledata.push(-1);
+          }
+        }
+        else if (i == 9) {
+          cycledata.push(parseInt(data))
+        }
+        else {
+          cycledata.push(parseFloat(data))
+        }
+      }
+
+      var speed = calc(cycledata, parseFloat(inps[3]), parseFloat(inps[4]))[1];
+
+      var facs = [0.9, 0.95, 1, 1.05, 1.1];
+
+      speed *= facs[parseInt(inps[9]) - 1];
+
+      if (num) {
+        document.getElementById("ridenum").innerHTML = num;
+      }
+      document.getElementById("sendtofirebase").innerHTML = inps.join("~~~") + "~~~" + speed;
+    }
+
+    function cancel() {
+      document.getElementById("addbutton").hidden = false;
+      document.getElementById("rideinput").hidden = true;
+    }
+
+    function calc(cyclist, miles, elev) {
+      var nc = []
+      for (var i = 0 ; i < 8 ; i += 2) {
+          if (cyclist[i] != -1 && cyclist[i+1] != -1) {
+              nc.push((cyclist[i] + cyclist[i+1]) / 2)
+          }
+          else if (cyclist[i] != -1) {
+              nc.push(cyclist[i])
+          }
+          else if (cyclist[i+1] != -1) {
+              nc.push(cyclist[i+1])
+          }
+          else {
+              nc.push(-1)
+          }
+      }
+
+
+
+      if (nc[0]+nc[1]+nc[2]+nc[3] == -4) {
+          nc[1] = cyclist[8]
+      }
+      if (nc[0] == -1) {
+          nc[0] = nc[1] / 0.63
+      }
+      if (nc[2] == -1) {
+          nc[2] = nc[1] * 0.63
+      }
+      if (nc[3] == -1) {
+          nc[3] = nc[2] * 0.63
+      }
+
+      var hd = Math.min(2, (elev / miles) / 100)
+
+      var down = Math.min(0.5, hd/2)
+      var flat = Math.max(0, 1 - hd)
+      var shallow = 0
+      if (hd < 0.5) {
+          shallow = hd / 2
+      }
+      else if (hd < 1) {
+          shallow = 0.25
+      }
+      else {
+          shallow = 0.25 - (hd - 1) / 4
+      }
+      steep = 0
+      if (hd >= 0.5 && hd < 1.0) {
+          steep = (hd - 0.5) / 2
+      }
+      else if (hd >= 1.0) {
+          steep = 0.25 + (hd - 1.0) / 4
+      }
+
+      var distancescore = ((1 - Math.pow(1.2, (-cyclist[9]))) + (1 - Math.pow(1.015, (-cyclist[10])))) / 2
+
+      distancescore = (distancescore / 5 + 0.8) * 0.92;
+
+      var decay = Math.pow(distancescore, (miles / 80));
+
+      var downtime = (down * miles) / nc[0]
+      var flattime = (flat * miles) / nc[1]
+      var shallowtime = (shallow * miles) / nc[2]
+      var steeptime = (steep * miles) / nc[3]
+
+      var totaltime = downtime + flattime + shallowtime + steeptime
+      var totalspeed = parseInt(((miles / totaltime) * decay)*10)/10;
+
+      totaltime = miles / totalspeed;
+      var mins = totaltime*60;
+      var mns = parseInt(mins%60);
+      if (mns<10) {
+        mns = "0" + mns;
+      }
+      if (totalspeed%1 == 0) {
+        totalspeed = totalspeed + ".0";
+      }
+
+      return [parseInt(mins/60) + ":" + mns, totalspeed];
+    }
+
+
+    function join(ride) {
+      document.getElementById("joinid").innerHTML = ridelist[ride][10] + "~~~" + ridelist[ride][13];
+    }
+
+    function leave(ride) {
+
+      document.getElementById("leaveid").innerHTML = ridelist[ride][10] + "~~~" + ridelist[ride][13];
+    }
+
+    function addfromedit(ride) {
+
+    }
+
+    function edit(ride) {
+      var rinf = ridelist[ride].slice(14,24);
+      rinf.push(ridelist[ride][10]);
+      window.scrollTo(0,0);
+      addride(rinf);
+    }
+
+    function sendmess(ride) {
+      document.getElementById("messid").innerHTML = ridelist[ride][10] + "~~~" + document.getElementById("ri" + ride).value;
+      document.getElementById("ri" + ride).value = "";
+    }
+
+    function loginput(i) {
+      lastinp = i;
+      lenter = false;
+    }
+
+    function logbad() {
+      lenter = true;
+    }
+
+    update();
+
+  </script>
+
+<!--<button id="signin">Google Signin</button>
+<button id="signout">Google Signout</button>!-->
+  </body>
+</html>

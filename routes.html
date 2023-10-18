@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <title>Cal Cycling p/b Harder Mechanical Contractors</title>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+        </script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+        <style>
+        @font-face {
+          font-family: Sather;
+          src: url("NCAA Cal Golden Bears.otf") format("opentype");
+        }
+          #profile {
+            position: fixed;
+            margin-top: -90px;
+            margin-left: calc(90% - 80px);
+            margin-right: calc(10% - 80px);
+            background-color: rgb(0, 0, 80);
+            color: rgb(200, 200, 0); /* go bears */
+            font-size: 25px;
+            text-align: center;
+            text-decoration: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 6px;
+            font-family: 'Avenir', 'Montserrat';
+          }
+          #cal {
+            position: absolute;
+            float: left;
+            width: 160px;
+            height: auto;
+            margin-left: calc(50% - 230px);
+            margin-top: 0px;
+            border-radius: 0px;
+          }
+          #title {
+            font-family: 'Sather';
+            color: rgb(4, 30, 66);
+            margin-left: calc(50% - 45px);
+            font-size: 120px;
+            margin-bottom: -20px;
+          }
+          #subtitle {
+            font-family: 'Play';
+            text-align: center;
+            font-size: 26px;
+            color: rgb(0, 0, 0);
+            margin-top: 0px;
+          }
+          .menu {
+            text-decoration: none;
+            font-style: normal;
+            position: absolute;
+            margin-top: 25px;
+            width: 11%;
+            text-align: center;
+            background-color: rgb(200, 200, 200);
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-family: 'Avenir', 'Montserrat';
+            border-radius: 0px;
+            border-style: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            cursor: pointer;
+          }
+          #b1 {
+            margin-left: 0px;
+          }
+          #b2 {
+            margin-left: 11%;
+          }
+          #b3 {
+            margin-left: 22%;
+
+          }
+          #b4 {
+            margin-left: 33%;
+          }
+          #b5 {
+
+            color: rgb(200, 200, 0);
+            background-color: rgb(0, 0, 90);
+            margin-left: 44%;
+          }
+          #b6 {
+            margin-left: 55%;
+          }
+          #b7 {
+            margin-left: 66%;
+          }
+          #b8 {
+            margin-left: 77%;
+          }
+          #b9 {
+            margin-left: 88%;
+          }
+
+          #homeimg {
+            opacity: 0.5;
+            margin-top: 85px;
+            width: 80%;
+            height: 40%;
+            margin-left: 10%;
+          }
+          #hometxt {
+            border-radius: 15px;
+            font-style: italic;
+            font-family: 'AvenirNext-UltraLight';
+            position: absolute;
+            margin-top: -34%;
+            text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+            height: 120px;
+            padding-top: 130px;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 35px;
+            color: rgb(200, 200, 0); //go bears
+
+          }
+          #titletxt {
+            font-style: normal;
+            font-family: 'Play';
+            position: absolute;
+            margin-top: -32%;
+            text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+            font-size: 55px;
+            color: rgb(200, 200, 0); //go bears
+          }
+
+          #big {
+            margin-top: -15px;
+            background-color: rgb(0, 0, 80);
+            color: rgb(200, 200, 0); /* go bears */
+            font-size: 37px;
+            margin-left: 2%;
+            margin-right: 2%;
+            width: 96%;
+            text-align: center;
+            text-decoration: none;
+            padding-top: 10px;
+            padding-bottom: 31px;
+            border-radius: 6px;
+            font-family: 'Play';
+            cursor: pointer;
+          }
+          #buffer {
+            margin-top: 100px;
+          }
+          #routebox {
+            margin-left: 2%;
+            margin-right: 2%;
+            border-color: rgb(0, 0, 0);
+            border-width: 1px;
+            border-style: solid;
+            font-family: 'Avenir', 'Montserrat';
+            padding-left: 3px;
+            padding-right: 3px;
+            margin-top: 0px;
+            border-radius: 4px;
+          }
+          #routebox2 {
+            margin-left: 2%;
+            margin-right: 2%;
+            border-color: rgb(0, 0, 0);
+            border-width: 1px;
+            border-style: solid;
+            font-family: 'Avenir', 'Montserrat';
+            padding-left: 3px;
+            padding-right: 3px;
+            margin-top: 0px;
+            border-radius: 4px;
+          }
+          #routebox3 {
+            margin-left: 2%;
+            margin-right: 2%;
+            border-color: rgb(0, 0, 0);
+            border-width: 1px;
+            border-style: solid;
+            font-family: 'Avenir', 'Montserrat';
+            padding-left: 3px;
+            padding-right: 3px;
+            margin-top: 0px;
+            border-radius: 4px;
+          }
+          #routebox4 {
+            margin-left: 2%;
+            margin-right: 2%;
+            border-color: rgb(0, 0, 0);
+            border-width: 1px;
+            border-style: solid;
+            font-family: 'Avenir', 'Montserrat';
+            padding-left: 3px;
+            padding-right: 3px;
+            margin-top: 0px;
+            border-radius: 4px;
+          }
+          #buffer2 {
+            margin-top: 22px;
+          }
+
+          #row {
+            display: flex;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 0.5px;
+            border-style: solid;
+            border-radius: 6px;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 9px;
+            margin-bottom: 9px;
+            border-color: rgb(0, 0, 0);
+          }
+
+          .route {
+            text-align: center;
+            padding-left: 0px;
+            padding-right: 0px;
+          }
+
+          .routebutton {
+            text-align: center;
+            padding-left: 0px;
+            padding-right: 0px;
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 15px;
+            border-style: none;
+            font-family: 'Avenir', 'Montserrat';
+            cursor: pointer;
+          }
+
+          #r1 {
+            width: 21%;
+          }
+          #r2 {
+            width: 5.5%;
+          }
+          #r3 {
+            width: 5.5%;
+          }
+          #r4 {
+            width: 6%;
+          }
+          #r5 {
+            width: 6%;
+          }
+          #r6 {
+            width: 8%;
+          }
+          #r7 {
+            width: 7%;
+          }
+          #r8 {
+            width: 10%;
+          }
+          #r9 {
+            width: 31%;
+            margin-right: 25px;
+          }
+
+          .clickto {
+            background-color: rgba(0,0,0,0);
+            cursor: pointer;
+            border-style: none;
+            position: absolute;
+            font-family: 'Avenir', 'Montserrat';
+            color: rgb(200, 200, 0); /* go bears */
+            font-size: 18px;
+            text-align: center;
+            margin-left: calc(50% - 72px);
+            margin-top: 38px;
+          }
+
+        </style>
+    </head>
+    <body>
+
+  <script src="routes.js" type="module"></script>
+  <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
+  <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
+
+  <a href="index.html" class="menu" id="b1" onclick="b1()">Home</a>
+  <a href="about.html" class="menu" id="b2" onclick="b2()">About</a>
+  <a href="membership.html" class="menu" id="b3" onclick="b3()">Membership</a>
+  <a href="officers.html" class="menu" id="b4" onclick="b4()">Officers</a>
+  <a href="routes.html" class="menu" id="b5" onclick="b5()">Routes</a>
+  <a href="upcomingrides.html" class="menu" id="b6" onclick="b6()">Upcoming Rides</a>
+  <a href="partners.html" class="menu" id="b7" onclick="b7()">Partners</a>
+  <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
+  <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
+
+  <p id="buffer"></p>
+  <button onclick="expand(0)" id="c1" class="clickto">Click to Expand</button>
+  <button onclick="expand(0)" id="big">ROAD ROUTES</button>
+  <div id="routebox" hidden=true></div>
+  <p id="buffer2"></p>
+  <button onclick="expand(3)" id="c4" class="clickto">Click to Expand</button>
+  <button onclick="expand(3)" id="big">ROAD CLIMBS</button>
+  <div id="routebox4" hidden=true></div>
+  <p id="buffer2"></p>
+  <button onclick="expand(1)" id="c2" class="clickto">Click to Expand</button>
+  <button onclick="expand(1)" id="big">GRAVEL ROUTES</button>
+  <div id="routebox2" hidden=true></div>
+  <p id="buffer2"></p>
+  <button onclick="expand(2)" id="c3" class="clickto">Click to Expand</button>
+  <button onclick="expand(2)" id="big">MTB ROUTES</button>
+  <div id="routebox3" hidden=true></div>
+  <p id="buffer2"></p>
+
+
+  <div id="i0" hidden=true></div>
+  <div id="i1" hidden=true></div>
+  <div id="i2" hidden=true></div>
+  <div id="i3" hidden=true></div>
+  <div id="i4" hidden=true></div>
+  <div id="i5" hidden=true></div>
+  <div id="i6" hidden=true></div>
+  <div id="i7" hidden=true></div>
+  <div id="i8" hidden=true></div>
+  <div id="i9" hidden=true></div>
+  <div id="i10" hidden=true></div>
+
+  <script>
+
+  var roadroutes = [
+    ["Base Ride", 37.8, 982, 26, 0, "UC Berkeley", "https://ridewithgps.com/routes/33431800", -1, -1, "The Base Ride is a relatively flat and scenic ride that goes along the Bay Trail, and is popular with beginning and experienced riders alike."],
+    ["Mt. Diablo N/S", 80, 7722, 97, 6.42, "UC Berkeley", "https://ridewithgps.com/routes/33425009", -1, -1, "Mt. Diablo is the hardest climb in the East Bay, and much of the elevation gain on this route comes from this massive climb. Starting from near sea level in Walnut Creek, the climb snakes up the mountain at a mostly constant 6% grade for 11 miles, eventually reaching a final elevation of 3849 feet. For a slightly shorter ride, you can take BART back from Walnut Creek or Pleasant Hill, which makes the total mileage 55 instead of 80."],
+    ["Happy Valley/Lafayette Loop", 36.1, 3507, 96, 0.94, "UC Berkeley", "https://ridewithgps.com/routes/33429156", -1, -1, ""],
+    ["South Park Drive", 10.3, 1467, 142, 1.88, "UC Berkeley", "https://ridewithgps.com/routes/33429172", -1, -1, "South Park Drive is one of the steepest climbs in Berkeley, and this route first takes you on Euclid and Wildcat Canyon Road before attempting this steep climb. This is a great route if you are looking for a short but hilly ride."],
+    ["Gradient Ascent (Centennial/El Toyonal)", 16.2, 2589, 160, 2.93, "UC Berkeley", "https://ridewithgps.com/routes/33429179", -1, -1, "Both Centennial and El Toyonal are incredibly long and steep climbs, especially El Toyonal, so this ride is an even better choice if you're looking for a short but super hilly ride. El Toyonal is not for the faint of heart - the last mile or so climbs at a seemingly endless 17-18% grade."],
+    ["Mt. Hamilton Out and Back", 62.4, 5782, 93, 5.02, "Fremont BART", "https://ridewithgps.com/routes/33429169", -1, -1, ""],
+    ["Mt. Hamilton Loop", 89.2, 7084, 79, 5.02, "Fremont BART", "https://ridewithgps.com/routes/33429170", -1, -1, ""],
+    ["The Three Bears", 35.5, 3709, 104, 1.17, "UC Berkeley", "https://ridewithgps.com/routes/33429185", -1, -1, "The Three Bears is a classic Berkeley loop involving going out and back on Wildcat Canyon road, and taking an 18 mile loop on San Pablo Dam and Bear Creek Road. The 18 mile loop section was the course for the 2022 Berkeley Hills Road Race, and it's also used by the local Grizzly Peak Cyclists cycling club as a time trial segment."],
+    ["Redwood Pinehurst", 28.2, 2847, 101, 1.55, "UC Berkeley", "https://ridewithgps.com/routes/33429180", -1, -1, "Redwood Pinehurst is arguably the most popular route around Berkeley, and for good reason - it's very scenic, and despite being on the shorter side, it still has plenty of hills, including the classic Tunnel Road, which is used by many as a time trial segment. Later in the route, you'll encounter the Pinehurst Road climb, which is steeper than Tunnel Road and has many hairpin turns."],
+    ["Pig Farm", 47, 4762, 101, 1.55, "UC Berkeley", "https://ridewithgps.com/routes/33429189", -1, -1, ""],
+    ["Redwood Skyline", 48.3, 4586, 95, 1.55, "UC Berkeley", "https://ridewithgps.com/routes/33429155", -1, -1, ""],
+    ["Treasure Island", 23.1, 767, 33, 0.34, "UC Berkeley", "https://ridewithgps.com/routes/33431743", -1, -1, "Treasure Island is a fun route that goes to the Bay Trail and goes south along the Bay Bridge. Since it's relatively flat and consists of mostly bike trails, it's a great route for beginning riders."],
+    ["Mt. Tamalpais", 81.9, 5045, 62, 2.64, "UC Berkeley", "https://ridewithgps.com/routes/33633048", -1, -1, "Mt. Tamalpais is an incredibly scenic ride that goes into Marin County and climbs first to Alpine Lake, and then to both summits of Mt. Tamalpais. Ridgecrest Blvd., which is included in the second half of the main climb, is one of the most scenic cycling roads in the entire Bay Area - it climbs along a grassy ridge, with amazing views of the ocean 2000 feet below you to the East. The ride can be made slightly shorter by ending in San Francisco (at the Embarcadero BART) instead of going all the way back to Berkeley."],
+    ["Paradise Out and Back", 59, 2007, 34, 0, "UC Berkeley", "https://ridewithgps.com/routes/38127622", -1, -1, "The Paradise Loop is a fun and relatively flat route through Marin County, that reaches the scenic coastal town of Tiburon. It is a great choice if you are looking for a relatively long but flat route."],
+    ["Tunnel-Pinehurst-Moraga-Wildcat", 27.5, 2149, 78, 1.55, "UC Berkeley", "https://ridewithgps.com/routes/35139343", -1, -1, ""],
+    ["Snake Loop", 54.5, 3761, 69, 0.7, "UC Berkeley", "https://ridewithgps.com/routes/37009177", -1, -1, ""],
+    ["Santa Cruz Mountains", 76.3, 5764, 76, 3.54, "Beryessa/North San Jose BART", "https://ridewithgps.com/routes/40003842", -1, -1, "The Santa Cruz Mountains loop is a beautiful and hilly 76.3 mile loop south of San Jose. It's a bit far from Berkeley but is well worth the trip - outside of the very start and finish in San Jose, almost the entire route goes through redwood forest. There is a 2 mile unpaved section towards the beginning, but it is fairly light gravel for the most part and would be likely be feasible for road riders."],
+    ["Euclid/Grizzly/Claremont", 11.0, 1444, 131, 1.87, "UC Berkeley", "https://ridewithgps.com/routes/40003911", -1, -1, "Euclid/Grizzly/Claremont is a short but fun loop in Berkeley - the entire route consists of climbing to the top of Grizzly Peak, and descending the steep Claremont descent, so it's a very satisfying ride, and a great choice if you only have an hour and want to get a ride in."],
+    ["Tunnel/Claremont", 11.0, 1288, 117, 1.55, "UC Berkeley", "https://ridewithgps.com/routes/40003944", -1, -1, "Tunnel/Claremont is another great short route in Berkeley, and is a particularly good loop if you're looking to break your PR on Tunnel Road, but not do too long of a ride - like the Euclid/Grizzly/Claremont ride, it also includes a fun and fast descent on Claremont Road at the end."],
+    ["South Bay Loop", 94.4, 6441, 68, 2.76, "Fremont BART", "https://ridewithgps.com/routes/40003977", -1, -1, "The South Bay loop is a great loop that includes both Old la Honda and Tunitas Creek Road, two of the most classic South Bay climbs."],
+    ["Nifty Ten Fifty", 62.8, 9744, 155, 3.5, "Sports Basement (Berkeley)", "https://ridewithgps.com/routes/38819872", -1, -1, "The Nifty Ten Fifty is an extremely hilly route in the East Bay that is done every April by 40+ riders in the official Nifty Ten Fifty event. The route includes most of the notable climbs in the East Bay, with the most difficult one (according to the FIETS index) being El Toyonal/Lomas Cantadas."]
+  ];
+
+  var gravelroutes = [
+    ["Rolling - Berkeley Hills Gravel", 18, 1776, -1, 0.88, "UC Berkeley", "https://ridewithgps.com/routes/34883108", -1, -1, ""],
+    ["Quickie - Berkeley Hills Gravel", 15, 1940, -1, 1.93, "UC Berkeley", "https://ridewithgps.com/routes/34883107", -1, -1, ""],
+    ["Ridge Line - Berkeley Hills Gravel", 20.7, 2399, -1, 1.97, "UC Berkeley", "https://ridewithgps.com/routes/34883106", -1, -1, ""],
+    ["Cuatro Ósos", 51, 4972, -1, 2.06, "UC Berkeley", "https://ridewithgps.com/routes/34883102", -1, -1, ""],
+    ["Lakeside - Berkeley Hills Gravel", 25.6, 2917, -1, 1.96, "UC Berkeley", "https://ridewithgps.com/routes/34883099", -1, -1, ""],
+    ["Half Ridge - Berkeley Hills", 19.2, 1869, -1, 0.79, "UC Berkeley", "https://ridewithgps.com/routes/34883096", -1, -1, ""]
+  ];
+
+  var mtbroutes = [
+    ["Soquel Demo Forest", 24.5, 4634, -1, 4.12, "Santa Cruz County", "https://ridewithgps.com/routes/38246356", -1, -1, ""],
+    ["Tilden North", 17.3, 1926, -1, 0.84, "UC Berkeley", "https://ridewithgps.com/routes/38246296", -1, -1, ""],
+    ["Mill Valley XC", 23.6, 3097, -1, 2.56, "Mill Valley", "https://ridewithgps.com/routes/38246279", -1, -1, ""],
+    ["Tamarancho", 11.9, 1810, -1, 1.18, "Fairfax", "https://ridewithgps.com/routes/38246258", -1, -1, ""],
+    ["Smackdown", 16.4, 2443, -1, 2.11, "UC Berkeley", "https://ridewithgps.com/routes/38246245", -1, -1, ""],
+    ["Redwood XC Loop", 27.4, 2924, -1, 1.56, "UC Berkeley", "https://ridewithgps.com/routes/38246230", -1, -1, ""],
+    ["JMP", 23.4, 2534, -1, 1.52, "UC Berkeley", "https://ridewithgps.com/routes/38246206", -1, -1, ""],
+    ["East Bay Mega Dirt Ride", 40.3, 4570, -1, 1.69, "UC Berkeley", "https://ridewithgps.com/routes/38246182", -1, -1, ""]
+  ];
+
+  var climbs = [];
+
+  function readTextFile() {
+    var file = "./routes.txt";
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function() {
+      if (rawFile.readyState === 4) {
+        if (rawFile.status === 200 || rawFile.status == 0) {
+          var file = rawFile.responseText;
+
+          file = file.split("\n\n");
+
+          for (var i = 0 ; i < file.length ; i++) {
+            file[i] = file[i].split("\t");
+            file[i][1] = parseFloat(file[i][1]);
+            file[i][2] = parseFloat(file[i][2]);
+            file[i][3] = parseFloat(file[i][3]);
+            file[i][5] = parseFloat(file[i][5]);
+          }
+
+          climbs = file;
+
+        }
+      }
+    }
+    rawFile.send(null);
+  }
+
+  readTextFile();
+
+
+  for (var i=0 ; i < gravelroutes.length;i++) {
+    gravelroutes[i][3] = parseInt(gravelroutes[i][2] / gravelroutes[i][1]);
+  }
+
+  for (var i=0 ; i < mtbroutes.length;i++) {
+    mtbroutes[i][3] = parseInt(mtbroutes[i][2] / mtbroutes[i][1]);
+  }
+
+  for (var i = 0 ; i < climbs.length ; i++) {
+    var r = climbs[i];
+    var fiets = ((r[3] / 3.3) * (r[3] / 3.3)) / (10 * (r[1] * (5280 / 3.3)));
+    fiets = parseInt(fiets*100)/100;
+    climbs[i][9] = fiets;
+  }
+
+  var dists = [2.31, 1.89, 0.58, 1.04, 2.38, 3.08, 1.90, 0.22];
+
+  for (var i = 0 ; i < roadroutes.length ; i++) {
+    roadroutes[i].push(i);
+  }
+
+  for (var i = 0 ; i < gravelroutes.length ; i++) {
+    gravelroutes[i].push(i);
+  }
+
+  for (var i = 0 ; i < mtbroutes.length ; i++) {
+    mtbroutes[i].push(i);
+  }
+
+  for (var i = 0 ; i < climbs.length ; i++) {
+    climbs[i].push(i);
+    climbs[i][11] = "(" + climbs[i][6].split("(")[1];
+    climbs[i][6] = parseFloat(climbs[i][6].split(" (")[0]);
+    if (climbs[i][4] == "HC") {
+      climbs[i][4] = "0";
+    }
+  }
+
+  var starter = `
+  <div id="row">
+    <button class="routebutton" id="r1" onclick="jclick(1)"><strong>Route Name</strong></button>
+    <button class="routebutton" id="r2" onclick="jclick(2)"><strong>Mileage</strong></button>
+    <button class="routebutton" id="r3" onclick="jclick(3)"><strong>Elevation Gain</strong></button>
+    <button class="routebutton" id="r4" onclick="jclick(4)"><strong>Elevation Gain per Mile</strong></button>
+    <button class="routebutton" id="r5" onclick="jclick(5)"><strong>FIETS Index of Hardest Climb</strong></button>
+    <button class="routebutton" id="r6" onclick="jclick(6)"><strong>Start Point</strong></button>
+    <button class="routebutton" id="r7" onclick="jclick(7)"><strong>Estimated Moving Time</strong></button>
+    <button class="routebutton" id="r8" onclick="jclick(8)"><strong>Estimated Moving Speed</strong></button>
+    <button class="routebutton" id="r9" onclick="jclick(9)"><strong>Description</strong></button>
+  </div>
+  `;
+
+  var gstarter = `
+  <div id="row">
+    <button class="routebutton" id="r1" onclick="jgclick(1)"><strong>Route Name</strong></button>
+    <button class="routebutton" id="r2" onclick="jgclick(2)"><strong>Mileage</strong></button>
+    <button class="routebutton" id="r3" onclick="jgclick(3)"><strong>Elevation Gain</strong></button>
+    <button class="routebutton" id="r4" onclick="jgclick(4)"><strong>Elevation Gain per Mile</strong></button>
+    <button class="routebutton" id="r5" onclick="jgclick(5)"><strong>FIETS Index of Hardest Climb</strong></button>
+    <button class="routebutton" id="r6" onclick="jgclick(6)"><strong>Start Point</strong></button>
+    <button class="routebutton" id="r7" onclick="jgclick(7)"><strong>Estimated Moving Time</strong></button>
+    <button class="routebutton" id="r8" onclick="jgclick(8)"><strong>Estimated Moving Speed</strong></button>
+    <button class="routebutton" id="r9" onclick="jgclick(9)"><strong>Description</strong></button>
+  </div>
+  `;
+
+  var mstarter = `
+  <div id="row">
+    <button class="routebutton" id="r1" onclick="jmclick(1)"><strong>Route Name</strong></button>
+    <button class="routebutton" id="r2" onclick="jmclick(2)"><strong>Mileage</strong></button>
+    <button class="routebutton" id="r3" onclick="jmclick(3)"><strong>Elevation Gain</strong></button>
+    <button class="routebutton" id="r4" onclick="jmclick(4)"><strong>Elevation Gain per Mile</strong></button>
+    <button class="routebutton" id="r5" onclick="jmclick(5)"><strong>FIETS Index of Hardest Climb</strong></button>
+    <button class="routebutton" id="r6" onclick="jmclick(6)"><strong>Start Point</strong></button>
+    <button class="routebutton" id="r7" onclick="jmclick(7)"><strong>Estimated Moving Time</strong></button>
+    <button class="routebutton" id="r8" onclick="jmclick(8)"><strong>Estimated Moving Speed</strong></button>
+    <button class="routebutton" id="r9" onclick="jmclick(9)"><strong>Description</strong></button>
+  </div>
+  `;
+
+  var cstarter = `
+  <div id="row">
+    <button class="routebutton" id="r1" onclick="jcclick(1)"><strong>Climb Name</strong></button>
+    <button class="routebutton" id="r2" onclick="jcclick(2)"><strong>Mileage</strong></button>
+    <button class="routebutton" id="r3" onclick="jcclick(3)"><strong>Average Gradient</strong></button>
+    <button class="routebutton" id="r4" onclick="jcclick(4)"><strong>Elevation Gain</strong></button>
+    <button class="routebutton" id="r5" onclick="jcclick(5)"><strong>Category</strong></button>
+    <button class="routebutton" id="r5" onclick="jcclick(6)"><strong>Difficulty (FIETS Index)</strong></button>
+    <button class="routebutton" id="r6" onclick="jcclick(7)"><strong>Distance from Berkeley</strong></button>
+    <button class="routebutton" id="r8" onclick="jcclick(8)"><strong>Distance from Nearest BART Station</strong></button>
+    <button class="routebutton" id="r9" onclick="jcclick(9)"><strong>Description</strong></button>
+  </div>
+  `;
+
+  document.getElementById("routebox").innerHTML = starter;
+  document.getElementById("routebox2").innerHTML = gstarter;
+  document.getElementById("routebox3").innerHTML = mstarter;
+  document.getElementById("routebox4").innerHTML = cstarter;
+
+  var mxs = [];
+  var mns = [];
+
+  function calcmx() {
+    mxs = [];
+    mns = [];
+    for (var i = 0 ; i < 9 ; i++) {
+      var mx = -100000000;
+      var mn = 1000000000;
+      var ind;
+      if (i > 5) {
+        ind = i+1;
+      }
+      else {
+        ind = i;
+      }
+      for (var j = 0 ; j < roadroutes.length ; j++) {
+        var num = roadroutes[j][ind];
+        /*if (i==6) {
+          num = parseInt(num.split(":")[0]) * 60 + parseInt(num.split(":")[1]);
+        }*/
+        mx = Math.max(mx, num);
+        mn = Math.min(mn, num);
+      }
+
+      mxs.push(mx);
+      mns.push(mn);
+    }
+  }
+
+  var gmxs = [];
+  var gmns = [];
+
+  function gcalcmx() {
+    gmxs = [];
+    gmns = [];
+    for (var i = 0 ; i < 9 ; i++) {
+      var mx = -100000000;
+      var mn = 1000000000;
+      var ind;
+      if (i > 5) {
+        ind = i+1;
+      }
+      else {
+        ind = i;
+      }
+      for (var j = 0 ; j < gravelroutes.length ; j++) {
+        var num = gravelroutes[j][ind];
+        if (i==6) {
+          //num = parseInt(num.split(":")[0]) * 60 + parseInt(num.split(":")[1]);
+        }
+        mx = Math.max(mx, num);
+        mn = Math.min(mn, num);
+      }
+
+      gmxs.push(mx);
+      gmns.push(mn);
+    }
+  }
+
+  var mmxs = [];
+  var mmns = [];
+
+  function mcalcmx() {
+    mmxs = [];
+    mmns = [];
+    for (var i = 0 ; i < 9 ; i++) {
+      var mx = -100000000;
+      var mn = 1000000000;
+      var ind;
+      if (i > 5) {
+        ind = i+1;
+      }
+      else {
+        ind = i;
+      }
+      for (var j = 0 ; j < mtbroutes.length ; j++) {
+        var num = mtbroutes[j][ind];
+        if (i==6) {
+          //num = parseInt(num.split(":")[0]) * 60 + parseInt(num.split(":")[1]);
+        }
+        mx = Math.max(mx, num);
+        mn = Math.min(mn, num);
+      }
+
+      mmxs.push(mx);
+      mmns.push(mn);
+    }
+  }
+
+  var cmxs = [];
+  var cmns = [];
+
+  function ccalcmx() {
+    cmxs = [];
+    cmns = [];
+    for (var i = 0 ; i < 9 ; i++) {
+      var mx = -100000000;
+      var mn = 1000000000;
+      var ind;
+      if (i == 5) {
+        ind = 9;
+      }
+      else if (i == 6) {
+        ind = 5;
+      }
+      else if (i == 7) {
+        ind = 6;
+      }
+      else {
+        ind = i;
+      }
+      for (var j = 0 ; j < climbs.length ; j++) {
+        var num = climbs[j][ind];
+        /*if (i==6) {
+          num = parseInt(num.split(":")[0]) * 60 + parseInt(num.split(":")[1]);
+        }*/
+        mx = Math.max(mx, num);
+        mn = Math.min(mn, num);
+      }
+
+      cmxs.push(mx);
+      cmns.push(mn);
+    }
+  }
+
+  calcmx();
+  gcalcmx();
+  mcalcmx();
+  ccalcmx();
+
+
+  var lastSort = -10000000;
+  var lastSortDir = -10000000;
+  var sort = -1;
+  var sortDir = 0;
+
+  var glastSort = -10000000;
+  var glastSortDir = -10000000;
+  var gsort = -1;
+  var gsortDir = 0;
+
+  var mlastSort = -10000000;
+  var mlastSortDir = -10000000;
+  var msort = -1;
+  var msortDir = 0;
+
+  var clastSort = -10000000;
+  var clastSortDir = -10000000;
+  var csort = -1;
+  var csortDir = 0;
+
+  var clicked = [];
+  for (var i = 0 ; i < 8 ; i++) {
+    clicked.push(false);
+  }
+
+  var gclicked = [];
+  for (var i = 0 ; i < 8 ; i++) {
+    gclicked.push(false);
+  }
+
+  var mclicked = [];
+  for (var i = 0 ; i < 8 ; i++) {
+    mclicked.push(false);
+  }
+
+  var cclicked = [];
+  for (var i = 0 ; i < 8 ; i++) {
+    cclicked.push(false);
+  }
+
+  function jclick(id) {
+    clicked[id-1] = true;
+  }
+
+  function jgclick(id) {
+    gclicked[id-1] = true;
+  }
+
+  function jmclick(id) {
+    mclicked[id-1] = true;
+  }
+
+  function jcclick(id) {
+    cclicked[id-1] = true;
+  }
+
+  function expand(id) {
+    if (id == 0) {
+      document.getElementById("routebox").hidden = !document.getElementById("routebox").hidden;
+      if (document.getElementById("c1").innerHTML == "Click to Expand") {
+        document.getElementById("c1").innerHTML = "Click to Collapse";
+      }
+      else {
+        document.getElementById("c1").innerHTML = "Click to Expand";
+      }
+    }
+    else if (id == 1) {
+      document.getElementById("routebox2").hidden = !document.getElementById("routebox2").hidden;
+      if (document.getElementById("c2").innerHTML == "Click to Expand") {
+        document.getElementById("c2").innerHTML = "Click to Collapse";
+      }
+      else {
+        document.getElementById("c2").innerHTML = "Click to Expand";
+      }
+    }
+    else if (id == 2) {
+      document.getElementById("routebox3").hidden = !document.getElementById("routebox3").hidden;
+      if (document.getElementById("c3").innerHTML == "Click to Expand") {
+        document.getElementById("c3").innerHTML = "Click to Collapse";
+      }
+      else {
+        document.getElementById("c3").innerHTML = "Click to Expand";
+      }
+    }
+    else if (id == 3) {
+      document.getElementById("routebox4").hidden = !document.getElementById("routebox4").hidden;
+      if (document.getElementById("c4").innerHTML == "Click to Expand") {
+        document.getElementById("c4").innerHTML = "Click to Collapse";
+      }
+      else {
+        document.getElementById("c4").innerHTML = "Click to Expand";
+      }
+    }
+  }
+
+  var calced = false;
+  var cycledata = [];
+
+  function check(st) {
+    if (st == -1) {
+      return "</strong><em>Log in and add data to your profile <a href=\"profile.html\">here</a> to see this</em><strong>";
+    }
+    return st;
+  }
+
+  function ct(time) {
+    if (time == -1) {
+      return -1;
+    }
+    var hr = parseInt(time / 60);
+    var min = parseInt(time % 60);
+    if (min < 10) {
+      min = "0" + min;
+    }
+    return hr + ":" + min;
+  }
+
+  function calc(cyclist, miles, elev) {
+    var nc = []
+    for (var i = 0 ; i < 8 ; i += 2) {
+        if (cyclist[i] != -1 && cyclist[i+1] != -1) {
+            nc.push((cyclist[i] + cyclist[i+1]) / 2)
+        }
+        else if (cyclist[i] != -1) {
+            nc.push(cyclist[i])
+        }
+        else if (cyclist[i+1] != -1) {
+            nc.push(cyclist[i+1])
+        }
+        else {
+            nc.push(-1)
+        }
+    }
+
+
+
+    if (nc[0]+nc[1]+nc[2]+nc[3] == -4) {
+        nc[1] = cyclist[8]
+    }
+    if (nc[0] == -1) {
+        nc[0] = nc[1] / 0.63
+    }
+    if (nc[2] == -1) {
+        nc[2] = nc[1] * 0.63
+    }
+    if (nc[3] == -1) {
+        nc[3] = nc[2] * 0.63
+    }
+
+    var hd = Math.min(2, (elev / miles) / 100)
+
+    var down = Math.min(0.5, hd/2)
+    var flat = Math.max(0, 1 - hd)
+    var shallow = 0
+    if (hd < 0.5) {
+        shallow = hd / 2
+    }
+    else if (hd < 1) {
+        shallow = 0.25
+    }
+    else {
+        shallow = 0.25 - (hd - 1) / 4
+    }
+    steep = 0
+    if (hd >= 0.5 && hd < 1.0) {
+        steep = (hd - 0.5) / 2
+    }
+    else if (hd >= 1.0) {
+        steep = 0.25 + (hd - 1.0) / 4
+    }
+
+    var distancescore = ((1 - Math.pow(1.2, (-cyclist[9]))) + (1 - Math.pow(1.015, (-cyclist[10])))) / 2
+
+    distancescore = (distancescore / 5 + 0.8) * 0.92;
+
+    var decay = Math.pow(distancescore, (miles / 80));
+
+    var downtime = (down * miles) / nc[0]
+    var flattime = (flat * miles) / nc[1]
+    var shallowtime = (shallow * miles) / nc[2]
+    var steeptime = (steep * miles) / nc[3]
+
+    var totaltime = downtime + flattime + shallowtime + steeptime
+    var totalspeed = parseInt(((miles / totaltime) * decay)*10)/10;
+
+    totaltime = miles / totalspeed;
+    var mins = totaltime*60;
+    var mns = parseInt(mins%60);
+    if (mns<10) {
+      mns = "0" + mns;
+    }
+    if (totalspeed%1 == 0) {
+      totalspeed = totalspeed + ".0";
+    }
+
+    return [parseInt(mins/60) + ":" + mns, totalspeed];
+  }
+
+  var justc = false;
+  var gjustc = false;
+  var mjustc = false;
+  var cjustc = false;
+
+  function update() {
+    if (document.getElementById("i0").innerHTML.length > 0 && !calced) {
+      cycledata = [];
+      for (var i = 0 ; i < 11 ; i++) {
+        var data = document.getElementById("i" + i).innerHTML;
+
+        if (i < 8) {
+          if (data.length) {
+            var time = (parseInt(data.split(":")[0]) * 60 + parseInt(data.split(":")[1])) / 3600;
+            data = dists[i] / time;
+            cycledata.push(data);
+          }
+          else {
+            cycledata.push(-1);
+          }
+        }
+        else if (i == 8) {
+          if (data.length) {
+            cycledata.push(parseFloat(data));
+          }
+          else {
+            cycledata.push(-1);
+          }
+        }
+        else if (i == 9) {
+          cycledata.push(parseInt(data))
+        }
+        else {
+          cycledata.push(parseFloat(data))
+        }
+      }
+      calced = true;
+      for (var i = 0 ; i < roadroutes.length ; i++) {
+        var vals = calc(cycledata, roadroutes[i][1], roadroutes[i][2]);
+        roadroutes[i][7] = parseInt(vals[0].split(":")[0]) * 60 + parseInt(vals[0].split(":")[1]);
+        roadroutes[i][8] = vals[1];
+      }
+      calcmx();
+      for (var i = 0 ; i < gravelroutes.length ; i++) {
+        var vals = calc(cycledata, gravelroutes[i][1], gravelroutes[i][2]);
+        gravelroutes[i][7] = parseInt(vals[0].split(":")[0]) * 60 + parseInt(vals[0].split(":")[1]);
+        gravelroutes[i][8] = vals[1];
+      }
+      gcalcmx();
+      for (var i = 0 ; i < mtbroutes.length ; i++) {
+        var vals = calc(cycledata, mtbroutes[i][1], mtbroutes[i][2]);
+        mtbroutes[i][7] = parseInt(vals[0].split(":")[0]) * 60 + parseInt(vals[0].split(":")[1]);
+        mtbroutes[i][8] = vals[1];
+      }
+      mcalcmx();
+      ccalcmx();
+      justc = true;
+    }
+
+    window.requestAnimationFrame(update, 1);
+
+    for (var i = 0 ; i < 10 ; i++) {
+      if (clicked[i]) {
+        sort = i;
+        if (sort >= 6) {
+          sort++;
+        }
+        if (sort != lastSort) {
+          sortDir = 1;
+        }
+        else {
+          sortDir = ((lastSortDir + 1) + 1)%3 - 1;
+        }
+      }
+
+      if (gclicked[i]) {
+        gsort = i;
+        if (gsort >= 6) {
+          gsort++;
+        }
+        if (gsort != glastSort) {
+          gsortDir = 1;
+        }
+        else {
+          gsortDir = ((glastSortDir + 1) + 1)%3 - 1;
+        }
+      }
+
+      if (mclicked[i]) {
+        msort = i;
+        if (msort >= 6) {
+          msort++;
+        }
+        if (msort != mlastSort) {
+          msortDir = 1;
+        }
+        else {
+          msortDir = ((mlastSortDir + 1) + 1)%3 - 1;
+        }
+      }
+
+      if (cclicked[i]) {
+        csort = i;
+
+        if (csort == 5) {
+          csort = 9;
+        }
+        if  (csort > 5 && csort < 8) {
+          csort--;
+        }
+
+        if (csort != clastSort) {
+          csortDir = 1;
+        }
+        else {
+          csortDir = ((clastSortDir + 1) + 1)%3 - 1;
+        }
+      }
+    }
+
+    for (var i = 0 ; i < 10 ; i++) {
+      clicked[i] = false;
+    }
+
+    for (var i = 0 ; i < 10 ; i++) {
+      gclicked[i] = false;
+    }
+
+    for (var i = 0 ; i < 10 ; i++) {
+      mclicked[i] = false;
+    }
+
+    for (var i = 0 ; i < 10 ; i++) {
+      cclicked[i] = false;
+    }
+
+
+    if ((!(sort != lastSort || sortDir != lastSortDir) && !justc) && (!(gsort != glastSort || gsortDir != glastSortDir) && !gjustc) && (!(msort != mlastSort || msortDir != mlastSortDir) && !mjustc) && (!(csort != clastSort || csortDir != clastSortDir) && !cjustc)) return;
+
+    justc = false;
+    gjustc = false;
+    mjustc = false;
+    cjustc = false;
+
+    if (sort == -1 || sortDir == 0) {
+      roadroutes.sort(function(a, b) {
+        if (a[10] > b[10]) {
+          return 1;
+        }
+        else if (b[10] > a[10]) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+    else if (sortDir == 1) {
+      roadroutes.sort(function(a, b) {
+        if (a[sort] > b[sort]) {
+          return 1;
+        }
+        else if (b[sort] > a[sort]) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+    else {
+      roadroutes.sort(function(a, b) {
+        if (a[sort] > b[sort]) {
+          return -1;
+        }
+        else if (b[sort] > a[sort]) {
+          return 1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+
+    if (gsort == -1 || gsortDir == 0) {
+      gravelroutes.sort(function(a, b) {
+        if (a[10] > b[10]) {
+          return 1;
+        }
+        else if (b[10] > a[10]) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+    else if (gsortDir == 1) {
+      gravelroutes.sort(function(a, b) {
+        if (a[gsort] > b[gsort]) {
+          return 1;
+        }
+        else if (b[gsort] > a[gsort]) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+    else {
+      gravelroutes.sort(function(a, b) {
+        if (a[gsort] > b[gsort]) {
+          return -1;
+        }
+        else if (b[gsort] > a[gsort]) {
+          return 1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+
+    if (msort == -1 || msortDir == 0) {
+      mtbroutes.sort(function(a, b) {
+        if (a[10] > b[10]) {
+          return 1;
+        }
+        else if (b[10] > a[10]) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+    else if (msortDir == 1) {
+      mtbroutes.sort(function(a, b) {
+        if (a[msort] > b[msort]) {
+          return 1;
+        }
+        else if (b[msort] > a[msort]) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+    else {
+      mtbroutes.sort(function(a, b) {
+        if (a[msort] > b[msort]) {
+          return -1;
+        }
+        else if (b[msort] > a[msort]) {
+          return 1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+
+    if (csort == -1 || csortDir == 0) {
+      climbs.sort(function(a, b) {
+        if (a[10] > b[10]) {
+          return 1;
+        }
+        else if (b[10] > a[10]) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+    else if (csortDir == 1) {
+      climbs.sort(function(a, b) {
+        if (a[csort] > b[csort]) {
+          return 1;
+        }
+        else if (b[csort] > a[csort]) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+    else {
+      climbs.sort(function(a, b) {
+        if (a[csort] > b[csort]) {
+          return -1;
+        }
+        else if (b[csort] > a[csort]) {
+          return 1;
+        }
+        else {
+          return 0;
+        }
+      });
+    }
+
+    document.getElementById("routebox").innerHTML = starter;
+    document.getElementById("routebox2").innerHTML = gstarter;
+    document.getElementById("routebox3").innerHTML = mstarter;
+    document.getElementById("routebox4").innerHTML = cstarter;
+
+
+
+    for (var i = 0 ; i < roadroutes.length ; i++) {
+      var r = roadroutes[i];
+      var rcols = [];
+      for (var j = 0 ; j < 9 ; j++) {
+        if (j == 0 || j == 5 || j == 8) {
+          rcols.push("rgb(0, 0, 0)");
+        }
+        else {
+          var ind;
+          if (j>5) {
+            ind = j+1;
+          }
+          else {
+            ind = j;
+          }
+          var num = roadroutes[i][ind];
+          if (j == 6) {
+            //num = parseInt(num.split(":")[0]) * 60 + parseInt(num.split(":")[1]);
+          }
+          if (j == 7) {
+            num = mxs[j] - (num - mns[j]);
+          }
+          rcols.push("rgb(" + (((num-mns[j])/(mxs[j]-mns[j]))*200) + "," + (200-((num-mns[j])/(mxs[j]-mns[j]))*200) + ",0)");
+        }
+      }
+
+      var routeStr = "";
+      routeStr +=  "<div id=\"row\">";
+      routeStr +=    "<div style=\"color: " + rcols[0] + "\"class=\"route\" id=\"r1\"><a href=\"" + r[6] + "\" target=\"_blank\">" + r[0] + "</a><br><a href=\"" + r[6] + "\" target=\"_blank\">" + "<img width=100 height=100 style=\"margin-top: 20px;\" src=\"imgs/route" + (roadroutes[i][10]+1) + ".png\"></a></div>";
+
+      routeStr +=    "<div style=\"color: " + rcols[1] + "\" class=\"route\" id=\"r2\"><strong>" + r[1] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[2] + "\"class=\"route\" id=\"r3\"><strong>" + r[2] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[3] + "\"class=\"route\" id=\"r4\"><strong>" + r[3] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[4] + "\"class=\"route\" id=\"r5\"><strong>" + r[4] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[5] + "\"class=\"route\" id=\"r6\">" + r[5] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[6] + "\"class=\"route\" id=\"r7\"><strong>" + check(ct(r[7])) + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[7] + "\"class=\"route\" id=\"r8\"><strong>" + check(r[8]) + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[8] + "\"class=\"route\" id=\"r9\">" + r[9] + "</div>";
+
+      routeStr +=  "</div>";
+      document.getElementById("routebox").innerHTML += routeStr;
+    }
+
+    for (var i = 0 ; i < gravelroutes.length ; i++) {
+      var r = gravelroutes[i];
+      var rcols = [];
+      for (var j = 0 ; j < 9 ; j++) {
+        if (j == 0 || j == 5 || j == 8) {
+          rcols.push("rgb(0, 0, 0)");
+        }
+        else {
+          var ind;
+          if (j>5) {
+            ind = j+1;
+          }
+          else {
+            ind = j;
+          }
+          var num = gravelroutes[i][ind];
+          if (j == 6) {
+            //num = parseInt(num.split(":")[0]) * 60 + parseInt(num.split(":")[1]);
+          }
+          if (j == 7) {
+            num = gmxs[j] - (num - gmns[j]);
+          }
+          rcols.push("rgb(" + (((num-gmns[j])/(gmxs[j]-gmns[j]))*200) + "," + (200-((num-gmns[j])/(gmxs[j]-gmns[j]))*200) + ",0)");
+        }
+      }
+      var routeStr = "";
+      routeStr +=  "<div id=\"row\">";
+      routeStr +=    "<div style=\"color: " + rcols[0] + "\"class=\"route\" id=\"r1\"><a href=\"" + r[6] + "\" target=\"_blank\">" + r[0] + "</a><br><a href=\"" + r[6] + "\" target=\"_blank\">" + "<img width=100 height=100 style=\"margin-top: 20px;\" src=\"imgs/groute" + (gravelroutes[i][10]+1) + ".png\"></a></div>";
+
+      routeStr +=    "<div style=\"color: " + rcols[1] + "\" class=\"route\" id=\"r2\"><strong>" + r[1] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[2] + "\"class=\"route\" id=\"r3\"><strong>" + r[2] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[3] + "\"class=\"route\" id=\"r4\"><strong>" + r[3] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[4] + "\"class=\"route\" id=\"r5\"><strong>" + r[4] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[5] + "\"class=\"route\" id=\"r6\">" + r[5] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[6] + "\"class=\"route\" id=\"r7\"><strong>" + check(ct(r[7])) + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[7] + "\"class=\"route\" id=\"r8\"><strong>" + check(r[8]) + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[8] + "\"class=\"route\" id=\"r9\">" + r[9] + "</div>";
+
+      routeStr +=  "</div>";
+      document.getElementById("routebox2").innerHTML += routeStr;
+    }
+
+    for (var i = 0 ; i < mtbroutes.length ; i++) {
+      var r = mtbroutes[i];
+      var rcols = [];
+      for (var j = 0 ; j < 9 ; j++) {
+        if (j == 0 || j == 5 || j == 8) {
+          rcols.push("rgb(0, 0, 0)");
+        }
+        else {
+          var ind;
+          if (j>5) {
+            ind = j+1;
+          }
+          else {
+            ind = j;
+          }
+          var num = mtbroutes[i][ind];
+          if (j == 6) {
+            //num = parseInt(num.split(":")[0]) * 60 + parseInt(num.split(":")[1]);
+          }
+          if (j == 7) {
+            num = mmxs[j] - (num - mmns[j]);
+          }
+          rcols.push("rgb(" + (((num-mmns[j])/(mmxs[j]-mmns[j]))*200) + "," + (200-((num-mmns[j])/(mmxs[j]-mmns[j]))*200) + ",0)");
+        }
+      }
+      var routeStr = "";
+      routeStr +=  "<div id=\"row\">";
+      routeStr +=    "<div style=\"color: " + rcols[0] + "\"class=\"route\" id=\"r1\"><a href=\"" + r[6] + "\" target=\"_blank\">" + r[0] + "</a><br><a href=\"" + r[6] + "\" target=\"_blank\">" + "<img width=100 height=100 style=\"margin-top: 20px;\" src=\"imgs/mroute" + (mtbroutes[i][10]+1) + ".png\"></a></div>";
+
+      routeStr +=    "<div style=\"color: " + rcols[1] + "\" class=\"route\" id=\"r2\"><strong>" + r[1] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[2] + "\"class=\"route\" id=\"r3\"><strong>" + r[2] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[3] + "\"class=\"route\" id=\"r4\"><strong>" + r[3] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[4] + "\"class=\"route\" id=\"r5\"><strong>" + r[4] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[5] + "\"class=\"route\" id=\"r6\">" + r[5] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[6] + "\"class=\"route\" id=\"r7\"><strong>" + check(ct(r[7])) + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[7] + "\"class=\"route\" id=\"r8\"><strong>" + check(r[8]) + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[8] + "\"class=\"route\" id=\"r9\">" + r[9] + "</div>";
+
+      routeStr +=  "</div>";
+      document.getElementById("routebox3").innerHTML += routeStr;
+    }
+
+
+    for (var i = 0 ; i < climbs.length ; i++) {
+      var r = climbs[i];
+      if (r[8] == undefined){
+        r[8] = "";
+      }
+      var rcols = [];
+      for (var j = 0 ; j < 9 ; j++) {
+        if (j == 0 || j == 8) {
+          rcols.push("rgb(0, 0, 0)");
+        }
+        else {
+          var ind;
+          if (j==5) {
+            ind = 9;
+          }
+          else if(j == 6) {
+            ind = 5;
+          }
+          else if (j == 7) {
+            ind = 6;
+          }
+          else {
+            ind = j;
+          }
+          var num = parseFloat(climbs[i][ind]);
+
+          if (j == 4) {
+            num = cmxs[j] - (num - cmns[j]);
+          }
+          rcols.push("rgb(" + (((num-cmns[j])/(cmxs[j]-cmns[j]))*200) + "," + (200-((num-cmns[j])/(cmxs[j]-cmns[j]))*200) + ",0)");
+        }
+      }
+      var routeStr = "";
+      routeStr +=  "<div id=\"row\">";
+      routeStr +=    "<div style=\"color: " + rcols[0] + "\"class=\"route\" id=\"r1\"><a href=\"" + r[7] + "\" target=\"_blank\">" + r[0] + "</a></div>";
+
+      routeStr +=    "<div style=\"color: " + rcols[1] + "\" class=\"route\" id=\"r2\"><strong>" + r[1] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[2] + "\"class=\"route\" id=\"r3\"><strong>" + r[2] + "%</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[3] + "\"class=\"route\" id=\"r4\"><strong>" + r[3] + "</strong></div>";
+      if (r[4] == 0) {
+        routeStr +=    "<div style=\"color: " + rcols[4] + "\"class=\"route\" id=\"r5\"><strong>" + "HC" + "</strong></div>";
+      }
+      else {
+        routeStr +=    "<div style=\"color: " + rcols[4] + "\"class=\"route\" id=\"r5\"><strong>" + r[4] + "</strong></div>";
+      }
+      routeStr +=    "<div style=\"color: " + rcols[5] + "\"class=\"route\" id=\"r6\"><strong>" + r[9] + "</strong></div>";
+      routeStr +=    "<div style=\"color: " + rcols[6] + "\"class=\"route\" id=\"r7\"><strong>" + r[5] + "</strong></div>";
+      routeStr +=    "<div class=\"route\" id=\"r8\"><strong style=\"color: " + rcols[7] + "\">" + r[6] + "</strong><br>" + r[11] + "</div>";
+      routeStr +=    "<div style=\"color: " + rcols[8] + "\"class=\"route\" id=\"r9\">" + r[8] + "</div>";
+
+      routeStr +=  "</div>";
+      document.getElementById("routebox4").innerHTML += routeStr;
+    }
+
+
+    lastSort = sort;
+    lastSortDir = sortDir;
+    glastSort = gsort;
+    glastSortDir = gsortDir;
+    mlastSort = msort;
+    mlastSortDir = msortDir;
+    clastSort = csort;
+    clastSortDir = csortDir;
+
+  }
+
+  update();
+
+  </script>
+
+<!--<button id="signin">Google Signin</button>
+<button id="signout">Google Signout</button>!-->
+  </body>
+</html>

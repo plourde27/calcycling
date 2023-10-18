@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <title>Cal Cycling p/b Harder Mechanical Contractors</title>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+        </script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+        <style>
+        @font-face {
+          font-family: Sather;
+          src: url("NCAA Cal Golden Bears.otf") format("opentype");
+        }
+        #profile {
+          position: fixed;
+          margin-top: -90px;
+          margin-left: calc(90% - 80px);
+          margin-right: calc(10% - 80px);
+          background-color: rgb(0, 0, 80);
+          color: rgb(200, 200, 0); /* go bears */
+          font-size: 25px;
+          text-align: center;
+          text-decoration: none;
+          padding-top: 3px;
+          padding-bottom: 3px;
+          padding-left: 10px;
+          padding-right: 10px;
+          border-radius: 6px;
+          font-family: 'Avenir', 'Montserrat';
+        }
+          #cal {
+            position: absolute;
+            float: left;
+            width: 160px;
+            height: auto;
+            margin-left: calc(50% - 230px);
+            margin-top: 0px;
+            border-radius: 0px;
+          }
+          #title {
+            font-family: 'Sather';
+            color: rgb(4, 30, 66);
+            margin-left: calc(50% - 45px);
+            font-size: 120px;
+            margin-bottom: -20px;
+          }
+          #subtitle {
+            font-family: 'Play';
+            text-align: center;
+            font-size: 26px;
+            color: rgb(0, 0, 0);
+            margin-top: 0px;
+          }
+          .menu {
+            text-decoration: none;
+            font-style: normal;
+            position: absolute;
+            margin-top: 25px;
+            width: 11%;
+            text-align: center;
+            background-color: rgb(200, 200, 200);
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-family: 'Avenir', 'Montserrat';
+            border-radius: 0px;
+            border-style: none;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            cursor: pointer;
+          }
+          #b1 {
+            margin-left: 0px;
+          }
+          #b2 {
+            margin-left: 11%;
+          }
+          #b3 {
+            margin-left: 22%;
+
+          }
+          #b4 {
+
+              color: rgb(200, 200, 0);
+              background-color: rgb(0, 0, 90);
+            margin-left: 33%;
+          }
+          #b5 {
+            margin-left: 44%;
+          }
+          #b6 {
+            margin-left: 55%;
+          }
+          #b7 {
+            margin-left: 66%;
+          }
+          #b8 {
+            margin-left: 77%;
+          }
+          #b9 {
+            margin-left: 88%;
+          }
+
+          .left {
+            position: absolute;
+            margin-left: 12.5%;
+            margin-right: 62.5%;
+            text-align: center;
+          }
+          .middle {
+            position: absolute;
+            margin-left: 37.5%;
+            margin-right: 37.5%;
+          }
+          .right {
+            position: absolute;
+            margin-left: 62.5%;
+            margin-right: 12.5%;
+          }
+          .img {
+            border-radius: 50%;
+            width: 60%;
+            margin-right: 10%;
+            margin-left: 10%;
+          }
+
+          #buffer {
+            margin-top: 100px;
+          }
+          #name {
+            position: relative;
+            font-family: 'Play';
+            text-align: center;
+            font-size: 30px;
+            margin-top: 30px;
+          }
+          #pos {
+            position: relative;
+            font-family: 'Play';
+            text-align: center;
+            font-size: 25px;
+            margin-top: -22px;
+          }
+          #txt {
+            position: relative;
+            font-family: 'Avenir', 'Montserrat';
+            text-align: center;
+            font-size: 18px;
+            margin-left: 9%;
+            margin-right: 9%;
+            margin-top: -10px;
+          }
+
+
+        </style>
+    </head>
+    <body>
+  <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
+  <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
+
+  <a href="index.html" class="menu" id="b1" onclick="b1()">Home</a>
+  <a href="about.html" class="menu" id="b2" onclick="b2()">About</a>
+  <a href="membership.html" class="menu" id="b3" onclick="b3()">Membership</a>
+  <a href="officers.html" class="menu" id="b4" onclick="b4()">Officers</a>
+  <a href="routes.html" class="menu" id="b5" onclick="b5()">Routes</a>
+  <a href="upcomingrides.html" class="menu" id="b6" onclick="b6()">Upcoming Rides</a>
+  <a href="partners.html" class="menu" id="b7" onclick="b7()">Partners</a>
+  <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
+  <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
+
+
+  <p id="buffer"></p>
+  <p id="line1">
+    <div class="left" id="r1">
+      <img class="img" src="imgs/rishi.jpeg"></img>
+      <p id="name">Rishi Desai</p>
+      <p id="pos">Road President</p>
+      <p id="txt">Rishi started cycling as a weekend warrior, but like a lot of us, caught the racing bug pretty early on. Primarily a criterium racer, he took up cycling with a local team in his hometown of Greenville, South Carolina during the pandemic.
+Above all, he just likes doing everything fast - whether it's sprinting to the finish of a crit, or flying through the countryside on the bike.
+Rishi’s biggest accolades are in criterium racing and time trialing - winning a host of local titles in the southeast USA. Outside of Cal Cycling, he races with Supra Performance Cycling, and also enjoys other go fast hobbies including skiing and Motorsport.</p>
+      <p id="txt"><em>Sophomore, Physics and Computer Science.</em></p>
+      <p id="txt">Email: <em>road@calcycling.edu</em></p>
+    </div>
+    <div class="middle" id="r2">
+      <img class="img" src="imgs/alex.jpeg"></img>
+      <p id="name">Alex Mordaunt</p>
+      <p id="pos">MTB President</p>
+      <p id="txt">Alex has been racing bikes competitively for 7 years now. He started with his local cross country high-school team out of Santa Cruz. Alex placed 2nd overall in California and went to USACycling nationals for XC. He competes in XC, Enduro, and Downhill with notable finishes including first in WCCC men's SuperD and sixth at the Tahoe Trail 100 cat 1 XC. When asked skiing or snowboarding, it's snowboarding all the way.      </p>
+      <p id="txt"><em>Junior,  Physics and Environmental Science</em></p>
+      <p id="txt">Email: <em>mtb@cycling.berkeley.edu</em></p>
+    </div>
+    <div class="right" id="r3">
+      <img class="img" src="imgs/crystal.jpeg"></img>
+      <p id="name">Crystal Haryanto</p>
+      <p id="pos">Operations Director</p>
+      <p id="txt">Crystal traded her ballerina shoes to clipless pedals in her second semester. Having done philanthropy work since she was a dancer, she continues to bring positive impacts through her cycling platform. She’s featured in World Bicycle Relief’s Women on Wheels 2022, a campaign to mobilize women and girls in global communities. Supporting the first HBCU cycling team in the country, she participated in and won three USAC-permitted Saint Augustine University Collegiate Virtual Cycling Race Fall 2020. She also podiumed in the Berkeley Hills Road Race Spring 2022. When the snow starts to fall, you’ll find her hitting the slopes of her favorite mountains.</p>
+      <p id="txt"><em>Senior, Economics, Cognitive Science, minor in Public Policy</em></p>
+      <p id="txt">Email: <em>operations@cycling.berkeley.edu</em></p>
+    </div>
+    <div class="left" id="r4">
+      <img class="img" src="imgs/han.jpeg"></img>
+      <p id="name">Han Zhang</p>
+      <p id="pos">Road Racing Team Director</p>
+      <p id="txt">Han is a proud member of the pandemic bike boom. He started cycling in August 2020 to find something else to do while listening to podcasts, and now he doesn’t listen to podcasts on the bike anymore because his airpods are not aero enough. Despite being a new cyclist, he loves exploring new routes around the bay(to hunt for obscure KOMs, of course), and trains extremely hard to finish middle of the pack in local Cat 5 races.</p>
+      <p id="txt"><em>Master of Engineering Student</em></p>
+    </div>
+    <div class="middle" id="r5">
+      <img class="img" src="imgs/zach.jpeg"></img>
+      <p id="name">Zachary Liu</p>
+      <p id="pos">Road Sport Director</p>
+      <p id="txt">Zach joined Cal Cycling at the beginning of freshman year and got immediately dropped on his first ride. Now he’s a tiny bit stronger so he doesn’t get dropped as much. He’s also a tech geek when it comes to bikes, working as a bike mechanic at Mike’s Bikes and always nerding out over obscure pieces of new tech</p>
+      <p id="txt"><em>Sophomore</em></p>
+    </div>
+    <div class="right" id="r6">
+      <img class="img" src="imgs/bryan.jpeg"></img>
+      <p id="name">Bryan Kao</p>
+      <p id="pos">Road Home Race Director</p>
+      <p id="txt">Bryan has been riding as a “weekend warrior” since his early youth with his family in Taiwan, but decided to commit to more structured training after joining Cal Cycling his freshman year. Off the bike, Bryan studies transportation engineering, part of which involves planning and designing bicycle infrastructure; therefore, one often finds him geeking out about the roads he rides on.</p>
+
+      <p id="txt"><em>Senior, Civil & Environmental Engineering</em></p>
+    </div>
+    <div class="left" id="r7">
+      <img class="img" src="imgs/justin.jpeg"></img>
+      <p id="name">Justin Peck</p>
+      <p id="pos">MTB Racing Team Director</p>
+      <p id="txt">Justin loves riding and racing cross country mountain bikes. He learned to ride a bike at age 2 and grew up cycling with his family and friends. He first started racing cyclocross before participating in NICA on the local high school team. He found his passion in cross country mountain biking, and now races competitively in the US Pro XCT and other events across the country. When he's not riding his bike, Justin loves all other outdoor activities, including hiking, skiing, and surfing.</p>
+      <p id="txt"><em>Sophomore, Mechanical Engineering</em></p>
+    </div>
+    <div class="middle" id="r8">
+      <img class="img" src="imgs/alyssa.jpeg"></img>
+      <p id="name">Alyssa Feinberg</p>
+      <p id="pos">MTB Sport Director</p>
+      <p id="txt">Alyssa joined Cal Cycling as a freshman in her first semester. As a mountain biker she has always ridden with her family on annual trips to the desert but began riding seriously in middle school after joining her town’s local teams. She has raced all four years in high school as well as in races around Colorado. Outside of racing Alyssa has coached young riders through groups like Little Bella’s and Pedaling Minds. Alyssa is excited for more years of racing and riding in Berkeley with Cal Cycling!</p>
+      <p id="txt"><em>Senior, Molecular and Environmental Biology</em></p>
+    </div>
+    <div class="right" id="r9">
+      <img class="img" src="imgs/laura.jpeg"></img>
+      <p id="name">Laura Treers</p>
+      <p id="pos">MTB Home Race Director</p>
+      <p id="txt">Laura builds robots and studies dynamics and bio-inspired design. When she’s not in lab she’s probably on her bike or on some hiking or skiing adventure, and is a huge nerd for maps and exploring new routes. She got hooked on road cycling during her sophomore year of undergrad and soon afterwards got her first mountain bike and started racing XC. While she continues to love riding the road, her main race focus has switched to XC mtb, and generally endurance off-road events.</p>
+      <p id="txt"><em>Ph.D. Candidate, Mechanical Engineering</em></p>
+    </div>
+    <div class="left" id="r10">
+      <img class="img" src="imgs/xavier.jpeg"></img>
+      <p id="name">Xavier Plourde</p>
+      <p id="pos">Technial Captain</p>
+      <p id="txt">Xavier has been cycling since he was very young, but started riding more regularly in 2020. He is a road cyclist, and enjoys going on long endurance rides, as well as planning out and exploring new routes. Off the bike, Xavier enjoys competitive programming, skiing, playing the piano and saxophone, and working on coding projects, like the website you're looking at right now.</p>
+      <p id="txt"><em>Sophomore, Computer Science</em></p>
+    </div>
+    <div class="middle" id="r11">
+      <img class="img" src="imgs/ricky.jpeg"></img>
+      <p id="name">Ricky Han</p>
+      <p id="pos">Clothing Captain</p>
+      <p id="txt">Ricky started road cycling during the pandemic and joined Cal Cycling in 2021. He is in charge of making sure we all shine with all of our team kits and accessories. He has a strong interest in Industrial Design, but if you have any mechanical problems on your bike, he can also help!</p>
+      <p id="txt"><em>Senior, Mechanical Engineering</em></p>
+          </div>
+    <div class="right" id="r12">
+      <img class="img" src="imgs/jason.jpeg"></img>
+      <p id="name">Jason Park</p>
+      <p id="pos">Health & Safety Captain</p>
+      <p id="txt">Jason started biking seriously in high school and has cranked out miles since, though he likes building bikes more than riding them. Road bikes are his favorite, but he also enjoys mountain bikes when the moment calls.</p>
+      <p id="txt"><em>Senior, Civil Engineering</em></p>
+    </div>
+    <div class="left" id="r13">
+      <img class="img" src="imgs/noelle.jpeg"></img>
+      <p id="name">Noelle Davis</p>
+      <p id="pos">Media Captain</p>
+      <p id="txt">Noelle started riding her bike around LA in 2020 while recovering from a soccer injury. One day, she hit a bump, busted her front wheel, and had to befriend some cyclists. Now, she owns a number of bicycles that is too many but also somehow not enough… Her favorite parts of the sport are the friends, views, and adrenaline, and also Calvin Jones. Due to a series of unfortunate events, she hasn’t had the opportunity to try racing yet, but is planning to enter XC events next year.</p>
+      <p id="txt"><em>Ph.D. Student, Electrical Engineering and Computer Sciences</em></p>
+    </div>
+    <div class="middle" id="r14">
+      <img class="img" src="imgs/max.jpeg"></img>
+      <p id="name">Max Vink</p>
+      <p id="pos">PR Captain</p>
+      <p id="txt">Max was indoctrinated into cycling by his Dutch parentage at a young age, and though he eventually learned to ride without wooden shoes, he still grumbles about hills and why they exist. When he’s not on the bike hunting KOMs with funny names, you can find him scouring the secondhand market for cheap parts, eating his weight in tortilla chips, or over analyzing Christoper Nolan movies</p>
+      <p id="txt"><em>Junior, Political Science and Computer Science</em></p>
+    </div>
+  </p>
+
+  <script>
+  function update() {
+    var imgs = document.getElementsByClassName("img");
+    var w = window.innerWidth / 5;
+    for (var i = 0 ; i < imgs.length ; i++) {
+      imgs[i].style.width = w + "px";
+      imgs[i].style.height = w + "px";
+    }
+    var mg = 40;
+    for (var i = 1 ; i <= 14 ; i += 3) {
+      var r1 = document.getElementById("r" + i);
+      var r2 = document.getElementById("r" + (i+1));
+      var r3 = r2;
+      if (i < 13) {
+        r3 = document.getElementById("r" + (i+2));
+      }
+
+      if (i > 1) {
+        r1.style = "margin-top: " + (mg) + "px;";
+        r2.style = "margin-top: " + (mg) + "px;";
+        r3.style = "margin-top: " + (mg) + "px;";
+      }
+      mg += Math.max(r1.offsetHeight, r2.offsetHeight, r3.offsetHeight) + 40;
+
+
+    }
+    window.requestAnimationFrame(update, 1);
+  }
+  update();
+  </script>
+
+<!--<button id="signin">Google Signin</button>
+<button id="signout">Google Signout</button>!-->
+  </body>
+</html>
