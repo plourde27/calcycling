@@ -156,6 +156,15 @@
             float: left;
           }
 
+          #left5 {
+            margin-left: 5%;
+            margin-top: -55px;
+            margin-right: 50px;
+            width: 560px;
+            height: 400px;
+            float: left;
+          }
+
           #left2 {
             margin-left: 5%;
             margin-top: -60px;
@@ -185,7 +194,16 @@
 
           #right3 {
             margin-right: 5%;
-            margin-top: -40px;
+            margin-top: -45px;
+            margin-left: 50px;
+            width: 560px;
+            height: 400px;
+            float: right;
+          }
+
+          #right5 {
+            margin-right: 5%;
+            margin-top: 20px;
             margin-left: 50px;
             width: 560px;
             height: 400px;
@@ -214,7 +232,7 @@
           }
 
           #righttitle4 {
-            margin-top: 177px;
+            margin-top: 217px;
             margin-right: 5%;
             font-size: 30px;
             font-family: 'Play';
@@ -238,6 +256,15 @@
           #right {
             margin-right: 5%;
             margin-top: 90px;
+            margin-left: 50px;
+            width: 560px;
+            height: 400px;
+            float: right;
+          }
+
+          #right4 {
+            margin-right: 5%;
+            margin-top: 80px;
             margin-left: 50px;
             width: 560px;
             height: 400px;
@@ -269,7 +296,7 @@
             font-family: 'Play';
           }
           #lefttitle5 {
-            margin-top: 132px;
+            margin-top: 162px;
             margin-left: 5%;
             font-size: 30px;
             font-family: 'Play';
@@ -293,30 +320,74 @@
           }
 
           #big {
-            margin-top: -15px;
             background-color: rgb(0, 0, 80);
             color: rgb(200, 200, 0); /* go bears */
             font-size: 37px;
-            margin-left: 0%;
-            margin-right: 0%;
+            margin-left: 5%;
+            margin-right: 5%;
             text-align: center;
             text-decoration: none;
             padding-top: 15px;
             padding-bottom: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
             border-radius: 6px;
             font-family: 'Play';
           }
           #buffer {
-            margin-top: 100px;
+            margin-top: 90px;
           }
           #buffer2 {
             margin-top: 130px;
           }
 
+          .box {
+            background-color: rgb(0, 0, 0, 0);
+            border-color: rgb(0, 0, 0);
+            border-style: solid;
+            border-radius: 5px;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            font-family: 'Avenir', 'Montserrat';
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            padding-right: 20px;            
+          }
+
+          .partnerimg {
+            width: 300px;
+            float: left;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+
+          #partnertitle {
+            
+            font-family: 'AvenirNext-Bold', 'Montserrat';
+            font-size: 35px;
+            margin-bottom: -5px;
+            margin-top: -5px;
+          }
+
+          #partnertext {
+
+          }
+
         </style>
     </head>
     <body>
+
   <script src="login.js" type="module"></script>
+  <a href="https://www.ocf.berkeley.edu">                                                                                                   
+    <img width=100 style="position: absolute; margin-left: 10px; margin-top: 10px" src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"                                                        
+    alt="Hosted by the OCF" style="border: 0;" />                                                                                          
+  </a>
+
   <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
   <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
 
@@ -330,10 +401,10 @@
   <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
   <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
 
-  <p id="buffer"></p>
-  <div id="big">CAL CYCLING IS PROUDLY POWERED BY</div>
+  <!--<p id="buffer"></p>!-->
+  <!--<div id="big">CAL CYCLING IS PROUDLY POWERED BY</div>
 
-<a href="https://harder.com" target="_blank"><img id="left" src="imgs/partners-1.jpeg"></a>
+<a href= target="_blank"><img id="left" src="imgs/partners-1.jpeg"></a>
 <p id="righttitle"><a href="https://harder.com" target="_blank">HARDER MECHANICAL CONTRACTORS</a></p>
 <p id="righttext">We are incredibly grateful to <a href="https://harder.com" target="_blank">Harder Mechanical Contractors</a> for their long-time support of Cal Cycling. Cal Cycling as it is would not exist without the support of Harder Mechanical. As a team with a ton of mechanical engineers, we are thrilled to have the support of Harder Mechanical.</p>
 <em><p id="righttext"><a href="https://harder.com" target="_blank">Harder Mechanical</a> has dedicated almost a century to tackling tough, complex projects. We fabricate high-quality, sophisticated piping the right way, the Harder Way—safely, on time, and on budget. By prioritizing continuous improvement, innovation and resource development, we position ourselves to meet the unique needs of your industry. Safety is at the heart of quality and performance. Our people and customers trust us to manage safe, successful projects.</p></em>
@@ -344,30 +415,73 @@
 <p id="lefttext">At Cal Cycling, we take safety seriously, so the support of Bay Area Bicycle Law is greatly appreciated. It’s comforting to know that when we’re out on the roads, there’s someone we can have in our corner if something goes wrong.</p>
 <em><p id="lefttext">We understand how difficult the aftermath of a bicycle accident can be. All bicycle accidents are serious accidents – even with a helmet and other protective gear, being involved in a collision with a motor vehicle can be devastating. Along with the physical, emotional, and financial toll of a bicycle accident, the legal process for pursuing compensation can insert additional stress into an already frustrating situation.</p></em>
 <em><p id="lefttext">At <a href="https://bayareabicyclelaw.com/" target="_blank">Bay Area Bicycle Law</a>, we understand the pain and suffering you are going through. Because we are a full-service firm, we handle all the legal legwork necessary on your behalf, so that you can focus all of your energy on healing and recovery. We want to make your life easier, and we will fight to make sure you receive the help and compensation you deserve.</p></em>
-
-<img class="img" id="left" src="imgs/partners-4.jpeg">
+<img class="img" id="left" src="imgs/partners-7.jpeg">
+<a href="https://www.okmilo.com/en-us/" target="_blank"><p id="righttitle4">MILO</p></a>
+<p id="lefttext">Milo makes shared adventures better by connecting people in the moments that matter</p>
+<img class="img" id="right3" src="imgs/partners-9.jpeg">
+<a href="https://www.specialized.com/" target="_blank"><p id="lefttitle5">SPECIALIZED</p></a>
+<p id="lefttext">We are riders -- that fact has guided our every decision since 1974. When quality tires weren't around, we strove to make the best. When people wanted to ride cruisers in the dirt, we made the first production mountain bike. When roadies wanted to go faster, we doubled-down on carbon and built our own wind tunnel. And when we saw kids struggling to focus in school, we began supporting Outride to help promote better health through cycling.</p>
+<p id="lefttext">Specialized. Made for riders, by riders.</p>
+<img class="img" id="left5" src="imgs/partners-4.jpeg">
 <a href="https://mikesbikes.com/" target="_blank"><p id="righttitle">MIKE'S BIKES OF BERKELEY</p></a>
 <p id="righttext">Sometimes, you really just need a professional to look at your bike. That’s where <a href="https://mikesbikes.com/" target="_blank">Mike’s Bikes</a> of Berkeley comes in for us. Their skilled repair services and wide selection of all things cycling keep us on the road.</p>
 <em><p id="righttext">Why shop with us? Because we know bikes and we care. We don’t sell snowboards, we don’t sell kayaks and we don’t sell tents. We only sell bikes – you might even say bikes are our life. Why does that matter? Because this utter fanaticism for our product makes us the best at what we do – We live to create cyclists.</p></em>
-<img class="img" id="right" src="imgs/partners-5.jpeg">
+<img class="img" id="right4" src="imgs/partners-5.jpeg">
 <a href="https://www.skratchlabs.com/" target="_blank"><p id="lefttitle3">SKRATCH LABS</p></a>
 <p id="lefttext">Skratch Labs makes sports nutrition designed to help you perform better without offending your gut or your taste buds because we use real food, starting from scratch.</p>
 <img class="img" id="left2" src="imgs/partners-6.jpeg">
 <a href="https://store.voler.com/" target="_blank"><p id="righttitle3">VOLER</p></a>
 <p id="righttext">We’ve been here from the start, and we’ll be here for good. For over three and a half decades, Voler has proudly built premium cycling and athletic apparel, for individuals, teams and events, right here in the USA. Even as we grow, we keep it local. No overseas outsourcing. No shortcuts to save a couple cents. From in-house design, to R & D, to sewing, to custom kits, to warehousing and shipping, it all happens right here on the US West Coast to ensure the best quality, consistency and sustainability of every piece of gear we make for you.</p>  
-<img class="img" id="right2" src="imgs/partners-7.jpeg">
-<a href="https://www.okmilo.com/en-us/" target="_blank"><p id="lefttitle4">MILO</p></a>
-<p id="lefttext">Milo makes shared adventures better by connecting people in the moments that matter</p>
-<img class="img" id="left3" src="imgs/partners-8.jpeg">
-<a href="https://www.rudyproject.com/" target="_blank"><p id="righttitle4">RUDY PROJECT</p></a>
-<p id="righttext">Driven by the pursuit of excellence and drawing from over years of experience, the Rudy Project collection elevate the performance of athletes at every level. Since 1985 all Rudy Project products masterfully blend cutting-edge technology and aesthetically sculpted design, along with Italian styling and attention to detail, to make some of the world’s best eyewear, hi-tech prescription solutions, helmets and sports gear. Legends of cycling, motorsports, triathlon, and many other disciplines represent Rudy Project as they wear the brand’s helmets and sunglasses in training and competition across the globe. By using athlete feedback, Rudy Project has developed unique products with the latest designs, aerodynamics, and technology. For this reason, Rudy Project supports and offers gear solutions to thousands of professional athletes and sports enthusiasts all around the world.  The end result is a collection of products that elevate athlete’s safety, comfort and, above all, performance in any field of play. Rudy Project is a worldwide developer, manufacturer, and distributor of performance sunglasses, helmets, goggles, and prescription solutions of the highest technical level.   Founded in Treviso, Italy in 1985, Rudy Project has been a global leader in the field of sports eyewear for over 30 years. By selling products in more than 60 countries worldwide, the company has re-affirmed its international vocation with its second generation of entrepreneurs, Cristiano and Simone Barbazza.</p>  
-<img class="img" id="right3" src="imgs/partners-9.jpeg">
-<a href="https://www.specialized.com/" target="_blank"><p id="lefttitle5">SPECIALIZED</p></a>
-<p id="lefttext">we are riders -- that fact has guided our every decision since 1974. When quality tires weren't around, we strove to make the best. When people wanted to ride cruisers in the dirt, we made the first production mountain bike. When roadies wanted to go faster, we doubled-down on carbon and built our own wind tunnel. And when we saw kids struggling to focus in school, we began supporting Outride to help promote better health through cycling.</p>
-<p id="lefttext">Specialized. Made for riders, by riders.</p>
-<p id="buffer2"></p>
+
+<img class="img" id="right5" src="imgs/partners-8.jpeg">
+<a href="https://www.rudyproject.com/" target="_blank"><p id="lefttitle3">RUDY PROJECT</p></a>
+<p id="lefttext">Driven by the pursuit of excellence and drawing from over years of experience, the Rudy Project collection elevate the performance of athletes at every level. Since 1985 all Rudy Project products masterfully blend cutting-edge technology and aesthetically sculpted design, along with Italian styling and attention to detail, to make some of the world’s best eyewear, hi-tech prescription solutions, helmets and sports gear. Legends of cycling, motorsports, triathlon, and many other disciplines represent Rudy Project as they wear the brand’s helmets and sunglasses in training and competition across the globe. By using athlete feedback, Rudy Project has developed unique products with the latest designs, aerodynamics, and technology. For this reason, Rudy Project supports and offers gear solutions to thousands of professional athletes and sports enthusiasts all around the world.  The end result is a collection of products that elevate athlete’s safety, comfort and, above all, performance in any field of play. Rudy Project is a worldwide developer, manufacturer, and distributor of performance sunglasses, helmets, goggles, and prescription solutions of the highest technical level.   Founded in Treviso, Italy in 1985, Rudy Project has been a global leader in the field of sports eyewear for over 30 years. By selling products in more than 60 countries worldwide, the company has re-affirmed its international vocation with its second generation of entrepreneurs, Cristiano and Simone Barbazza.</p>  
+  
+<p id="buffer2"></p>!-->
+
+<div id="main">
+
+</div>
+
+
   <script>
-  var updated = false;
+
+  var order = [1, 2, 7, 9, 4, 5, 6, 8];
+
+  var sponsor_names = [
+    "HARDER MECHANICAL CONTRACTORS",
+    "BAY AREA BICYCLE LAW",
+    "MILO",
+    "SPECIALIZED",
+    "STAY TRUE CYCLES",
+    "SKRATCH LABS",
+    "VOLER",
+    "RUDY PROJECT"
+  ]
+  
+  var sponsor_links = [
+    "https://harder.com",
+    "https://bayareabicyclelaw.com/",
+    "https://www.okmilo.com/en-us/",
+    "https://www.specialized.com/",
+    "https://www.staytrue.bike/",
+    "https://www.skratchlabs.com/",
+    "https://store.voler.com/",
+    "https://www.rudyproject.com/"
+  ];
+  
+  var sponsor_descs = [
+    "We are incredibly grateful to <a href=\"https://harder.com\" target=\"_blank\">Harder Mechanical Contractors</a> for their long-time support of Cal Cycling. Cal Cycling as it is would not exist without the support of Harder Mechanical. As a team with a ton of mechanical engineers, we are thrilled to have the support of Harder Mechanical.<br><em><p id=\"righttext\"><a href=\"https://harder.com\" target=\"_blank\">Harder Mechanical</a> has dedicated almost a century to tackling tough, complex projects. We fabricate high-quality, sophisticated piping the right way, the Harder Way—safely, on time, and on budget. By prioritizing continuous improvement, innovation and resource development, we position ourselves to meet the unique needs of your industry. Safety is at the heart of quality and performance. Our people and customers trust us to manage safe, successful projects.</em>",
+    "At Cal Cycling, we take safety seriously, so the support of Bay Area Bicycle Law is greatly appreciated. It’s comforting to know that when we’re out on the roads, there’s someone we can have in our corner if something goes wrong.<br><em>We understand how difficult the aftermath of a bicycle accident can be. All bicycle accidents are serious accidents – even with a helmet and other protective gear, being involved in a collision with a motor vehicle can be devastating. Along with the physical, emotional, and financial toll of a bicycle accident, the legal process for pursuing compensation can insert additional stress into an already frustrating situation.</em><em>At <a href=\"https://bayareabicyclelaw.com/\" target=\"_blank\">Bay Area Bicycle Law</a>, we understand the pain and suffering you are going through. Because we are a full-service firm, we handle all the legal legwork necessary on your behalf, so that you can focus all of your energy on healing and recovery. We want to make your life easier, and we will fight to make sure you receive the help and compensation you deserve.</em>",
+    "Milo makes shared adventures better by connecting people in the moments that matter",
+    "We are riders -- that fact has guided our every decision since 1974. When quality tires weren't around, we strove to make the best. When people wanted to ride cruisers in the dirt, we made the first production mountain bike. When roadies wanted to go faster, we doubled-down on carbon and built our own wind tunnel. And when we saw kids struggling to focus in school, we began supporting Outride to help promote better health through cycling.<br>Specialized. Made for riders, by riders.",
+    "We belive cycling can be more equitable, accessible, & fun for everyone<br>Here’s how our shop is working towards that goal<br>Co-founders, childhood friends, and bike industry veterans Nick and Jonah started Stay True Cycles in 2019 to support the community that turned them into who they are.<br>We're offering Cal Cycling a comprehensive discount and keeping the team stocked with any bikes and parts they need, and making sure their bikes are running in good condition",
+    "Skratch Labs makes sports nutrition designed to help you perform better without offending your gut or your taste buds because we use real food, starting from scratch.",
+    "We’ve been here from the start, and we’ll be here for good. For over three and a half decades, Voler has proudly built premium cycling and athletic apparel, for individuals, teams and events, right here in the USA. Even as we grow, we keep it local. No overseas outsourcing. No shortcuts to save a couple cents. From in-house design, to R & D, to sewing, to custom kits, to warehousing and shipping, it all happens right here on the US West Coast to ensure the best quality, consistency and sustainability of every piece of gear we make for you.",
+    "Driven by the pursuit of excellence and drawing from over years of experience, the Rudy Project collection elevate the performance of athletes at every level. Since 1985 all Rudy Project products masterfully blend cutting-edge technology and aesthetically sculpted design, along with Italian styling and attention to detail, to make some of the world’s best eyewear, hi-tech prescription solutions, helmets and sports gear. Legends of cycling, motorsports, triathlon, and many other disciplines represent Rudy Project as they wear the brand’s helmets and sunglasses in training and competition across the globe. By using athlete feedback, Rudy Project has developed unique products with the latest designs, aerodynamics, and technology. For this reason, Rudy Project supports and offers gear solutions to thousands of professional athletes and sports enthusiasts all around the world.  The end result is a collection of products that elevate athlete’s safety, comfort and, above all, performance in any field of play. Rudy Project is a worldwide developer, manufacturer, and distributor of performance sunglasses, helmets, goggles, and prescription solutions of the highest technical level.   Founded in Treviso, Italy in 1985, Rudy Project has been a global leader in the field of sports eyewear for over 30 years. By selling products in more than 60 countries worldwide, the company has re-affirmed its international vocation with its second generation of entrepreneurs, Cristiano and Simone Barbazza."
+  ];
+
+  /*var updated = false;
   var ratios = [];
   function update() {
     console.log(ratios);
@@ -386,7 +500,81 @@
     updated = true;
     window.requestAnimationFrame(update, 1);
   }
+  update();*/
+
+  
+
+  var width = -1;
+
+  function update() {
+
+    var lastWidth = width;
+    width = window.innerWidth;
+
+    if (lastWidth == width) {
+      return;
+    }
+    
+    document.getElementById("main").innerHTML = "<p id=\"buffer\"></p>";
+
+  for (var i = 0 ; i < sponsor_descs.length ; i++) {
+    if (i == 0) {
+      document.getElementById("main").innerHTML += "<div id=\"big\">CAL CYCLING IS PROUDLY POWERED BY</div>";
+    }
+    else if (i == 1) {
+      document.getElementById("main").innerHTML += "<div id=\"big\">CAL CYCLING IS SUPPORTED BY</div>";
+    }
+
+
+    var cur = "<div class=\"box\" id=\"box" + (i+1) + "\">";
+    cur += "<img class=\"partnerimg\" id=\"img" + (i+1) + "\" src=\"imgs/partners-" + (order[i]) + ".jpeg\">";
+    cur += "<p id=\"partnertitle\"><a href=\"" + sponsor_links[i] + "\">" + sponsor_names[i] + "</a></p>";
+    cur += "<p id=\"partnertext\">" + sponsor_descs[i] + "</p>";
+    cur += "</div>";
+    
+
+
+    document.getElementById("main").innerHTML += cur;
+    
+   // document.body.innerHTML += "<img id=\"test" +  (i+1) +"\" src=\"imgs/partners-" + (order[i]) + ".jpeg\">";
+    
+    getImgSize("imgs/partners-" + (order[i]) + ".jpeg", i);
+    //var hval = document.getElementById("img" + (i+1)).style.height + 100;
+      var hval = 0;
+
+  //  document.getElementById("box" + (i+1)).style.height = hval + "px";
+  }
+  }
+
   update();
+  
+  window.setInterval(update, 1);
+
+  function getImgSize(imgSrc, index) {
+    const newImg = new Image();
+
+    newImg.onload = function() {
+      const height = newImg.height;
+      const width = newImg.width;
+      
+      var hval = 300 * (height / width) + 20;
+      
+      var oval = document.getElementById("box" + (index+1)).clientHeight - 50;
+      //console.log(document.getElementById("box" + (index+1)).clientHeight);
+      //oval = parseInt(oval.slice(0, oval.length - 2));
+
+      console.log(hval + " " + oval);
+
+      //console.log(hval);
+
+      document.getElementById("box" + (index+1)).style.height = Math.max(oval, hval) + "px";
+    };
+
+    newImg.src = imgSrc; // this must be done AFTER setting onload
+  }
+
+  
+
   </script>
 
 <!--<button id="signin">Google Signin</button>
