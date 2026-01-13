@@ -1,327 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cal Cycling Officers</title>
 
-    <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
-        <meta charset="utf-8">
-        <title>Cal Cycling p/b Harder Mechanical Contractors</title>
-        <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
-        </script>
-        <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
-        </script>
-        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-        <style>
-        @font-face {
-          font-family: Sather;
-          src: url("NCAA Cal Golden Bears.otf") format("opentype");
-        }
-        #profile {
-          position: fixed;
-          margin-top: -90px;
-          margin-left: calc(90% - 80px);
-          margin-right: calc(10% - 80px);
-          background-color: rgb(0, 0, 80);
-          color: rgb(200, 200, 0); /* go bears */
-          font-size: 25px;
-          text-align: center;
-          text-decoration: none;
-          padding-top: 3px;
-          padding-bottom: 3px;
-          padding-left: 10px;
-          padding-right: 10px;
-          border-radius: 6px;
-          font-family: 'Avenir', 'Montserrat';
-        }
-          #cal {
-            position: absolute;
-            float: left;
-            width: 160px;
-            height: auto;
-            margin-left: calc(50% - 230px);
-            margin-top: 0px;
-            border-radius: 0px;
-          }
-          #title {
-            font-family: 'Sather';
-            color: rgb(4, 30, 66);
-            margin-left: calc(50% - 45px);
-            font-size: 120px;
-            margin-bottom: -20px;
-          }
-          #subtitle {
-            font-family: 'Play';
-            text-align: center;
-            font-size: 26px;
-            color: rgb(0, 0, 0);
-            margin-top: 0px;
-          }
-          .menu {
-            text-decoration: none;
-            font-style: normal;
-            position: absolute;
-            margin-top: 25px;
-            width: 11%;
-            text-align: center;
-            background-color: rgb(200, 200, 200);
-            color: rgb(0, 0, 0);
-            font-size: 18px;
-            font-family: 'Avenir', 'Montserrat';
-            border-radius: 0px;
-            border-style: none;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            cursor: pointer;
-          }
-          #b1 {
-            margin-left: 0px;
-          }
-          #b2 {
-            margin-left: 11%;
-          }
-          #b3 {
-            margin-left: 22%;
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
-          }
-          #b4 {
+   <!-- util bar -->
+<div class="utility-bar stripes-bg">
+  <div class="utility-left">
 
-              color: rgb(200, 200, 0);
-              background-color: rgb(0, 0, 90);
-            margin-left: 33%;
-          }
-          #b5 {
-            margin-left: 44%;
-          }
-          #b6 {
-            margin-left: 55%;
-          }
-          #b7 {
-            margin-left: 66%;
-          }
-          #b8 {
-            margin-left: 77%;
-          }
-          #b9 {
-            margin-left: 88%;
-          }
+  <a href="https://instagram.com/calcycling" target="_blank" class="utility-link">
+    <img src="imgs/instagram_logo.webp" alt="Instagram" class="utility-icon">
+  </a>
 
-          .left {
-            position: absolute;
-            margin-left: 12.5%;
-            margin-right: 62.5%;
-            text-align: center;
-          }
-          .middle {
-            position: absolute;
-            margin-left: 37.5%;
-            margin-right: 37.5%;
-          }
-          .right {
-            position: absolute;
-            margin-left: 62.5%;
-            margin-right: 12.5%;
-          }
-          .leftm {
-            position: absolute;
-            margin-left: 12.5%;
-            margin-right: 50%;
-            text-align: center;
-          }
-          .rightm {
-            position: absolute;
-            margin-left: 50%;
-            margin-right: 12.5%;
-            text-align: center;
-          }
-          .img {
-            border-radius: 50%;
-            width: 60%;
-            margin-right: 10%;
-            margin-left: 10%;
-          }
-
-          #buffer {
-            margin-top: 100px;
-          }
-          #name {
-            position: relative;
-            font-family: 'Play';
-            text-align: center;
-            font-size: 30px;
-            margin-top: 30px;
-          }
-          #pos {
-            position: relative;
-            font-family: 'Play';
-            text-align: center;
-            font-size: 25px;
-            margin-top: -22px;
-          }
-          #txt {
-            position: relative;
-            font-family: 'Avenir', 'Montserrat';
-            text-align: center;
-            font-size: 18px;
-            margin-left: 9%;
-            margin-right: 9%;
-            margin-top: -10px;
-          }
-
-
-        </style>
-    </head>
-    <body>
-  
-      <a href="https://www.ocf.berkeley.edu">                                                                                                   
-        <img width=100 style="position: absolute; margin-left: 10px; margin-top: 10px" src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"                                                        
-        alt="Hosted by the OCF" style="border: 0;" />                                                                                          
-      </a>
-  <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
-  <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
-
-  <a href="index.html" class="menu" id="b1" onclick="b1()">Home</a>
-  <a href="about.html" class="menu" id="b2" onclick="b2()">About</a>
-  <a href="membership.html" class="menu" id="b3" onclick="b3()">Membership</a>
-  <a href="officers.html" class="menu" id="b4" onclick="b4()">Officers</a>
-  <a href="routes.html" class="menu" id="b5" onclick="b5()">Routes</a>
-  <a href="upcomingrides.html" class="menu" id="b6" onclick="b6()">Upcoming Rides</a>
-  <a href="partners.html" class="menu" id="b7" onclick="b7()">Partners</a>
-  <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
-  <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
-
-
-  <p id="buffer"></p>
-  <p id="line1">
-    <div class="leftm" id="r1">
-      <img class="img" src="imgs/rishi.jpeg"></img>
-      <p id="name">Rishi Desai</p>
-      <p id="pos">Road President</p>
-      <p id="txt">Rishi started cycling as a weekend warrior, but like a lot of us, caught the racing bug pretty early on. Primarily a criterium racer, he took up cycling with a local team in his hometown of Greenville, South Carolina during the pandemic.
-Above all, he just likes doing everything fast - whether it's sprinting to the finish of a crit, or flying through the countryside on the bike.
-Rishi’s biggest accolades are in criterium racing and time trialing - winning a host of local titles in the southeast USA. Outside of Cal Cycling, he races with Supra Performance Cycling, and also enjoys other go fast hobbies including skiing and Motorsport.</p>
-      <p id="txt"><em>Sophomore, Physics and Computer Science.</em></p>
-      <p id="txt">Email: <em>road@calcycling.edu</em></p>
-    </div>
-    <div class="rightm" id="r2">
-      <img class="img" src="imgs/alex.jpeg"></img>
-      <p id="name">Alex Mordaunt</p>
-      <p id="pos">MTB President</p>
-      <p id="txt">Alex has been racing bikes competitively for 7 years now. He started with his local cross country high-school team out of Santa Cruz. Alex placed 2nd overall in California and went to USACycling nationals for XC. He competes in XC, Enduro, and Downhill with notable finishes including first in WCCC men's SuperD and sixth at the Tahoe Trail 100 cat 1 XC. When asked skiing or snowboarding, it's snowboarding all the way.      </p>
-      <p id="txt"><em>Junior,  Physics and Environmental Science</em></p>
-      <p id="txt">Email: <em>mtb@cycling.berkeley.edu</em></p>
-    </div>
-    <div class="leftm" id="r4">
-      <img class="img" src="imgs/cal.jpeg"></img>
-      <p id="name">Chloé Mauvais</p>
-      <p id="pos">Road Racing Team Director</p>
-      <p id="txt">Chloé started racing road in 2022 and shot up through the categories to ride at Pro Nationals in 2023. When not riding—which doesn’t happen that often—you’ll find her poring over obscure Latin American texts or hiking in the Sierras, working on her fear of heights.</p>
-      <p id="txt"><em></em></p>
-    </div>
-    <div class="rightm" id="r5">
-      <img class="img" src="imgs/zach.jpeg"></img>
-      <p id="name">Zachary Liu</p>
-      <p id="pos">Road Sport Director</p>
-      <p id="txt">Zach joined Cal Cycling at the beginning of freshman year and got immediately dropped on his first ride. Now he’s a tiny bit stronger so he doesn’t get dropped as much. He’s also a tech geek when it comes to bikes, working as a bike mechanic at Mike’s Bikes and always nerding out over obscure pieces of new tech</p>
-      <p id="txt"><em>Sophomore</em></p>
-    </div>
-    <div class="left" id="r7">
-      <img class="img" src="imgs/justin.jpeg"></img>
-      <p id="name">Justin Peck</p>
-      <p id="pos">MTB Racing Team Director</p>
-      <p id="txt">Justin loves riding and racing cross country mountain bikes. He learned to ride a bike at age 2 and grew up cycling with his family and friends. He first started racing cyclocross before participating in NICA on the local high school team. He found his passion in cross country mountain biking, and now races competitively in the US Pro XCT and other events across the country. When he's not riding his bike, Justin loves all other outdoor activities, including hiking, skiing, and surfing.</p>
-      <p id="txt"><em>Sophomore, Mechanical Engineering</em></p>
-    </div>
-    <div class="middle" id="r8">
-      <img class="img" src="imgs/davis.jpeg"></img>
-      <p id="name">Davis Bryant</p>
-      <p id="pos">MTB Sport Director</p>
-      <p id="txt">Davis joined Cal Cycling last year as a freshman, and he is looking forward to another year of racing and riding with the team. He first started racing cross country with his local NICA team Yosemite Composite. Davis is looking forward to more mountain bike races this fall, and maybe some road racing in the spring if convinced. Outside of biking, Davis enjoys backpacking and fly fishing.</p>
-      <p id="txt"><em></em></p>
-    </div>
-    <div class="right" id="r9">
-      <img class="img" src="imgs/uma.jpg"></img>
-      <p id="name">Uma Baker</p>
-      <p id="pos">MTB Home Race Director</p>
-      <p id="txt">Uma grew up riding mountain bikes with her family, but didn’t realize how fun it was until covid hit. No longer able to do her preferred sports of surfing and circus, she picked up her mountain bike and hasn’t put it down since.<br>When she joined Cal Cycling she was talked into trying her luck at racing and now she loves participating in enduro, downhill and cross country races. Uma is looking forward to another fun season of riding adventures and races with the team!</p>
-      <p id="txt"><em></em></p>
-    </div>
-    <div class="left" id="r10">
-      <img class="img" src="imgs/xavier.jpeg"></img>
-      <p id="name">Xavier Plourde</p>
-      <p id="pos">Technial Captain</p>
-      <p id="txt">Xavier has been cycling since he was very young, but started riding more regularly in 2020. He is a road cyclist, and enjoys going on long endurance rides, as well as planning out and exploring new routes. Off the bike, Xavier enjoys competitive programming, skiing, playing the piano and saxophone, and working on coding projects, like the website you're looking at right now.</p>
-      <p id="txt"><em>Sophomore, Computer Science</em></p>
-    </div>
-    <div class="middle" id="r11">
-      <img class="img" src="imgs/abigail.png"></img>
-      <p id="name">Abigail Sorenson</p>
-      <p id="pos">Clothing Captain</p>
-      <p id="txt">Abigail started road biking seriously 8 years ago as cross training for speedskating. In 2019 she took a short detour to road racing and became the Junior Utah State Champ.</p>
-      <p id="txt"><em></em></p>
-          </div>
-    <div class="right" id="r12">
-      <img class="img" src="imgs/jason.jpeg"></img>
-      <p id="name">Jason Park</p>
-      <p id="pos">Health & Safety Captain</p>
-      <p id="txt">Jason started biking seriously in high school and has cranked out miles since, though he likes building bikes more than riding them. Road bikes are his favorite, but he also enjoys mountain bikes when the moment calls.</p>
-      <p id="txt"><em>Senior, Civil Engineering</em></p>
-    </div>
-    <div class="leftm" id="r13">
-      <img class="img" src="imgs/noelle.jpeg"></img>
-      <p id="name">Noelle Davis</p>
-      <p id="pos">Media Captain</p>
-      <p id="txt">Noelle started riding her bike around LA in 2020 while recovering from a soccer injury. One day, she hit a bump, busted her front wheel, and had to befriend some cyclists. Now, she owns a number of bicycles that is too many but also somehow not enough… Her favorite parts of the sport are the friends, views, and adrenaline, and also Calvin Jones. Due to a series of unfortunate events, she hasn’t had the opportunity to try racing yet, but is planning to enter XC events next year.</p>
-      <p id="txt"><em>Ph.D. Student, Electrical Engineering and Computer Sciences</em></p>
-      
-    </div>
-    <div class="rightm" id="r14">
-      <img class="img" src="imgs/max.jpeg"></img>
-      <p id="name">Max Vink</p>
-      <p id="pos">PR Captain</p>
-      <p id="txt">Max was indoctrinated into cycling by his Dutch parentage at a young age, and though he eventually learned to ride without wooden shoes, he still grumbles about hills and why they exist. When he’s not on the bike hunting KOMs with funny names, you can find him scouring the secondhand market for cheap parts, eating his weight in tortilla chips, or over analyzing Christoper Nolan movies</p>
-      <p id="txt"><em>Junior, Political Science and Computer Science</em></p>
-    </div>
-  </p>
-
+  <a href="https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fcal_cycling%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnknReHomz32ks_xnA6AWWRj8Ll3fegwHq6TFPCqhzJtBz4fpAxQ-cDC6RXcc_aem_VsCoRaN-jWeqxBZ1n5qsJw&e=AT21-frP9Pc-viIPNuhzTqwxeJH5-93qYKeUug2mciPfGWFJ8lrtOxmV9EY1dsgZs20o1smIZcYSaNDrvW4uIsxdUIN7TRzaxJbrTjzwDgPDzUOayGWHykvzqQ" class="utility-link">
+    <img src="imgs/linktree_logo.png" alt="Linktree" class="utility-icon">
+  </a>
   
 
-  <script>
-  function update() {
-    var imgs = document.getElementsByClassName("img");
-    var w = window.innerWidth / 5;
-    for (var i = 0 ; i < imgs.length ; i++) {
-      imgs[i].style.width = w + "px";
-      imgs[i].style.height = w + "px";
-    }
-    var mg = 40;
-    for (var i = 1 ; i <= 14 ; i += 3) {
-      var r1 = document.getElementById("r" + i);
-      var r2 = document.getElementById("r" + (i+1));
-      var r3 = r2;
-      if (i < 13 && i != 1 && i != 4) {
-        r3 = document.getElementById("r" + (i+2));
-      }
-
-      if (i > 1) {
-        r1.style = "margin-top: " + (mg) + "px;";
-        r2.style = "margin-top: " + (mg) + "px;";
-        r3.style = "margin-top: " + (mg) + "px;";
-      }
-      mg += Math.max(r1.offsetHeight, r2.offsetHeight, r3.offsetHeight) + 40;
+  <a class="utility-link">contact@cycling.berkeley.edu</a>
+</div>
 
 
-    }
-    window.requestAnimationFrame(update, 1);
-  }
-  update();
-  </script>
 
-<!--<button id="signin">Google Signin</button>
-<button id="signout">Google Signout</button>!-->
-  </body>
+  <div class="utility-right">
+    <a
+      href="https://harder.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="sponsor-link"
+    >
+      Powered by Harder Mechanical Contractors
+    </a>
+  </div>
+</div>
+
+
+<!-- TOP BAR -->
+<header class="top-bar">
+  <div class="top-left">
+    <img src="imgs/cal.jpeg" alt="Cal Logo" class="cal-logo">
+    <span class="cycling-text">CYCLING</span>
+  </div>
+
+  <div class="top-right">
+    <a href="https://www.ocf.berkeley.edu">
+      <img
+        src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"
+        alt="Hosted by OCF"
+        class="ocf-logo"
+      >
+    </a>
+  </div>
+</header>
+
+<!-- NAV BAR (sticky when it reaches utility bar) -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="membership.html" class="nav-link">Membership</a>
+  <a href="officers.html" class="nav-link active">Officers</a>
+  <a href="routes.html" class="nav-link">Routes</a>
+  <a href="partners.html" class="nav-link">Partners</a>
+  <a href="donate.html" class="nav-link">Donate</a>
+</nav>
+
+  <!-- Officers Grid -->
+  <main class="officers-grid">
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Nicolas Goumas">
+      <h3>Road President</h3>
+      <p>Nicolas Goumas</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/justin.jpeg" alt="Justin Peck">
+      <h3>MTB President</h3>
+      <p>Justin Peck</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Leo Guo">
+      <h3>Road Racing Team Director</h3>
+      <p>Leo Guo</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Adrian Chin">
+      <h3>Road Sport Director</h3>
+      <p>Adrian Chin</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Adrian Chin">
+      <h3>Road Home Race Director</h3>
+      <p>Adrian Chin</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/davis.jpeg" alt="Davis Bryant">
+      <h3>Operations Director</h3>
+      <p>Davis Bryant</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Grant Hough">
+      <h3>MTB Racing Team Director</h3>
+      <p>Grant Hough</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Sam Ayers">
+      <h3>MTB Sport Director</h3>
+      <p>Sam Ayers</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Anthony Pritchett">
+      <h3>MTB Home Race Director</h3>
+      <p>Anthony Pritchett</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Neel Chandran">
+      <h3>Media Captain</h3>
+      <p>Neel Chandran</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Benson Ou">
+      <h3>PR Captain</h3>
+      <p>Benson Ou</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Dennis Liang">
+      <h3>Technical Captain</h3>
+      <p>Dennis Liang</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Naman Rudrakshi">
+      <h3>Website Captain</h3>
+      <p>Naman Rudrakshi</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Evan Wade">
+      <h3>Clothing Captain</h3>
+      <p>Evan Wade</p>
+    </div>
+
+    <div class="officer">
+      <img src="imgs/cal.jpeg" alt="Davis Bryant">
+      <h3>Health & Safety Captain</h3>
+      <p>Davis Bryant</p>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+<header class="top-bar bottom-bar">
+  <div class="top-left bottom-left">
+    <img src="imgs/cal.jpeg" class="cal-logo">
+    <span class="cycling-text">CYCLING</span>
+  </div>
+  <div class="top-right bottom-right">
+    <a href="https://www.ocf.berkeley.edu">
+      <img src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg" class="ocf-logo">
+    </a>
+  </div>
+</header>
+</body>
 </html>

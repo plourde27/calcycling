@@ -1,264 +1,318 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cal Cycling p/b Harder Mechanical Contractors</title>
 
-    <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
-        <meta charset="utf-8">
-        <title>Cal Cycling p/b Harder Mechanical Contractors</title>
-        <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
-        </script>
-        <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
-        </script>
-        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-        <style>
-        @font-face {
-          font-family: Sather;
-          src: url("NCAA Cal Golden Bears.otf") format("opentype");
-        }
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-        #profile {
-          position: fixed;
-          margin-top: -90px;
-          margin-left: calc(90% - 80px);
-          margin-right: calc(10% - 80px);
-          background-color: rgb(0, 0, 80);
-          color: rgb(200, 200, 0); /* go bears */
-          font-size: 25px;
-          text-align: center;
-          text-decoration: none;
-          padding-top: 3px;
-          padding-bottom: 3px;
-          padding-left: 10px;
-          padding-right: 10px;
-          border-radius: 6px;
-          font-family: 'Avenir', 'Montserrat';
-        }
-        #cal {
-          position: absolute;
-          float: left;
-          width: 160px;
-          height: auto;
-          margin-left: calc(50% - 230px);
-          margin-top: 0px;
-          border-radius: 0px;
-        }
-        #title {
-          font-family: 'Sather';
-          color: rgb(4, 30, 66);
-          margin-left: calc(50% - 45px);
-          font-size: 120px;
-          margin-bottom: -20px;
-        }
-        #subtitle {
-          font-family: 'Play';
-          text-align: center;
-          font-size: 26px;
-          color: rgb(0, 0, 0);
-          margin-top: 0px;
-        }
-          .menu {
-            text-decoration: none;
-            font-style: normal;
-            position: absolute;
-            margin-top: 25px;
-            width: 11%;
-            text-align: center;
-            background-color: rgb(200, 200, 200);
-            color: rgb(0, 0, 0);
-            font-size: 18px;
-            font-family: 'Avenir', 'Montserrat';
-            border-radius: 0px;
-            border-style: none;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            cursor: pointer;
-          }
-          #b1 {
-            margin-left: 0px;
-            background-color: rgb(0, 0, 90);
-            color: rgb(200, 200, 0);
-          }
-          #b2 {
-            margin-left: 11%;
-          }
-          #b3 {
-            margin-left: 22%;
-          }
-          #b4 {
-            margin-left: 33%;
-          }
-          #b5 {
-            margin-left: 44%;
-          }
-          #b6 {
-            margin-left: 55%;
-          }
-          #b7 {
-            margin-left: 66%;
-          }
-          #b8 {
-            margin-left: 77%;
-          }
-          #b9 {
-            margin-left: 88%;
-          }
 
-          #homeimg {
-            opacity: 0.5;
-            margin-top: 85px;
-            width: 80%;
-            height: 40%;
-            margin-left: 10%;
-          }
-          #hometxt {
-            border-radius: 15px;
-            font-style: italic;
-            font-family: 'AvenirNext-UltraLight', 'Montserrat';
-            position: absolute;
-            margin-top: -29%;
-            text-align: center;
-            margin-left: 15%;
-            margin-right: 15%;
-            width: 70%;
-            height: 120px;
-            padding-top: 130px;
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 35px;
-            color: rgb(200, 200, 0); //go bears
+<body>
 
-          }
-          #titletxt {
-            font-style: normal;
-            font-family: 'Play';
-            position: absolute;
-            margin-top: -27.5%;
-            text-align: center;
-            margin-left: 15%;
-            margin-right: 15%;
-            width: 70%;
-            font-size: 55px;
-            color: rgb(200, 200, 0); //go bears
-          }
-          .leftbox {
-            margin-left: 10%;
-            width: 26.6%;
-            float: left;
-          }
-          .middlebox {
-            margin-left: 0%;
-            width: 26.6%;
-            float: left;
-            margin-top: 25px;
-          }
-          .rightbox {
-            margin-left: 0%;
-            width: 26.6%;
-            float: left;
-          }
-          #pimg {
-            width: 100%;
-            height: 100%;
-            margin-top: 15px;
-          }
-          #ptext {
-            font-family: 'Avenir', 'Montserrat';
-            font-size: 21px;
-            color: rgb(0,0,0);
-            margin-top: 10px;
-            text-align: center;
-            margin-left: 5%;
-            margin-right: 5%;
-          }
-          #pbutton {
-            background-color: rgb(0, 0, 80);
-            color: rgb(200, 200, 0); /* go bears */
-            font-size: 21px;
-            margin-left: calc(50% - 80px);
-            margin-right: calc(50% - 80px);
-            text-align: center;
-            text-decoration: none;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            border-radius: 6px;
-            font-family: 'Avenir', 'Montserrat';
-            margin-bottom: 15px;
-          }
-          #btext {
-            font-family: 'Avenir', 'Montserrat';
-            font-size: 24px;
-            color: rgb(0,0,0);
-            margin-top: 10px;
-            text-align: center;
-          }
-          #pl {
-            text-decoration: none;
-            color: rgb(200, 200, 0);
-          }
+   <!-- util bar -->
+<div class="utility-bar stripes-bg">
+  <div class="utility-left">
 
-        </style>
-    </head>
-    <body>
-  <script src="login.js" type="module"></script>
-  <a href="https://www.ocf.berkeley.edu">                                                                                                   
-    <img width=100 style="position: absolute; margin-left: 10px; margin-top: 10px" src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"                                                        
-    alt="Hosted by the OCF" style="border: 0;" />                                                                                          
+  <a href="https://instagram.com/calcycling" target="_blank" class="utility-link">
+    <img src="imgs/instagram_logo.webp" alt="Instagram" class="utility-icon">
   </a>
-  <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
-  <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
 
-  <a href="index.html" class="menu" id="b1" onclick="b1()">Home</a>
-  <a href="about.html" class="menu" id="b2" onclick="b2()">About</a>
-  <a href="membership.html" class="menu" id="b3" onclick="b3()">Membership</a>
-  <a href="officers.html" class="menu" id="b4" onclick="b4()">Officers</a>
-  <a href="routes.html" class="menu" id="b5" onclick="b5()">Routes</a>
-  <a href="upcomingrides.html" class="menu" id="b6" onclick="b6()">Upcoming Rides</a>
-  <a href="partners.html" class="menu" id="b7" onclick="b7()">Partners</a>
-  <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
-  <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
-
-  <img id="homeimg" src="imgs/home1.jpeg">
-
-  <div id="hometxt">The bicycle club and racing team of University of California, Berkeley</div>
-  <div id="titletxt">CAL CYCLING</div>
-  <div class="leftbox">
-    <img id="pimg" src="imgs/partners-1.jpeg"></img>
-    <p id="ptext">Meet our generous sponsors and partners</p>
-    <button id="pbutton"><a id="pl" href="partners.html">Our Sponsors</a></button>
-  </div>
-  <div class="middlebox">
-    <p id="btext">Join our Mailing List</p>
-    <p id="ptext">Click <a href="https://berkeley.us19.list-manage.com/subscribe?u=fb4fd1b725cba0ec7e0db508b&id=1e242ee17e">here</a> to join our mailing list. See <a href="officers.html">here</a> for Road, MTB, and Operations contact information.</p>
-  </div>
-  <div class="rightbox">
-    <img id="pimg" src="imgs/home2.jpeg" style="margin-top: 30px"></img>
-    <p id="ptext">Learn about joining the club.</p>
-    <button id="pbutton"><a id="pl" href="membership.html">Membership</a></button>
-  </div>
-
-  <div hidden=true id="i0"></div>
-  <div hidden=true id="i1"></div>
-  <div hidden=true id="i2"></div>
-  <div hidden=true id="i3"></div>
-  <div hidden=true id="i4"></div>
-  <div hidden=true id="i5"></div>
-  <div hidden=true id="i6"></div>
-  <div hidden=true id="i7"></div>
-  <div hidden=true id="i8"></div>
-  <div hidden=true id="i9"></div>
-  <div hidden=true id="i10"></div>
+  <a href="https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fcal_cycling%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnknReHomz32ks_xnA6AWWRj8Ll3fegwHq6TFPCqhzJtBz4fpAxQ-cDC6RXcc_aem_VsCoRaN-jWeqxBZ1n5qsJw&e=AT21-frP9Pc-viIPNuhzTqwxeJH5-93qYKeUug2mciPfGWFJ8lrtOxmV9EY1dsgZs20o1smIZcYSaNDrvW4uIsxdUIN7TRzaxJbrTjzwDgPDzUOayGWHykvzqQ" class="utility-link">
+    <img src="imgs/linktree_logo.png" alt="Linktree" class="utility-icon">
+  </a>
   
 
-  <script>
+  <a class="utility-link">contact@cycling.berkeley.edu</a>
 
-  </script>
+</div>
 
-<!--<button id="signin">Google Signin</button>
-<button id="signout">Google Signout</button>!-->
-  </body>
+
+
+  <div class="utility-right">
+    <a
+      href="https://harder.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="sponsor-link"
+    >
+      Powered by Harder Mechanical Contractors
+    </a>
+  </div>
+</div>
+
+
+<!-- TOP BAR -->
+<header class="top-bar">
+  <div class="top-left">
+    <img src="imgs/cal.jpeg" alt="Cal Logo" class="cal-logo">
+    <span class="cycling-text">CYCLING</span>
+  </div>
+
+  <div class="top-right">
+    <a href="https://www.ocf.berkeley.edu">
+      <img
+        src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"
+        alt="Hosted by OCF"
+        class="ocf-logo"
+      >
+    </a>
+  </div>
+</header>
+
+<!-- NAV BAR (sticky when it reaches utility bar) -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link active">Home</a>
+  <a href="membership.html" class="nav-link">Membership</a>
+  <a href="officers.html" class="nav-link">Officers</a>
+  <a href="routes.html" class="nav-link">Routes</a>
+  <a href="partners.html" class="nav-link">Partners</a>
+  <a href="donate.html" class="nav-link">Donate</a>
+</nav>
+
+  <!-- HERO / CAROUSEL -->
+  <section class="hero">
+    <img src="imgs/team1.png" alt="Cal Cycling" class="hero-image">
+
+  
+
+    <div class="hero-overlay">
+      <h1>CAL CYCLING</h1>
+      <p>The mountain and road bicycle club and racing team of the University of California, Berkeley.</p>
+    </div>
+  </section>
+
+<section class="partners-bar">
+  <div class="partners-marquee">
+    <div class="marquee-track">
+      <!-- ORIGINAL SET -->
+      <a href="https://harder.com/" target="_blank"><img src="imgs/partners-1.jpeg" alt="Harder Mechanical"></a>
+      <a href="https://bayareabicyclelaw.com/" target="_blank"><img src="imgs/partners-2.jpeg" alt="Bay Area Bicycle Law"></a>
+      <a href="https://www.staytrue.bike/" target="_blank"><img src="imgs/partners-4.jpeg" alt="STC"></a>
+      <a href="https://www.skratchlabs.com/" target="_blank"><img src="imgs/partners-5.jpeg" alt="Skratch Labs"></a>
+      <a href="https://store.voler.com/" target="_blank"><img src="imgs/partners-6.jpeg" alt="Voler"></a>
+      <a href="https://www.rudyproject.com/" target="_blank"><img src="imgs/partners-8.jpeg" alt="Rudy Project"></a>
+      <a href="https://www.specialized.com/" target="_blank"><img src="imgs/partners-9.jpeg" alt="Specialized"></a>
+
+      <!-- DUPLICATE SET for seamless scrolling -->
+      <a href="https://harder.com/" target="_blank"><img src="imgs/partners-1.jpeg" alt="Harder Mechanical"></a>
+      <a href="https://bayareabicyclelaw.com/" target="_blank"><img src="imgs/partners-2.jpeg" alt="Bay Area Bicycle Law"></a>
+      <a href="https://www.staytrue.bike/" target="_blank"><img src="imgs/partners-4.jpeg" alt="STC"></a>
+      <a href="https://www.skratchlabs.com/" target="_blank"><img src="imgs/partners-5.jpeg" alt="Skratch Labs"></a>
+      <a href="https://store.voler.com/" target="_blank"><img src="imgs/partners-6.jpeg" alt="Voler"></a>
+      <a href="https://www.rudyproject.com/" target="_blank"><img src="imgs/partners-8.jpeg" alt="Rudy Project"></a>
+      <a href="https://www.specialized.com/" target="_blank"><img src="imgs/partners-9.jpeg" alt="Specialized"></a>
+      
+      <a href="https://harder.com/" target="_blank"><img src="imgs/partners-1.jpeg" alt="Harder Mechanical"></a>
+      <a href="https://bayareabicyclelaw.com/" target="_blank"><img src="imgs/partners-2.jpeg" alt="Bay Area Bicycle Law"></a>
+      <a href="https://www.staytrue.bike/" target="_blank"><img src="imgs/partners-4.jpeg" alt="STC"></a>
+      <a href="https://www.skratchlabs.com/" target="_blank"><img src="imgs/partners-5.jpeg" alt="Skratch Labs"></a>
+      <a href="https://store.voler.com/" target="_blank"><img src="imgs/partners-6.jpeg" alt="Voler"></a>
+      <a href="https://www.rudyproject.com/" target="_blank"><img src="imgs/partners-8.jpeg" alt="Rudy Project"></a>
+      <a href="https://www.specialized.com/" target="_blank"><img src="imgs/partners-9.jpeg" alt="Specialized"></a>
+
+    </div>
+  </div>
+
+  <!-- CTA below -->
+  <div class="partners-cta-container">
+    <a href="partners.html" class="partners-cta stripes-bg">
+      Meet the Partners →
+    </a>
+  </div>
+</section>
+
+
+
+<!-- THREE IMAGE CARDS SECTION -->
+
+<div class="image-cards">
+  <a href="membership.html" class="card">
+    <img src="imgs/about2.jpeg" alt="Membership">
+    <div class="card-text">Membership</div>
+  </a>
+  <a href="officers.html" class="card">
+    <img src="imgs/home1.jpeg" alt="Contact">
+    <div class="card-text">Contact Information</div>
+  </a>
+  <a href="https://berkeley.us19.list-manage.com/subscribe?u=fb4fd1b725cba0ec7e0db508b&id=1e242ee17e" target="_blank" class="card">
+    <img src="imgs/zach.jpeg" alt="Mailing List">
+    <div class="card-text">Mailing List</div>
+  </a>
+</div>
+
+<!-- NEWS CAROUSEL -->
+<section class="news-carousel">
+  <button class="news-arrow left">‹</button>
+
+  <div class="news-viewport">
+    <div class="news-track">
+
+      <!-- Road Race Highlights -->
+      <div class="news-card">
+        <span class="news-index">Road Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>3rd: USA Cycling Collegiate Nationals Criterium (W)</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Road Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>1st: Sea Otter Classic Road Race (W, M) – 2x</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Road Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>1st: Sea Otter Classic Circuit (W, M) – 2x</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Road Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>1st: UCD Criterium (W)</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Road Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>1st: UC Santa Cruz Road Race (W)</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Road Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>1st: UCSC Circuit Race (W)</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Road Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>1st: UCSB Team Time Trial (W)</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Road Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>1st: UCSB Road Race (W)</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Road Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>3rd: UCSC Road Race (M)</p>
+      </div>
+
+      <!-- Mountain Race Highlights -->
+      <div class="news-card">
+        <span class="news-index">Mountain Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>2025: 1st Place Men’s XC, 2nd Place Men’s Downhill, 1st Place Men’s Omnium</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Mountain Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>2024: 1st Place Men’s XC, 4th Place Men’s STXC, 4th Place Women’s D, 4th Place Men’s DH</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Mountain Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>Nationals: 2nd Place XC, 2nd Place STXC (3x M), 7th Place DH</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Mountain Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>1st Place: UNR XC (W), Stanford SD (W)</p>
+      </div>
+
+      <div class="news-card">
+        <span class="news-index">Mountain Race Highlights</span>
+        <div class="news-line"><span></span></div>
+        <p>Podium finishes: UNR STXC (M, W), Stanford SD (M), Shreditation XC (W)</p>
+      </div>
+
+      <!-- Alumni Success -->
+      <div class="news-card">
+        <span class="news-index">Alumni Success</span>
+        <div class="news-line"><span></span></div>
+        <p>Our alumni include Katie Hall, professional cyclist for the top-level SDWorx team and winner of the 2018 AMGEN Tour of California.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="news-arrow right">›</button>
+</section>
+
+
+<!-- NEWS CAROUSEL SCRIPT (MUST BE AFTER HTML) -->
+<script type="module" src="js/news.js"></script>
+
+
+
+
+<div class="about-section stripes-bg">
+
+  <!-- Row 1 -->
+  <div class="about-block left-image">
+    <img src="imgs/about1.jpeg" alt="Home for Cycling" class="about-img">
+    <div class="about-text">
+      <h2>Your Home for Cycling at UC-Berkeley</h2>
+      <p>
+        The mission of Cal Cycling is to support cyclists at all levels while fielding a competitive racing team. Our club is comprised of students from all backgrounds of riding, from highly competitive racers to near-beginner riders.
+        <br><br>
+        Our race seasons are MTB in the Fall and road in the Spring. In between, we host group rides, social events, and other club activities.
+      </p>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Row 3 -->
+  <div class="about-block right-image">
+    
+    <div class="about-text">
+      <h2>A Community</h2>
+      <p>
+        Most importantly, we’re a tight-knit community, a group of friends brought together by a common passion. Come here for ride partners that’ll become your friends off-the-bike.
+      </p>
+    </div>
+    <img src="imgs/about3.jpeg" alt="A Community" class="about-img">
+  </div>
+  <hr>
+
+</div>
+
+
+<header class="top-bar bottom-bar">
+  <div class="top-left bottom-left">
+    <img src="imgs/cal.jpeg" alt="Cal Logo" class="cal-logo">
+    <span class="cycling-text">CYCLING</span>
+  </div>
+
+  <div class="top-right bottom-right">
+    <a href="https://www.ocf.berkeley.edu">
+      <img
+        src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"
+        alt="Hosted by OCF"
+        class="ocf-logo"
+      >
+    </a>
+  </div>
+</header>
+
+</body>
+
+<script type="module" src="js/membership.js"></script>
+
+
+
 </html>

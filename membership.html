@@ -1,380 +1,279 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cal Cycling p/b Harder Mechanical Contractors</title>
 
-    <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
-        <meta charset="utf-8">
-        <title>Cal Cycling p/b Harder Mechanical Contractors</title>
-        <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
-        </script>
-        <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
-        </script>
-        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-        <style>
-        @font-face {
-          font-family: Sather;
-          src: url("NCAA Cal Golden Bears.otf") format("opentype");
-        }
-        #profile {
-          position: fixed;
-          margin-top: -90px;
-          margin-left: calc(90% - 80px);
-          margin-right: calc(10% - 80px);
-          background-color: rgb(0, 0, 80);
-          color: rgb(200, 200, 0); /* go bears */
-          font-size: 25px;
-          text-align: center;
-          text-decoration: none;
-          padding-top: 3px;
-          padding-bottom: 3px;
-          padding-left: 10px;
-          padding-right: 10px;
-          border-radius: 6px;
-          font-family: 'Avenir';
-        }
-        #cal {
-          position: absolute;
-          float: left;
-          width: 160px;
-          height: auto;
-          margin-left: calc(50% - 230px);
-          margin-top: 0px;
-          border-radius: 0px;
-        }
-        #title {
-          font-family: 'Sather';
-          color: rgb(4, 30, 66);
-          margin-left: calc(50% - 45px);
-          font-size: 120px;
-          margin-bottom: -20px;
-        }
-        #subtitle {
-          font-family: 'Play';
-          text-align: center;
-          font-size: 26px;
-          color: rgb(0, 0, 0);
-          margin-top: 0px;
-        }
-          .menu {
-            text-decoration: none;
-            font-style: normal;
-            position: absolute;
-            margin-top: 25px;
-            width: 11%;
-            text-align: center;
-            background-color: rgb(200, 200, 200);
-            color: rgb(0, 0, 0);
-            font-size: 18px;
-            font-family: 'Avenir';
-            border-radius: 0px;
-            border-style: none;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            cursor: pointer;
-          }
-          #b1 {
-            margin-left: 0px;
-          }
-          #b2 {
-            margin-left: 11%;
-          }
-          #b3 {
-            margin-left: 22%;
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-              color: rgb(200, 200, 0);
-            background-color: rgb(0, 0, 90);
-          }
-          #b4 {
-            margin-left: 33%;
-          }
-          #b5 {
-            margin-left: 44%;
-          }
-          #b6 {
-            margin-left: 55%;
-          }
-          #b7 {
-            margin-left: 66%;
-          }
-          #b8 {
-            margin-left: 77%;
-          }
-          #b9 {
-            margin-left: 88%;
-          }
+<body>
 
+<!-- UTILITY BAR -->
+<div class="utility-bar stripes-bg">
+  <div class="utility-left">
+    <a href="https://instagram.com/calcycling" target="_blank" class="utility-link">
+      <img src="imgs/instagram_logo.webp" alt="Instagram" class="utility-icon">
+    </a>
+    <a href="#" class="utility-link">
+      <img src="imgs/linktree_logo.png" alt="Linktree" class="utility-icon">
+    </a>
+   <a class="utility-link">contact@cycling.berkeley.edu</a>
+    </div>
 
-          #homeimg {
-            opacity: 0.5;
-            margin-top: 85px;
-            width: 80%;
-            height: 40%;
-            margin-left: 10%;
-          }
-          #hometxt {
-            border-radius: 15px;
-            font-style: italic;
-            font-family: 'AvenirNext-UltraLight';
-            position: absolute;
-            margin-top: -34%;
-            text-align: center;
-            margin-left: 15%;
-            margin-right: 15%;
-            width: 70%;
-            height: 120px;
-            padding-top: 130px;
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 35px;
-            color: rgb(200, 200, 0); /* go bears */
-
-          }
-          #titletxt {
-            font-style: normal;
-            font-family: 'Play';
-            position: absolute;
-            margin-top: -32%;
-            text-align: center;
-            margin-left: 15%;
-            margin-right: 15%;
-            width: 70%;
-            font-size: 55px;
-            color: rgb(200, 200, 0); /* go bears */
-          }
-
-          #left {
-            margin-left: 5%;
-            margin-top: 90px;
-            margin-right: 50px;
-            width: 560px;
-            height: 400px;
-            float: left;
-          }
-
-          #left2 {
-            margin-left: 5%;
-            margin-top: 90px;
-            margin-right: 50px;
-            width: 560px;
-            height: 400px;
-            float: left;
-            margin-bottom: 100px;
-          }
-
-          #righttitle {
-            margin-top: 162px;
-            margin-right: 5%;
-            font-size: 30px;
-            font-family: 'Play';
-          }
-
-          #righttitle2 {
-            margin-top: 232px;
-            margin-right: 5%;
-            font-size: 30px;
-            font-family: 'Play';
-          }
-
-          #righttext {
-            margin-top: 40px;
-            margin-right: 5%;
-            font-size: 18px;
-            font-family: 'Avenir';
-          }
-
-          #right {
-            margin-right: 5%;
-            margin-top: 125px;
-            margin-left: 50px;
-            width: 560px;
-            height: 400px;
-            float: right;
-          }
-
-          #lefttitle {
-            margin-top: 152px;
-            margin-left: 5%;
-            font-size: 30px;
-            font-family: 'Play';
-          }
-
-          #lefttext {
-            margin-top: 40px;
-            margin-left: 5%;
-            font-size: 15px;
-            font-family: 'Avenir';
-          }
-
-          #racetable {
-            font-family: 'Avenir';
-            font-size: 15px;
-            margin-left: 5%;
-          }
-
-          #ind {
-            margin-left: 20px;
-          }
-
-          #howtojoin {
-            margin-top: 80px;
-            font-family: 'Play';
-            text-align: center;
-            font-size: 42px;
-          }
-          #joinbutton {
-            margin-top: -15px;
-            background-color: rgb(0, 0, 80);
-            color: rgb(200, 200, 0); /* go bears */
-            font-size: 21px;
-            margin-left: calc(50% - 80px);
-            margin-right: calc(50% - 80px);
-            text-align: center;
-            text-decoration: none;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            border-radius: 6px;
-            font-family: 'Avenir';
-          }
-          .left {
-            position: absolute;
-            margin-top: 30px;
-            margin-left: 10%;
-            margin-right: 48%;
-          }
-          .right {
-            margin-top: 30px;
-            margin-left: 52%;
-            margin-right: 10%;
-          }
-          #buffer {
-            margin-top: 100px;
-          }
-          #bigtitle {
-            font-family: 'Play';
-            font-size: 45px;
-            margin-left: 5px;
-          }
-          #smalltitle {
-            font-family: 'Play';
-            font-size: 28px;
-            margin-left: 5px;
-          }
-          #txt {
-            font-family: 'Avenir';
-            font-size: 16px;
-            margin-left: 5px;
-          }
-          #bigtitle2 {
-            font-family: 'Play';
-            font-size: 45px;
-            margin-left: 10%;
-            margin-right: 10%;
-          }
-          #smalltitle2 {
-            font-family: 'Play';
-            font-size: 28px;
-            margin-left: 10%;
-            margin-right: 10%;
-          }
-          #txt2 {
-            font-family: 'Avenir';
-            font-size: 16px;
-            margin-left: 10%;
-            margin-right: 10%;
-          }
-
-        </style>
-    </head>
-    <body>
-  <script src="login.js" type="module"></script>
-  <a href="https://www.ocf.berkeley.edu">                                                                                                   
-    <img width=100 style="position: absolute; margin-left: 10px; margin-top: 10px" src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"                                                        
-        alt="Hosted by the OCF" style="border: 0;" />                                                                                       
-  </a>
-  <img src="imgs/cal.jpeg" id="cal"></img><div id="title">CYCLING</div><br>
-  <div id="subtitle"><em>Powered by Harder Mechanical Contractors</em></div>
-
-  <a href="index.html" class="menu" id="b1" onclick="b1()">Home</a>
-  <a href="about.html" class="menu" id="b2" onclick="b2()">About</a>
-  <a href="membership.html" class="menu" id="b3" onclick="b3()">Membership</a>
-  <a href="officers.html" class="menu" id="b4" onclick="b4()">Officers</a>
-  <a href="routes.html" class="menu" id="b5" onclick="b5()">Routes</a>
-  <a href="upcomingrides.html" class="menu" id="b6" onclick="b6()">Upcoming Rides</a>
-  <a href="partners.html" class="menu" id="b7" onclick="b7()">Partners</a>
-  <a href="donate.html" class="menu" id="b8" onclick="b8()">Donate</a>
-  <a href="profile.html" class="menu" id="b9" onclick="b9()">Account</a>
-
-  <p id="howtojoin">How to Join Cal Cycling</p>
-  <div id="joinbutton"><a id="joinbutton" href="https://docs.google.com/document/d/1BONe38-aa79ZBpzeyrFtrVMYWQDV2meQy_r04DBR1oI/edit" target="_blank">Click Here</a></div>
-  <div class="left">
-
-<p id="bigtitle">Eligibility and Benefits
-</p>
-<p id="txt">In general, club activities are open to members only. This includes all of our group rides and other in-person activities.
-</p>
-<p id="txt">“Member” is defined as someone on our Sport Clubs Roster, which is managed at IMLeagues. Any registered undergraduate or graduate student is eligible to join the club.
-</p>
-<p id="txt">For information about how to join Cal Cycling, see below.
-</p>
-<p id="txt">While you are waiting, sign up for our email list-serv here. You will be notified when sign-ups are available.
-</p>
-<p id="smalltitle">Membership
-  </p>
-<p id="txt">Membership grants access to the Cal Cycling Slack, where you can hang out and meet other cyclists at Cal. It’s a great place for getting any cycling-related questions answered and finding ride partners.
-</p>
+  <div class="utility-right">
+    <a href="https://harder.com/" target="_blank" class="sponsor-link">
+      Powered by Harder Mechanical Contractors
+    </a>
   </div>
-  <div class="right">
-<p id="smalltitle">Participation in Cal Cycling group rides and activities
-</p>
-<p id="txt">Cal Cycling rides, including our Saturday group rides, are open only to roster members.
+</div>
 
-<p id="smalltitle">Access to club and sponsor benefits
-</p>
-<p id="txt">Cycling members get access to various benefits through our sponsors and Cal Sport Clubs, such as discounted CLIF orders, and discounts at Mike’s Bikes of Berkeley.
-</p>
-<p id="smalltitle">Racing in the WCCC
-</p>
-<p id="txt">In order to race in WCCC Collegiate events, you need to be a member of a collegiate cycling club (like Cal Cycling). We pay for transportation, housing, and part of race fees for our members.
-</p>
-<p id="txt">The Spring road race schedule for 2022 is:
-</p>
-<p id="txt">– UCLA: Feb 19-20<br>
-– UCSB/CPSLO: March 5-6<br>
-– USC: March 26-27<br>
-– UCSC: April 2-3<br>
-– Stanford: April 9-10<br>
-– UC Berkeley: Apr 23-24<br>
-– Collegiate Nationals: May 6-8</p>
+<!-- TOP BAR -->
+<header class="top-bar">
+  <div class="top-left">
+    <img src="imgs/cal.jpeg" alt="Cal Logo" class="cal-logo">
+    <span class="cycling-text">CYCLING</span>
   </div>
-<p id="buffer"></p>
-<p id="bigtitle2">Frequently Asked Questions</p>
-<p id="smalltitle2">I am a Postdoc / Exchange Student / recently graduated. Can I join Cal Cycling?
-</p>
-<p id="txt2">Unfortunately, you must be a registered student to join. This precludes most postdocs and recently-graduated. The test for whether or not you can join is whether or not you can “purchase” the $0 “Sport Club Membership” on the Cal Rec Sports Store. Some exchange students can do this; some cannot. If you cannot join Cal Cycling, please check out <a href="https://www.berkeleybikeclub.org/" target="_blank">Berkeley Bike Club</a>, <a href="https://www.grizz.org/home/index.php" target="_blank">Grizzly Peak Cyclists</a>, or <a href="https://www.majortayloreastbay.com/" target="_blank">Major Taylor East Bay.</a></p>
-<p id="smalltitle2">What are the obligations of Cal Cycling members?
-</p>
-<p id="txt2">All members are obliged to follow the code of conduct in the <a href="https://docs.google.com/document/d/1_1xjtizpZv_WhLyQg4OzhqQKnzPmLm0jtmLvhLnGvB8/edit#" target="_blank">Cal Cycling Constitution.</a> This includes riding safely, with a helmet, and with respect towards other road users. In addition, all members are obligated to help volunteer at any hosted events, such as our home races.</p>
-<p id="smalltitle2">I don’t have a bike. Can you help me out?
-</p>
-<p id="txt2">Unfortunately, we do not have any team bikes. However, we can help you in your search for one.</p>
-<p id="smalltitle2">What do I need to bring on a ride?
-</p>
-<p id="txt2">Your bike must be fully functional and safe to ride in a group. You should also bring any necessary tools to fix common roadside maintenance issues, such as flat tires. Finally, you should bring enough food (at a minimum 30 grams of carbohydrate an hour) and hydration.</p>
-<p id="smalltitle2">Do I have to race to join?
-</p>
-<p id="txt2">You absolutely do not, and this is reflected in our lower dues for non-racing members.
-</p>
+  <div class="top-right">
+    <a href="https://www.ocf.berkeley.edu">
+      <img src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg" class="ocf-logo">
+    </a>
+  </div>
+</header>
 
-  <script>
+<!-- NAV -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="membership.html" class="nav-link active">Membership</a>
+  <a href="officers.html" class="nav-link">Officers</a>
+  <a href="routes.html" class="nav-link">Routes</a>
+  <a href="partners.html" class="nav-link">Partners</a>
+  <a href="donate.html" class="nav-link">Donate</a>
+</nav>
 
-  </script>
+<!-- HERO -->
+<section class="hero">
+  <img src="imgs/home3.jpg" class="hero-image">
+  <div class="hero-overlay">
+    <h1>MEMBERSHIP</h1>
+    <p>Join Cal Cycling and gain access to rides, events, and our competitive teams.</p>
+  </div>
+</section>
 
-<!--<button id="signin">Google Signin</button>
-<button id="signout">Google Signout</button>!-->
-  </body>
+<!-- CTA below -->
+  <div class="join-container">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc76jYPuiPHcMh6lTc0CAvI6UB8k7uatKYY2O_u8hhw37JTbg/viewform" class="partners-cta stripes-bg">
+      Join Cal Cycling →
+    </a>
+
+    <a href="https://berkeley.us19.list-manage.com/subscribe?u=fb4fd1b725cba0ec7e0db508b&id=1e242ee17e" class="partners-cta stripes-bg">
+      Join list-serv →
+    </a>
+  </div>
+  
+
+<!-- BLUE STRIPED CONTENT -->
+<div class="about-section stripes-bg">
+
+  <!-- Eligibility and Benefits -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <h2>Eligibility and Benefits</h2>
+
+      <p>
+        In general, club activities are open to members only. This includes all of our group rides and other in-person activities.
+      </p>
+
+      <br>
+
+      <p>
+        “Member” is defined as someone on our Sport Clubs Roster, which is managed at IMLeagues. Any registered undergraduate or graduate student is eligible to join the club.
+      </p>
+
+      <br>
+
+      <p>
+        For information about how to join Cal Cycling, see below.
+      </p>
+
+      <br>
+
+      <p>
+        While you are waiting, sign up for our email list-serv here. You will be notified when sign-ups are available.
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Membership -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <h2>Membership</h2>
+
+      <p>
+        Membership grants access to the Cal Cycling Slack, where you can hang out and meet other cyclists at Cal. It’s a great place for getting any cycling-related questions answered and finding ride partners.
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Participation -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <h2>Participation in Cal Cycling group rides and activities</h2>
+
+      <p>
+        Cal Cycling rides, including our Saturday group rides, are open only to roster members.
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Sponsor Benefits -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <h2>Access to club and sponsor benefits</h2>
+
+      <p>
+        Cycling members get access to various benefits through our sponsors and Cal Sport Clubs, such as discounted CLIF orders, and discounts at Mike’s Bikes of Berkeley.
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Racing -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <h2>Racing in the WCCC</h2>
+
+      <p>
+        In order to race in WCCC Collegiate events, you need to be a member of a collegiate cycling club (like Cal Cycling). We pay for transportation, housing, and part of race fees for our members.
+      </p>
+
+      <br>
+
+      <p>
+        The Spring Road Race schedule for 2026 will be posted here when available.
+      </p>
+
+      
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- FAQ: Postdoc -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <h2>Frequently Asked Questions</h2>
+
+      <p class="faq-question">
+        <strong>I am a Postdoc / Exchange Student / recently graduated. Can I join Cal Cycling?</strong>
+      </p>
+
+      <p class="cal-gold-links">
+        Unfortunately, you must be a registered student to join. This precludes most postdocs and recently-graduated. The test for whether or not you can join is whether or not you can “purchase” the $0 “Sport Club Membership” on the Cal Rec Sports Store. Some exchange students can do this; some cannot. If you cannot join Cal Cycling, please check out
+        <a href="https://www.berkeleybikeclub.org/" target="_blank">Berkeley Bike Club</a>,
+        <a href="https://www.grizz.org/home/index.php" target="_blank">Grizzly Peak Cyclists</a>,
+        or
+        <a href="https://www.majortayloreastbay.com/" target="_blank">Major Taylor East Bay.</a>
+      </p>
+
+    </div>
+  </div>
+
+
+
+  <!-- FAQ: Obligations -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <p class="faq-question">
+        <strong>What are the obligations of Cal Cycling members?</strong>
+      </p>
+
+      <p class="cal-gold-links">
+        All members are obliged to follow the code of conduct in the
+        <a href="https://docs.google.com/document/d/1_1xjtizpZv_WhLyQg4OzhqQKnzPmLm0jtmLvhLnGvB8/edit#" target="_blank">
+          Cal Cycling Constitution.
+        </a>
+        This includes riding safely, with a helmet, and with respect towards other road users. In addition, all members are obligated to help volunteer at any hosted events, such as our home races.
+      </p>
+    </div>
+  </div>
+
+
+
+  <!-- FAQ: Bike -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <p class="faq-question">
+        <strong>I don’t have a bike. Can you help me out?</strong>
+      </p>
+
+      <p>
+        Unfortunately, we do not have any team bikes. However, we can help you in your search for one.
+      </p>
+    </div>
+  </div>
+
+  
+
+  <!-- FAQ: Ride Prep -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <p class="faq-question">
+        <strong>What do I need to bring on a ride?</strong>
+      </p>
+
+      <p>
+        Your bike must be fully functional and safe to ride in a group. You should also bring any necessary tools to fix common roadside maintenance issues, such as flat tires. Finally, you should bring enough food (at a minimum 30 grams of carbohydrate an hour) and hydration.
+      </p>
+    </div>
+  </div>
+
+
+
+  <!-- FAQ: Racing -->
+  <div class="about-block no-image">
+    <div class="about-text">
+      <p class="faq-question">
+        <strong>Do I have to race to join?</strong>
+      </p>
+
+      <p>
+        You absolutely do not, and this is reflected in our lower dues for non-racing members.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<header class="top-bar bottom-bar">
+  <div class="top-left bottom-left">
+    <img src="imgs/cal.jpeg" class="cal-logo">
+    <span class="cycling-text">CYCLING</span>
+  </div>
+  <div class="top-right bottom-right">
+    <a href="https://www.ocf.berkeley.edu">
+      <img src="http://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg" class="ocf-logo">
+    </a>
+  </div>
+</header>
+
+
+<script type="module" src="js/membership.js"></script>
+
+</body>
 </html>
