@@ -152,7 +152,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: gold;
+  color: #c9a13b;
   background: rgba(0, 0, 0, 0.55);
 }
 
@@ -480,6 +480,7 @@ hr {
 .stripes-bg {
   position: relative; /* required for ::before positioning */
   overflow: hidden;   /* ensures stripes don't overflow */
+  background-color: rgb(4, 30, 66);
 }
 
 .stripes-bg::before {
@@ -547,7 +548,7 @@ hr {
 ===================== */
 .news-carousel {
   position: relative;
-  background: #f7d303; /* CAL GOLD */
+  background: #c9a13b; /* CAL GOLD */
   
   overflow: hidden;
   height: 150px;
@@ -655,7 +656,7 @@ hr {
 .cal-gold-links a:hover,
 .cal-gold-links a:visited,
 .cal-gold-links a:active {
-  color: #FDB515; /* California Gold */
+  color: #c9a13b; /* California Gold */
 }
 .route-section {
   position: relative;
@@ -695,51 +696,6 @@ hr {
   color: white;
   font-size: 1.2em;
   margin-top: 10px;
-}
-
-.route-dropdown {
-  display: none;
-  flex-direction: column;
-  width: 100%;
-  background-color: #111;
-  color: white;
-  padding: 20px 30px;
-  box-sizing: border-box;
-}
-
-.route-dropdown.open {
-  display: flex;
-}
-
-.route-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #444;
-  padding-bottom: 20px;
-}
-
-.route-card img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.route-info h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.5em;
-}
-
-.route-info p {
-  margin: 3px 0;
-}
-
-.route-info a {
-  color: #4caf50;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 
@@ -919,3 +875,310 @@ hr {
 .popup.show {
   opacity: 1;
 }
+
+.donate-title {
+  font-family: 'Play', sans-serif;
+  color: rgb(0,0,60);
+  font-size: 40px;
+}
+
+
+
+
+/* =====================
+   ROUTE DIVIDER SYSTEM
+===================== */
+
+.route-divider {
+  position: relative;
+  background: black;
+  
+}
+
+/* thin white lines */
+.divider-line {
+  height: 2px;
+  background: white;
+  width: 100%;
+}
+
+.divider-line.top {
+  position: relative;
+  z-index: 2;
+}
+
+.divider-line.bottom {
+  position: relative;
+  z-index: 2;
+  transform: translateY(0);
+  transition: transform 0.6s ease;
+}
+
+/* dropdown starts collapsed */
+.route-dropdown {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: black;
+  transition:
+    max-height 1.5s ease,
+    opacity 0.8s ease;
+}
+
+/* OPEN STATE */
+.route-divider.open .route-dropdown {
+  opacity: 1;
+}
+
+.route-divider.open .divider-line.bottom {
+  transform: translateY(var(--expand-distance));
+}
+
+
+
+
+.route-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 20px;
+}
+
+.route-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.route-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+  color: white;
+}
+
+.route-info p {
+  margin: 3px 0;
+  color: white;
+}
+
+.route-info a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+
+.sponsor-layout {
+  display: flex;
+  width: 100%;
+  height: 500px;
+}
+
+/* ================= LEFT ================= */
+
+.sponsor-left {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.gold-box {
+  background: #c9a13b;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom:40px;
+
+  
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gold-box.fade {
+  opacity: 0;
+}
+
+.timer-bar {
+  margin-top: 20px;
+  height: 6px;
+  background: rgba(0,0,0,0.2);
+  overflow: hidden;
+  
+}
+
+.timer-fill {
+  height: 100%;
+  width: 0%;
+  background: black;
+}
+
+.gold-box h2 {
+  flex: 0.2;
+  font-size: 20px;
+}
+
+.gold-box h3 {
+  flex: 3;
+  font-size: 60px;
+  
+}
+
+.gold-box p {
+  flex: 4.5;
+}
+
+.gold-box h3 a {
+  color: inherit;           /* keeps same color as h3 */
+  text-decoration: none;    /* remove underline */
+}
+
+.gold-box h3 a:hover {
+  text-decoration: underline; /* optional hover effect */
+}
+
+
+/* ================= RIGHT ================= */
+
+.sponsor-right {
+  width: 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-stage {
+  margin-right: 100px;
+  
+  position: absolute;
+  inset: 0;
+}
+
+/* ================= CARD ================= */
+
+.sponsor-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 520px;
+  height: 400px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translate(-50%, -50%);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.sponsor-card img {
+  max-width: 75%;
+  max-height: 75%;
+}
+
+/* states */
+.sponsor-card.from-right {
+  transform: translate(150%, -50%);
+  opacity: 0;
+}
+
+.sponsor-card.center {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.sponsor-card.to-left {
+  transform: translate(-200%, -50%);
+  opacity: 0;
+}
+
+.card-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sponsor-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(120%, -50%);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.sponsor-card.enter {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.sponsor-card.exit {
+  transform: translate(-180%, -50%);
+  opacity: 0;
+}
+
+/* Gold box stays visible */
+#gold-box {
+  opacity: 1;
+}
+
+/* Text elements default hidden */
+#gold-box h2,
+#gold-box h3,
+#gold-box p {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* When visible */
+#gold-box.visible h2,
+#gold-box.visible h3,
+#gold-box.visible p {
+  opacity: 1;
+}
+
+.timer-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  margin-top: 20px;
+}
+
+.timer-fill {
+  height: 100%;
+  width: 0%;
+  background: black;
+}
+
+@media (max-width: 900px) {
+  .sponsor-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sponsor-left,
+  .sponsor-right {
+    width: 100%;
+    height: 300px; /* you can adjust this */
+  }
+
+  .sponsor-right {
+    margin-top: 20px;
+  }
+
+  .card-stage {
+    margin-right: 0;
+  }
+}
+
+
