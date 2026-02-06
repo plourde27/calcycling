@@ -166,6 +166,104 @@ body {
   font-size: 22px;
   max-width: 700px;
 }
+.hero-cta {
+  margin-top: 24px;
+
+  display: block;               /* important */
+  background: rgba(255, 255, 255, 0.696);
+  border-color: black;
+  color: black !important;      /* override gold text */
+  padding: 16px 26px;
+  border-radius: 12px;
+
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+
+  max-width: 90%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.hero-cta-title {
+  font-family: 'Play', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hero-cta-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  margin-top: 4px;
+  opacity: 0.8;
+}
+
+.hero-cta {
+  position: relative;
+  border-radius: 12px;
+}
+
+/* marching ants border */
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  inset: -3px; /* border thickness */
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #c9a13b 0 12px,
+      transparent 12px 24px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      #c9a13b 0 12px,
+      transparent 12px 24px
+    ),
+    repeating-linear-gradient(
+      270deg,
+      #c9a13b 0 12px,
+      transparent 12px 24px
+    ),
+    repeating-linear-gradient(
+      360deg,
+      #c9a13b 0 12px,
+      transparent 12px 24px
+    );
+
+  background-size:
+    24px 3px,
+    3px 24px,
+    24px 3px,
+    3px 24px;
+
+  background-position:
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%;
+
+  background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+
+  animation: border-move 4s linear infinite;
+}
+
+@keyframes border-move {
+  to {
+    background-position:
+      24px 0,
+      100% 24px,
+      calc(100% - 24px) 100%,
+      0 calc(100% - 24px);
+  }
+}
+
+
 
 /* =====================
    CAROUSEL ARROWS
@@ -1180,5 +1278,6 @@ hr {
     margin-right: 0;
   }
 }
+
 
 
