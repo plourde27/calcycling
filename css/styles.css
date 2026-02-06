@@ -172,7 +172,7 @@ body {
   display: block;               /* important */
   background: white;
   border-color: black;
-  color: black !important;      /* override gold text */
+  color: black;      /* override gold text */
   padding: 16px 26px;
   border-radius: 12px;
 
