@@ -185,6 +185,7 @@ body {
 
 .hero-cta:hover {
   transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.767);
   box-shadow: 0 18px 40px rgba(0,0,0,0.45);
 }
 
@@ -200,6 +201,76 @@ body {
   margin-top: 4px;
   opacity: 0.8;
 }
+
+.hero-cta-image {
+  margin-top: 12px;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+.hero-cta {
+  position: relative;
+  border-radius: 12px;
+}
+
+/* marching ants border */
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  inset: -3px; /* border thickness */
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #c9a13b 0 12px,
+      transparent 12px 24px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      #c9a13b 0 12px,
+      transparent 12px 24px
+    ),
+    repeating-linear-gradient(
+      270deg,
+      #c9a13b 0 12px,
+      transparent 12px 24px
+    ),
+    repeating-linear-gradient(
+      360deg,
+      #c9a13b 0 12px,
+      transparent 12px 24px
+    );
+
+  background-size:
+    24px 3px,
+    3px 24px,
+    24px 3px,
+    3px 24px;
+
+  background-position:
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%;
+
+  background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+
+  animation: border-move 4s linear infinite;
+}
+
+@keyframes border-move {
+  to {
+    background-position:
+      24px 0,
+      100% 24px,
+      calc(100% - 24px) 100%,
+      0 calc(100% - 24px);
+  }
+}
+
 
 
 /* =====================
